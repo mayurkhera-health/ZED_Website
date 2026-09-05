@@ -175,37 +175,47 @@ const en = {
   /**
    * Global delivery — homepage.
    *
-   * [CONFIRM] Three location claims. North America and India are stated
-   * elsewhere on the site already; the Americas nearshore column matches the
-   * Offshore & Nearshore service page, which says "nearshore across the
-   * Americas for overlapping hours". If that is aspirational rather than
-   * staffed today, this column and that pillar come off together.
+   * Two groups: client markets and delivery. Deliberately not three peers —
+   * a market and a delivery centre are different kinds of thing.
    *
-   * No "24/7", "always-on" or "around-the-clock" anywhere — those are
-   * contractual claims ZEDventures has not made elsewhere on this site.
+   * [CONFIRM] CANADA. The only claim made is "growing market". The copy says
+   * "built to serve Canadian organizations" and never Canadian operations,
+   * office, delivery centre, local team or presence, none of which is true
+   * today. If any of those becomes true the wording can strengthen; until
+   * then it must not.
+   *
+   * No "24/7", "always-on" or "around-the-clock" anywhere: contractual claims
+   * ZEDventures has not made elsewhere on this site.
    */
   globalDelivery: {
     eyebrow: "Global delivery",
-    heading: "Local accountability. Global delivery.",
-    stages: [
+    heading: "North American relationships. Global delivery strength.",
+    sub: "We stay close to our clients in North America and connect that relationship to engineering and delivery capability in India.",
+    marketsLabel: "North America",
+    marketsNote: "Where we work with clients",
+    markets: [
       {
-        place: "North America",
-        role: "Client engagement",
-        desc: "Strategy, architecture and program leadership, working directly with your teams where the decisions get made.",
+        place: "United States",
+        role: "Client leadership & engagement",
+        desc: "We work closely with client teams from strategy and architecture through implementation and ongoing delivery.",
       },
       {
-        place: "Americas",
-        role: "Nearshore delivery",
-        desc: "Engineering in overlapping hours, for the work that needs real-time collaboration rather than a handover.",
-      },
-      {
-        place: "India",
-        role: "Engineering depth",
-        desc: "Implementation, development, integration and ongoing delivery, with the capacity to scale a workstream up.",
+        place: "Canada",
+        flag: "Growing market",
+        role: "Built to serve Canadian organizations",
+        desc: "Bringing our enterprise technology experience and flexible delivery model to organizations across Canada.",
       },
     ],
-    closing:
-      "One connected team \u2014 close to the client when decisions are made, with the engineering depth to keep work moving.",
+    deliveryLabel: "Global delivery",
+    deliveryNote: "Engineering depth",
+    delivery: {
+      place: "India",
+      role: "Engineering & delivery",
+      desc: "Implementation, development, integration and ongoing delivery, backed by engineering capacity that can scale with the engagement.",
+    },
+    closing: "One connected team. From strategy to delivery.",
+    closingSub:
+      "Client-facing leadership and scalable engineering working as one team across time zones.",
   },
   careers: {
     eyebrow: "Join us",
@@ -628,26 +638,33 @@ const fr: Copy = {
   },
   globalDelivery: {
     eyebrow: "Livraison mondiale",
-    heading: "Responsabilité locale. Livraison mondiale.",
-    stages: [
+    heading: "Des relations nord-américaines. Une capacité de livraison mondiale.",
+    sub: "Nous restons proches de nos clients en Amérique du Nord et relions cette relation à une capacité d'ingénierie et de livraison en Inde.",
+    marketsLabel: "Amérique du Nord",
+    marketsNote: "Là où nous travaillons avec nos clients",
+    markets: [
       {
-        place: "Amérique du Nord",
-        role: "Relation client",
-        desc: "Stratégie, architecture et pilotage de programme, au contact direct de vos équipes, là où les décisions se prennent.",
+        place: "États-Unis",
+        role: "Relation et pilotage client",
+        desc: "Nous travaillons au contact des équipes clientes, de la stratégie et de l'architecture jusqu'à la mise en œuvre et l'exploitation.",
       },
       {
-        place: "Amériques",
-        role: "Livraison nearshore",
-        desc: "De l'ingénierie en heures communes, pour les travaux qui demandent une collaboration en temps réel plutôt qu'un relais.",
-      },
-      {
-        place: "Inde",
-        role: "Profondeur d'ingénierie",
-        desc: "Mise en œuvre, développement, intégration et exploitation, avec la capacité de renforcer un chantier.",
+        place: "Canada",
+        flag: "Marché en développement",
+        role: "Au service des organisations canadiennes",
+        desc: "Nous apportons notre expérience des systèmes d'entreprise et notre modèle de livraison souple aux organisations partout au Canada.",
       },
     ],
-    closing:
-      "Une seule équipe \u2014 proche du client au moment des décisions, avec la profondeur d'ingénierie pour faire avancer le travail.",
+    deliveryLabel: "Livraison mondiale",
+    deliveryNote: "Profondeur d'ingénierie",
+    delivery: {
+      place: "Inde",
+      role: "Ingénierie et livraison",
+      desc: "Mise en œuvre, développement, intégration et exploitation, portés par une capacité d'ingénierie qui suit la taille de l'engagement.",
+    },
+    closing: "Une seule équipe. De la stratégie à la livraison.",
+    closingSub:
+      "Un pilotage au contact du client et une ingénierie qui monte en charge, comme une seule équipe à travers les fuseaux horaires.",
   },
   careers: {
     eyebrow: "Rejoignez-nous",
