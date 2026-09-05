@@ -35,18 +35,18 @@ export function CareersProcess() {
           {c.processSub}
         </p>
 
-        {/* An ordered list, because it is one. Steps stack on phones and run as
-            four columns from 768px, with the hairline separating along
-            whichever axis they are stacking on. */}
+        {/* An ordered list, because it is one. Steps stack on phones and run
+            as four columns from 768px.
+
+            No numerals. This one genuinely IS a sequence, so the count carried
+            meaning here — but numbers came off site-wide, and a single
+            numbered list left standing would read as an oversight rather than
+            as a distinction. Order still comes from the ol element and from
+            reading order; a short red rule marks each step. */}
         <ol className="mt-10 grid gap-px overflow-hidden bg-border md:grid-cols-4">
-          {c.process.map((step, i) => (
+          {c.process.map((step) => (
             <li key={step.title} className="bg-secondary py-6 md:px-6 md:first:pl-0">
-              <span
-                className="font-display block text-[1.375rem] leading-none tracking-[-0.02em] text-accent"
-                aria-hidden="true"
-              >
-                {i + 1}
-              </span>
+              <span className="block h-px w-7 bg-accent" aria-hidden="true" />
               <h3 className="mt-4 text-[0.9375rem] font-bold leading-[1.35]">{step.title}</h3>
               <p className="mt-1.5 text-sm leading-[1.55] text-muted-foreground">{step.body}</p>
             </li>

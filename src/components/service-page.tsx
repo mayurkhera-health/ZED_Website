@@ -237,18 +237,14 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
             eyebrow={t.services.buildEyebrow}
             heading={t.services.buildHeading}
           />
+          {/* No numerals. These are six things we do, not six steps, and the
+              count read as a sequence it does not have. The hairline above
+              each entry already separates them. */}
           <ol className="mt-8 grid gap-x-12 gap-y-6 sm:grid-cols-2">
-            {s.capabilities.map((c, i) => (
+            {s.capabilities.map((c) => (
               <li key={c.title} className="group border-t border-border pt-4">
-                <span
-                  className="eyebrow block text-accent transition-opacity group-hover:opacity-80"
-                  style={{ transitionDuration: "var(--dur)" }}
-                  aria-hidden="true"
-                >
-                  {String(i + 1).padStart(2, "0")}
-                </span>
                 <h3
-                  className="font-display mt-2.5 max-w-[22ch] text-[1.3125rem] leading-[1.15] tracking-[-0.02em] transition-transform group-hover:translate-x-1 sm:text-[1.375rem]"
+                  className="font-display max-w-[22ch] text-[1.3125rem] leading-[1.15] tracking-[-0.02em] transition-transform group-hover:translate-x-1 sm:text-[1.375rem]"
                   style={{
                     transitionDuration: "var(--dur)",
                     transitionTimingFunction: "var(--ease)",
@@ -403,21 +399,15 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
               </p>
             )}
 
+            {/* The red rule stays, the numeral does not. Three reasons why us
+                are not ranked, and numbering them implied they were. */}
             <ol className="mt-12 grid gap-px overflow-hidden bg-border lg:grid-cols-3">
-              {pillars.map((pillar, i) => (
+              {pillars.map((pillar) => (
                 <li
                   key={pillar.title}
                   className="bg-background py-7 lg:px-8 lg:py-0 lg:first:pl-0"
                 >
-                  <div className="flex items-center gap-3">
-                    <span className="eyebrow text-dark-lead" aria-hidden="true">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <span
-                      className="h-px w-8 bg-primary"
-                      aria-hidden="true"
-                    />
-                  </div>
+                  <span className="block h-px w-8 bg-primary" aria-hidden="true" />
                   <h3 className="font-display mt-5 max-w-[18ch] text-[1.375rem] leading-[1.15] tracking-[-0.02em] sm:text-2xl">
                     {pillar.title}
                   </h3>
