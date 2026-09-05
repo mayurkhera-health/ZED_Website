@@ -3,6 +3,7 @@ import { LanguageProvider } from "@/lib/i18n";
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
 import { Services } from "@/components/services";
+import { GlobalDelivery } from "@/components/global-delivery";
 import { CaseStudies } from "@/components/case-studies";
 import { Careers } from "@/components/careers";
 import { Contact } from "@/components/contact";
@@ -38,6 +39,10 @@ function Index() {
       <main className="pt-16 sm:pt-20">
         <Hero />
         <Services />
+        {/* After Services, not before: the spec calls this a confidence
+            point, and a confidence point lands once the visitor knows what
+            the company does. */}
+        <GlobalDelivery />
         <CaseStudies />
         <Careers />
         <Contact />

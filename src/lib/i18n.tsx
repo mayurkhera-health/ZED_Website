@@ -172,6 +172,41 @@ const en = {
     outcomesLabel: "Outcomes",
     stackLabel: "Technology",
   },
+  /**
+   * Global delivery — homepage.
+   *
+   * [CONFIRM] Three location claims. North America and India are stated
+   * elsewhere on the site already; the Americas nearshore column matches the
+   * Offshore & Nearshore service page, which says "nearshore across the
+   * Americas for overlapping hours". If that is aspirational rather than
+   * staffed today, this column and that pillar come off together.
+   *
+   * No "24/7", "always-on" or "around-the-clock" anywhere — those are
+   * contractual claims ZEDventures has not made elsewhere on this site.
+   */
+  globalDelivery: {
+    eyebrow: "Global delivery",
+    heading: "Local accountability. Global delivery.",
+    stages: [
+      {
+        place: "North America",
+        role: "Client engagement",
+        desc: "Strategy, architecture and program leadership, working directly with your teams where the decisions get made.",
+      },
+      {
+        place: "Americas",
+        role: "Nearshore delivery",
+        desc: "Engineering in overlapping hours, for the work that needs real-time collaboration rather than a handover.",
+      },
+      {
+        place: "India",
+        role: "Engineering depth",
+        desc: "Implementation, development, integration and ongoing delivery, with the capacity to scale a workstream up.",
+      },
+    ],
+    closing:
+      "One connected team \u2014 close to the client when decisions are made, with the engineering depth to keep work moving.",
+  },
   careers: {
     eyebrow: "Join us",
     line: "We're hiring across every team on this page.",
@@ -590,6 +625,29 @@ const fr: Copy = {
     sub: "Des engagements réels, des résultats concrets — des systèmes d'IA, de données et d'analytique en production chez des entreprises mondiales.",
     outcomesLabel: "Résultats",
     stackLabel: "Technologies",
+  },
+  globalDelivery: {
+    eyebrow: "Livraison mondiale",
+    heading: "Responsabilité locale. Livraison mondiale.",
+    stages: [
+      {
+        place: "Amérique du Nord",
+        role: "Relation client",
+        desc: "Stratégie, architecture et pilotage de programme, au contact direct de vos équipes, là où les décisions se prennent.",
+      },
+      {
+        place: "Amériques",
+        role: "Livraison nearshore",
+        desc: "De l'ingénierie en heures communes, pour les travaux qui demandent une collaboration en temps réel plutôt qu'un relais.",
+      },
+      {
+        place: "Inde",
+        role: "Profondeur d'ingénierie",
+        desc: "Mise en œuvre, développement, intégration et exploitation, avec la capacité de renforcer un chantier.",
+      },
+    ],
+    closing:
+      "Une seule équipe \u2014 proche du client au moment des décisions, avec la profondeur d'ingénierie pour faire avancer le travail.",
   },
   careers: {
     eyebrow: "Rejoignez-nous",
