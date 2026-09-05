@@ -1,20 +1,45 @@
 import { Link } from "@tanstack/react-router";
 import {
+  ArrowLeftRight,
   ArrowRight,
   ArrowUpRight,
   BarChart3,
+  Blocks,
   Box,
+  CircleCheck,
+  Clock,
   Cloud,
+  Compass,
+  Database,
+  Gauge,
+  Globe,
   Layers,
+  LayoutDashboard,
+  Map,
+  MapPin,
+  MessagesSquare,
+  PieChart,
   Plug,
+  Rocket,
+  Satellite,
+  Server,
   ShieldCheck,
+  Shuffle,
+  SlidersHorizontal,
+  Sparkles,
+  TrendingUp,
+  TriangleAlert,
+  Users,
+  Workflow,
 } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
 import { SectionHeader } from "@/components/section-header";
 import {
+  CAPABILITY_ICONS,
   isServiceDraft,
   SERVICE_PAGES,
   SHOW_SERVICE_PROOF,
+  type CapabilityIcon,
   type ServiceSlug,
   type TechIcon,
 } from "@/lib/service-pages";
@@ -49,6 +74,41 @@ const TECH_ICONS: Record<TechIcon, typeof BarChart3> = {
   layers: Layers,
   plug: Plug,
   shield: ShieldCheck,
+};
+
+/**
+ * Capability card icons. Same library as everything else on the site — no
+ * emoji, which would be the first on the page and would render as a different
+ * typeface, at a different weight, in a different colour per platform.
+ */
+const CAPABILITY_GLYPHS: Record<CapabilityIcon, typeof BarChart3> = {
+  compass: Compass,
+  "trending-up": TrendingUp,
+  "arrow-left-right": ArrowLeftRight,
+  dashboard: LayoutDashboard,
+  "pie-chart": PieChart,
+  gauge: Gauge,
+  map: Map,
+  shield: ShieldCheck,
+  "map-pin": MapPin,
+  alert: TriangleAlert,
+  satellite: Satellite,
+  plug: Plug,
+  layers: Layers,
+  sliders: SlidersHorizontal,
+  cloud: Cloud,
+  server: Server,
+  blocks: Blocks,
+  sparkles: Sparkles,
+  database: Database,
+  workflow: Workflow,
+  check: CircleCheck,
+  rocket: Rocket,
+  users: Users,
+  globe: Globe,
+  clock: Clock,
+  shuffle: Shuffle,
+  messages: MessagesSquare,
 };
 
 /**
@@ -223,12 +283,22 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
 
       {/* ---------------------------------------------------------------
           03 — WHAT WE HELP YOU DO (S13-S18)
-          Editorial grid, not cards: numbering, typography, whitespace and
-          a hairline. Spacing is deliberately tight — six short entries in
-          two columns, where generous leading made each one read like a
-          separate announcement rather than one list. Rows are not links — there is nowhere to send the
-          reader, and a hover that implies navigation and delivers none is
-          worse than no hover at all (S17).
+
+          Cards, per the card-grid spec, replacing the editorial hairline
+          grid that spec v1.0 §15/§43 and v1.2 §15 asked for. That is a
+          reversal and it is recorded as one: the earlier rule was written
+          against "six large boxed SaaS cards", and the objection was to
+          the weight, not the box. These are quiet — white ground, one
+          hairline, 12px radius, no shadow, no lift — so the section still
+          reads as one list rather than six announcements.
+
+          Two columns, not the spec's 2x2: three of the seven services have
+          six capabilities, and a grid fixed at four would strand them.
+
+          Rows are not links. There is nowhere to send the reader, and a
+          hover that implies navigation and delivers none is worse than no
+          hover at all (S17) — so the only hover here is the border, which
+          promises nothing.
           --------------------------------------------------------------- */}
       <section className="border-b border-border">
         <div className="container-page section-y">
@@ -237,26 +307,41 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
             eyebrow={t.services.buildEyebrow}
             heading={t.services.buildHeading}
           />
-          {/* No numerals. These are six things we do, not six steps, and the
-              count read as a sequence it does not have. The hairline above
-              each entry already separates them. */}
-          <ol className="mt-8 grid gap-x-12 gap-y-6 sm:grid-cols-2">
-            {s.capabilities.map((c) => (
-              <li key={c.title} className="group border-t border-border pt-4">
-                <h3
-                  className="font-display max-w-[22ch] text-[1.3125rem] leading-[1.15] tracking-[-0.02em] transition-transform group-hover:translate-x-1 sm:text-[1.375rem]"
+          {/* No numerals — these are things we do, not steps, and the count
+              read as a sequence it does not have. */}
+          <ol className="mt-8 grid gap-4 sm:grid-cols-2">
+            {s.capabilities.map((c, i) => {
+              const Glyph = CAPABILITY_GLYPHS[CAPABILITY_ICONS[slug][i] ?? "layers"];
+              return (
+                <li
+                  key={c.title}
+                  className="rounded-xl border border-border bg-background p-6 transition-colors hover:border-border-strong"
                   style={{
                     transitionDuration: "var(--dur)",
                     transitionTimingFunction: "var(--ease)",
                   }}
                 >
-                  {c.title}
-                </h3>
-                <p className="mt-2 max-w-[30rem] text-[0.9375rem] leading-[1.5] text-muted-foreground">
-                  {c.desc}
-                </p>
-              </li>
-            ))}
+                  {/* Decoration. The heading below carries the meaning, so
+                      the badge is hidden from assistive tech rather than
+                      given a label that would only repeat it. */}
+                  <span
+                    aria-hidden="true"
+                    className="flex h-9 w-9 items-center justify-center rounded-lg bg-secondary text-accent"
+                  >
+                    <Glyph size={18} strokeWidth={1.75} />
+                  </span>
+                  {/* No max-w on the title. The card is already the measure;
+                      a 22ch cap on top of it broke two-word headings onto a
+                      second line with half the card empty beside them. */}
+                  <h3 className="font-display mt-3.5 text-[1.25rem] leading-[1.15] tracking-[-0.02em] sm:text-[1.3125rem]">
+                    {c.title}
+                  </h3>
+                  <p className="mt-2 text-[0.9375rem] leading-[1.55] text-muted-foreground">
+                    {c.desc}
+                  </p>
+                </li>
+              );
+            })}
           </ol>
         </div>
       </section>

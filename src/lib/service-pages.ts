@@ -39,6 +39,52 @@ export type ServiceCapability = { title: string; desc: string };
 export type TechIcon = "chart" | "cube" | "cloud" | "layers" | "plug" | "shield";
 
 /**
+ * Icon for a capability card.
+ *
+ * A closed set, like TechIcon, so a typo is a build error rather than a missing
+ * glyph in production.
+ *
+ * The assignment lives in CAPABILITY_ICONS (below SERVICE_SLUGS) rather than on
+ * the capability record, and it is POSITIONAL. That is deliberate: the
+ * capabilities are the same six — or four — things in both locales, in the same
+ * order, so an icon field on the record would have to be written twice per
+ * capability and kept in sync by hand across roughly thirty-four of them. The
+ * icon belongs to the capability, not to the translation.
+ *
+ * The cost is that reordering the English array without reordering the French
+ * one silently reassigns icons. If capabilities ever stop being one-to-one
+ * across locales, move the field onto ServiceCapability instead.
+ */
+export type CapabilityIcon =
+  | "compass"
+  | "trending-up"
+  | "arrow-left-right"
+  | "dashboard"
+  | "pie-chart"
+  | "gauge"
+  | "map"
+  | "shield"
+  | "map-pin"
+  | "alert"
+  | "satellite"
+  | "plug"
+  | "layers"
+  | "sliders"
+  | "cloud"
+  | "server"
+  | "blocks"
+  | "sparkles"
+  | "database"
+  | "workflow"
+  | "check"
+  | "rocket"
+  | "users"
+  | "globe"
+  | "clock"
+  | "shuffle"
+  | "messages";
+
+/**
  * A linked case study. Index matches the order on /case-studies, which is where
  * the anchor ids come from.
  */
@@ -145,6 +191,29 @@ export const SERVICE_SLUGS = [
 ] as const;
 
 export type ServiceSlug = (typeof SERVICE_SLUGS)[number];
+
+/**
+ * Capability icons, in the order the capabilities appear for each service.
+ *
+ * These label a heading that already says the thing; they are not information
+ * of their own. Every card reads correctly with the badge ignored, which is why
+ * the badge is aria-hidden in the template. Any glyph that would need
+ * explaining — a chart standing in for "consistency", say — is the wrong one:
+ * pick the literal icon, or the generic one.
+ *
+ * A list shorter than the service's capability array is not an error; the
+ * template falls back to a neutral glyph rather than dropping the badge, so the
+ * grid does not go ragged.
+ */
+export const CAPABILITY_ICONS: Record<ServiceSlug, readonly CapabilityIcon[]> = {
+  analytics: ["compass", "trending-up", "arrow-left-right", "dashboard", "pie-chart", "gauge"],
+  sap: ["server", "shield", "blocks", "dashboard", "plug", "sparkles"],
+  "gis-geospatial": ["map", "database", "map-pin", "alert", "satellite", "plug"],
+  "ai-data": ["messages", "workflow", "database", "plug"],
+  guidewire: ["layers", "sliders", "trending-up", "cloud"],
+  "product-engineering": ["blocks", "cloud", "check", "rocket"],
+  "offshore-nearshore": ["users", "globe", "clock", "shuffle"],
+};
 
 /**
  * Which service pages are still drafts.
