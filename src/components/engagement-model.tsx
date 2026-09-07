@@ -52,8 +52,20 @@ export function EngagementModel({ data }: { data: EngagementBlock }) {
             </p>
 
             <ul className="mt-6 space-y-5">
-              {group.options.map((o) => (
+              {group.options.map((o, oi) => (
                 <li key={o.title} className="relative border-t border-border pl-5 pt-4">
+                  {/* Left column only: a red segment laid over the hairline,
+                      growing with each option, so increasing ZED ownership is
+                      visible without a chart or a second explanation. The
+                      right column keeps the plain hairline — those three are
+                      alternatives, and ranking them would be wrong. */}
+                  {gi === 0 && (
+                    <span
+                      aria-hidden="true"
+                      className="absolute left-0 top-[-1px] h-px bg-primary"
+                      style={{ width: `${30 + oi * 36}px` }}
+                    />
+                  )}
                   {/* The marker sits in the gutter so the three titles stay on
                       one optical line whether or not a row carries it. */}
                   {o.common && (

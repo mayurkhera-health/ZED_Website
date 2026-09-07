@@ -66,6 +66,20 @@ export type TechIcon = "chart" | "cube" | "cloud" | "layers" | "plug" | "shield"
  * `common` marks the choice most engagements start from, at most one per
  * group. It is explained once by `closing` rather than badged on each row.
  */
+/**
+ * "When it fits" — four reasons a customer would consider distributed
+ * delivery at all. An interlude between what we sell and how it is bought.
+ *
+ * Four items, no more: the layout is four columns on desktop and 2x2 on
+ * tablet, and a fifth would strand one item on its own row.
+ */
+export type WhenItFits = {
+  eyebrow: string;
+  heading: string;
+  intro: string;
+  items: { title: string; body: string }[];
+};
+
 export type EngagementBlock = {
   eyebrow: string;
   heading: string;
@@ -214,6 +228,12 @@ export type ServiceContent = {
    */
   platformsEyebrow?: string;
   platformsHeading?: string;
+
+  /**
+   * The "when it fits" interlude. Sits between the capability cards and the
+   * delivery model. Only Offshore & Nearshore carries it.
+   */
+  whenItFits?: WhenItFits;
 
   /**
    * Engagement — how much we own and where the people sit, as one block.
@@ -834,7 +854,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
       },
       outcome: "Add engineering capacity without adding coordination overhead.",
       intro:
-        "Build the delivery model around the work. Use India for engineering depth and scale, nearshore teams when working-hour overlap matters, or combine both under one accountable engagement.",
+        "Add the engineering capacity you need without building another team to manage it. Work with our India team, add nearshore support when closer working hours matter, or combine both in a delivery model that fits your team and your work.",
       problems: [
         "Hiring timelines that do not match the delivery date.",
         "Distributed teams losing a day to every question.",
@@ -848,31 +868,55 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
       capabilities: [
         {
           title: "Dedicated engineering teams",
-          desc: "Build stable teams around your products, platforms or programs rather than rotating resources from project to project.",
+          desc: "Build a consistent team around your product, platform or program. The same people stay with the work, learn your environment and build knowledge over time.",
         },
         {
           title: "Offshore delivery",
-          desc: "Use India-based engineering capability for development, QA, integration, modernization and long-running delivery work where depth and scale matter.",
+          desc: "Use our India team for development, QA, integration, modernization and ongoing engineering work. Build a small specialist team or scale into a larger delivery team as the work grows.",
         },
         {
           title: "Nearshore delivery",
-          desc: "Place work that benefits from stronger working-hour overlap with teams across compatible Americas time zones.",
+          desc: "Use nearshore teams when the work needs more overlap with your business day — for workshops, frequent collaboration, faster decisions or work that benefits from real-time access to the team.",
         },
         {
           title: "Blended delivery",
-          desc: "Combine client-facing, nearshore and offshore roles based on the needs of each workstream rather than forcing the entire engagement into one model.",
+          desc: "Not every part of the project needs to sit in the same place. Keep client-facing work close to the business, use nearshore where daily collaboration matters, and offshore the work that benefits from deeper capacity.",
         },
         {
           title: "Managed delivery",
-          desc: "Give ZED responsibility for planning, engineering execution, quality, reporting and delivery — not simply supplying individual resources.",
+          desc: "When you want ZED to own the delivery, we do. We manage the plan, engineering work, quality, reporting and day-to-day execution — not just provide people for you to manage.",
         },
         {
           title: "Team extension",
-          desc: "Add specialized engineers into your existing tools, backlog and delivery rituals while keeping your internal team in control of priorities.",
+          desc: "Add engineers to the team you already have. They work in your tools, follow your processes and join your existing delivery rhythm, while your team continues to set priorities and manage the work.",
         },
       ],
       technologies: ["Distributed delivery", "Agile delivery", "Embedded QA", "Shared tooling", "Delivery ownership", "Knowledge retention"],
       buildHeading: "Build the delivery model around the work.",
+      whenItFits: {
+        eyebrow: "When it fits",
+        heading: "When distributed delivery makes sense.",
+        intro:
+          "You don't need to offshore everything. Distributed delivery works best when there is a clear reason for doing it.",
+        items: [
+          {
+            title: "You need capacity",
+            body: "Your roadmap is growing faster than your internal team.",
+          },
+          {
+            title: "You need skills",
+            body: "You need engineering expertise that is difficult or slow to hire locally.",
+          },
+          {
+            title: "You need continuity",
+            body: "You have ongoing work that benefits from a stable team that learns your systems over time.",
+          },
+          {
+            title: "You need flexibility",
+            body: "You want to add or change capacity as priorities move without rebuilding the team every time.",
+          },
+        ],
+      },
       /**
        * No `situation` and no `situationHeading`. The section was removed from
        * this page at Mayur's direction; the template skips it entirely rather
@@ -889,7 +933,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
       platformsEyebrow: "Delivery model",
       platformsHeading: "One team. Different locations.",
       platformsSub:
-        "We use the same engineering standards, tools and governance across the engagement. Geography changes where work happens — not how delivery is managed.",
+        "Wherever the team is based, they work to the same engineering standards and use the same delivery process. The location may change, but the way the team works together does not.",
       technologyGroups: [
         {
           label: "Delivery model",
@@ -914,66 +958,66 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
       ],
       engagement: {
         eyebrow: "Engagement",
-        heading: "Shape the engagement around the work.",
-        sub: "Two decisions, and they are independent — any operating model can run with any team shape.",
+        heading: "Choose how you want to work with us.",
+        sub: "Start with two simple decisions: how much responsibility you want ZED to take, and where you want the work to happen. You can mix the two to build the model that works for your team.",
         groups: [
           {
-            label: "How much we own",
-            note: "Who carries responsibility for delivery.",
+            label: "How much ZED owns",
+            note: "Each step hands us more of the delivery.",
             options: [
               {
                 title: "Team extension",
-                body: "You lead. Our engineers work inside your team, tools and process; ownership stays with you. Suits teams with strong internal delivery leadership.",
+                body: "Add engineers to your existing team. You set the priorities and manage the work; we provide the people and support needed to keep the team running smoothly.",
               },
               {
                 title: "Dedicated team",
-                body: "A consistent team works against your roadmap, with defined technical and delivery leadership. Suits sustained capacity around a product or platform.",
+                body: "A consistent ZED team works against your roadmap and stays with the engagement over time, building deeper knowledge of your systems and business.",
                 common: true,
               },
               {
                 title: "Managed delivery",
-                body: "You define the outcome; we take responsibility for planning, execution, quality and delivery against an agreed scope.",
+                body: "You define the outcome. We take responsibility for planning the work, running the team, managing quality and keeping delivery on track.",
               },
             ],
           },
           {
-            label: "Where the people sit",
+            label: "Where the team sits",
             note: "Where the work actually happens.",
             options: [
               {
-                title: "Pure offshore",
-                body: "Delivered end to end from India. Suits work that is well specified and does not need daily real-time contact to move forward.",
+                title: "Offshore",
+                body: "The team works from our India delivery center. A good fit for engineering work that can move forward with planned collaboration and clearly defined ownership.",
               },
               {
-                title: "Hybrid",
-                body: "People close to you where collaboration decides the outcome, with engineering depth in India behind them.",
+                title: "Blended",
+                body: "Combine client-facing or nearshore roles with our India engineering team. You get more working-hour overlap where you need it while keeping deeper engineering capacity offshore.",
                 common: true,
               },
               {
-                title: "Pure onsite",
-                body: "In the room with your team, for work that has to happen in person — discovery, workshops, cutover and go-live.",
+                title: "Onsite",
+                body: "Put people alongside your team when the work benefits from being done in person — workshops, discovery, planning, rollout or periods of intensive collaboration.",
               },
             ],
           },
         ],
         closing:
-          "Most engagements begin as a dedicated team on a hybrid shape, and move from there as the work changes.",
+          "Most engagements begin with a dedicated team or a blended model and evolve as the work changes.",
       },
       whyHeading: "Distributed delivery without distributed accountability.",
       whyIntro:
-        "We build distributed teams around ownership and continuity — not around filling seats.",
+        "Working across locations should not mean figuring out who is responsible when something needs attention. We keep ownership clear and give you one ZED team accountable for the work.",
       whyPillars: [
         {
           title: "Integrated teams, not staffing",
-          body: "Engineers work inside your tools, delivery rhythms and technical environment long enough to understand the context behind the work.",
+          body: "Our engineers work in your tools, follow your processes and get to know your systems. Over time, they build the context that helps them solve problems without needing every detail explained.",
         },
         {
           title: "Accountability stays with ZED",
-          body: "We stay involved in execution, risks, quality and escalation — not just resource placement.",
+          body: "We don't disappear once the team starts. We stay involved in delivery, quality, performance and issues that need escalation.",
         },
         {
-          title: "Geography follows the work",
-          body: "Use India for engineering depth and scale, nearshore capability where collaboration overlap matters, and combine them when the engagement needs both.",
+          title: "Put the work where it makes sense",
+          body: "Some work is a natural fit for India. Some needs closer working-hour overlap. Many engagements need both. We help you choose based on how the work actually gets done.",
         },
       ],
       /**
@@ -989,7 +1033,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
       photoBand: {
         eyebrow: "Delivery centre",
         heading: "The India team.",
-        sub: "Engineering depth and scale, in one place, working to the same standards as the rest of the engagement.",
+        sub: "Our India delivery center gives us a stable engineering base that can support both individual specialists and larger delivery teams. They work as part of the same ZED team, using the same tools, standards and delivery processes as everyone else on the engagement.",
         photos: [
           {
             src: "/delivery-team.webp",
@@ -1399,7 +1443,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
       },
       outcome: "Ajouter de la capacité d'ingénierie sans ajouter de coordination.",
       intro:
-        "Construire le modèle de livraison autour du travail. L'Inde pour la profondeur et l'échelle, des équipes de proximité quand le chevauchement horaire compte, ou les deux au sein d'un même engagement dont nous répondons.",
+        "Ajoutez la capacité d'ingénierie dont vous avez besoin sans monter une équipe de plus à gérer. Travaillez avec notre équipe en Inde, ajoutez du renfort de proximité quand les horaires communs comptent, ou combinez les deux dans un modèle qui convient à votre équipe et à votre travail.",
       problems: [
         "Des délais de recrutement incompatibles avec la date de livraison.",
         "Des équipes distribuées qui perdent une journée à chaque question.",
@@ -1408,31 +1452,55 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
       capabilities: [
         {
           title: "Équipes d'ingénierie dédiées",
-          desc: "Constituer des équipes stables autour de vos produits, plateformes ou programmes, plutôt que de faire tourner des ressources d'un projet à l'autre.",
+          desc: "Constituer une équipe stable autour de votre produit, de votre plateforme ou de votre programme. Les mêmes personnes restent sur le travail, apprennent votre environnement et accumulent la connaissance au fil du temps.",
         },
         {
           title: "Livraison délocalisée",
-          desc: "Mobiliser la capacité d'ingénierie basée en Inde pour le développement, la qualité, l'intégration, la modernisation et les travaux de longue durée, là où la profondeur et l'échelle comptent.",
+          desc: "Mobiliser notre équipe en Inde pour le développement, la qualité, l'intégration, la modernisation et l'ingénierie au long cours. Commencer par une petite équipe spécialisée, puis monter en charge à mesure que le travail grandit.",
         },
         {
           title: "Livraison de proximité",
-          desc: "Placer les travaux qui gagnent à un meilleur chevauchement horaire auprès d'équipes situées dans des fuseaux compatibles des Amériques.",
+          desc: "Faire appel à des équipes de proximité quand le travail demande plus de recouvrement avec votre journée — ateliers, collaboration fréquente, décisions rapides, ou tout travail qui gagne à un accès en temps réel à l'équipe.",
         },
         {
           title: "Livraison mixte",
-          desc: "Combiner des rôles chez le client, de proximité et délocalisés selon les besoins de chaque chantier, plutôt que d'imposer un modèle unique à tout l'engagement.",
+          desc: "Toutes les parties d'un projet n'ont pas à se trouver au même endroit. Gardez près du métier ce qui est en contact avec lui, utilisez la proximité là où la collaboration quotidienne compte, et délocalisez ce qui gagne à une capacité plus profonde.",
         },
         {
           title: "Livraison pilotée",
-          desc: "Confier à ZED la planification, l'exécution technique, la qualité, le reporting et la livraison — et non la simple mise à disposition de personnes.",
+          desc: "Quand vous voulez que ZED porte la livraison, nous la portons. Nous gérons le plan, le travail d'ingénierie, la qualité, le reporting et l'exécution au quotidien — pas seulement la fourniture de personnes que vous gérez.",
         },
         {
           title: "Renfort d'équipe",
-          desc: "Intégrer des ingénieurs spécialisés à vos outils, votre backlog et vos rituels de livraison, vos priorités restant pilotées par votre équipe.",
+          desc: "Ajouter des ingénieurs à l'équipe que vous avez déjà. Ils travaillent dans vos outils, suivent vos processus et rejoignent votre cadence de livraison, pendant que votre équipe continue de fixer les priorités et de piloter le travail.",
         },
       ],
       technologies: ["Livraison distribuée", "Livraison agile", "QA intégrée", "Outillage commun", "Responsabilité de livraison", "Rétention des connaissances"],
       buildHeading: "Construire le modèle de livraison autour du travail.",
+      whenItFits: {
+        eyebrow: "Quand c'est pertinent",
+        heading: "Quand la livraison distribuée a du sens.",
+        intro:
+          "Il n'est pas nécessaire de tout délocaliser. La livraison distribuée fonctionne le mieux quand il y a une raison claire de le faire.",
+        items: [
+          {
+            title: "Vous manquez de capacité",
+            body: "Votre feuille de route grandit plus vite que votre équipe interne.",
+          },
+          {
+            title: "Vous manquez de compétences",
+            body: "Vous avez besoin d'une expertise difficile ou longue à recruter localement.",
+          },
+          {
+            title: "Vous cherchez de la continuité",
+            body: "Vous avez un travail récurrent qui gagne à une équipe stable, qui apprend vos systèmes avec le temps.",
+          },
+          {
+            title: "Vous cherchez de la souplesse",
+            body: "Vous voulez ajuster la capacité quand les priorités bougent, sans reconstruire l'équipe à chaque fois.",
+          },
+        ],
+      },
       /**
        * No `situation` and no `situationHeading`. The section was removed from
        * this page at Mayur's direction; the template skips it entirely rather
@@ -1444,7 +1512,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
       platformsEyebrow: "Modèle de livraison",
       platformsHeading: "Une seule équipe. Plusieurs lieux.",
       platformsSub:
-        "Mêmes standards d'ingénierie, mêmes outils, même gouvernance sur tout l'engagement. La géographie change où le travail se fait, pas la façon dont la livraison est pilotée.",
+        "Où que l'équipe soit basée, elle applique les mêmes standards d'ingénierie et le même processus de livraison. Le lieu peut changer ; la façon dont l'équipe travaille ensemble, non.",
       technologyGroups: [
         {
           label: "Modèle de livraison",
@@ -1469,66 +1537,66 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
       ],
       engagement: {
         eyebrow: "Engagement",
-        heading: "Construire l'engagement autour du travail.",
-        sub: "Deux décisions, indépendantes l'une de l'autre — chaque modèle peut se combiner à chaque configuration d'équipe.",
+        heading: "Choisissez la façon de travailler avec nous.",
+        sub: "Commencez par deux décisions simples : la part de responsabilité que vous voulez confier à ZED, et l'endroit où le travail doit se faire. Les deux se combinent librement pour construire le modèle qui convient à votre équipe.",
         groups: [
           {
-            label: "Ce que nous prenons en charge",
-            note: "Qui porte la responsabilité de la livraison.",
+            label: "Ce que ZED prend en charge",
+            note: "Chaque étape nous confie une part plus grande de la livraison.",
             options: [
               {
                 title: "Renfort d'équipe",
-                body: "Vous pilotez. Nos ingénieurs travaillent dans votre équipe, vos outils et votre processus ; la responsabilité reste chez vous. Convient aux équipes au pilotage interne solide.",
+                body: "Ajoutez des ingénieurs à votre équipe actuelle. Vous fixez les priorités et pilotez le travail ; nous fournissons les personnes et le soutien nécessaires pour que l'équipe tourne.",
               },
               {
                 title: "Équipe dédiée",
-                body: "Une équipe constante travaille sur votre feuille de route, avec un pilotage technique et de livraison défini. Convient à une capacité durable autour d'un produit ou d'une plateforme.",
+                body: "Une équipe ZED constante travaille sur votre feuille de route et reste sur l'engagement dans la durée, en approfondissant sa connaissance de vos systèmes et de votre métier.",
                 common: true,
               },
               {
                 title: "Livraison pilotée",
-                body: "Vous définissez le résultat ; nous prenons en charge la planification, l'exécution, la qualité et la livraison sur un périmètre convenu.",
+                body: "Vous définissez le résultat. Nous prenons la responsabilité de planifier le travail, de faire tourner l'équipe, de gérer la qualité et de tenir la livraison.",
               },
             ],
           },
           {
-            label: "Où se trouvent les personnes",
+            label: "Où se trouve l'équipe",
             note: "Où le travail se fait réellement.",
             options: [
               {
-                title: "Tout délocalisé",
-                body: "Livré de bout en bout depuis l'Inde. Convient aux travaux bien cadrés, qui n'exigent pas un contact quotidien en temps réel.",
+                title: "Délocalisé",
+                body: "L'équipe travaille depuis notre centre de livraison en Inde. Convient au travail d'ingénierie qui avance avec une collaboration planifiée et des responsabilités clairement définies.",
               },
               {
-                title: "Hybride",
-                body: "Des personnes proches de vous là où la collaboration décide du résultat, avec la profondeur d'ingénierie en Inde derrière.",
+                title: "Mixte",
+                body: "Combinez des rôles en contact avec le métier ou de proximité et notre équipe d'ingénierie en Inde. Vous gagnez du recouvrement horaire là où il compte, tout en gardant la capacité d'ingénierie en Inde.",
                 common: true,
               },
               {
-                title: "Tout sur site",
-                body: "Dans la même pièce que votre équipe, pour ce qui exige la présence — cadrage, ateliers, bascule et mise en production.",
+                title: "Sur site",
+                body: "Des personnes aux côtés de votre équipe quand le travail gagne à se faire en présence — ateliers, cadrage, planification, déploiement ou périodes de collaboration intense.",
               },
             ],
           },
         ],
         closing:
-          "La plupart des engagements démarrent en équipe dédiée sur une configuration hybride, puis évoluent avec le travail.",
+          "La plupart des engagements démarrent en équipe dédiée ou en modèle mixte, puis évoluent avec le travail.",
       },
       whyHeading: "Une livraison distribuée, une responsabilité qui ne l'est pas.",
       whyIntro:
-        "Nous construisons des équipes distribuées autour de la responsabilité et de la continuité — pas autour de postes à pourvoir.",
+        "Travailler sur plusieurs sites ne devrait pas obliger à chercher qui est responsable quand quelque chose demande une attention. Nous gardons la responsabilité claire et vous donnons une seule équipe ZED qui répond du travail.",
       whyPillars: [
         {
           title: "Des équipes intégrées, pas de la mise à disposition",
-          body: "Les ingénieurs travaillent dans vos outils, vos rythmes de livraison et votre environnement technique assez longtemps pour comprendre le contexte derrière le travail.",
+          body: "Nos ingénieurs travaillent dans vos outils, suivent vos processus et apprennent vos systèmes. Avec le temps, ils acquièrent le contexte qui leur permet de résoudre les problèmes sans qu'on leur explique chaque détail.",
         },
         {
           title: "La responsabilité reste chez ZED",
-          body: "Nous restons engagés sur l'exécution, les risques, la qualité et les escalades — pas seulement sur le placement de ressources.",
+          body: "Nous ne disparaissons pas une fois l'équipe démarrée. Nous restons engagés sur la livraison, la qualité, la performance et les sujets qui demandent une escalade.",
         },
         {
-          title: "La géographie suit le travail",
-          body: "L'Inde pour la profondeur et l'échelle, une capacité de proximité là où le chevauchement compte, et les deux quand l'engagement le demande.",
+          title: "Placer le travail là où c'est le plus efficace",
+          body: "Certains travaux vont naturellement en Inde. D'autres demandent plus d'heures communes. Beaucoup d'engagements ont besoin des deux. Nous vous aidons à choisir selon la façon dont le travail se fait vraiment.",
         },
       ],
       /**
@@ -1544,7 +1612,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
       photoBand: {
         eyebrow: "Centre de livraison",
         heading: "L'équipe en Inde.",
-        sub: "Profondeur et échelle d'ingénierie, au même endroit, avec les mêmes standards que le reste de l'engagement.",
+        sub: "Notre centre de livraison en Inde nous donne une base d'ingénierie stable, capable de soutenir aussi bien des spécialistes isolés que des équipes de livraison plus larges. Ils font partie de la même équipe ZED, avec les mêmes outils, standards et processus que tous les autres sur l'engagement.",
         photos: [
           {
             src: "/delivery-team.webp",

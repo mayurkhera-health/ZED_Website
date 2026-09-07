@@ -35,6 +35,7 @@ import {
 import { useLanguage } from "@/lib/i18n";
 import { SectionHeader } from "@/components/section-header";
 import { EngagementModel } from "@/components/engagement-model";
+import { WhenItFits } from "@/components/when-it-fits";
 import {
   CAPABILITY_ICONS,
   isServiceDraft,
@@ -355,6 +356,28 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
           </ol>
         </div>
       </section>
+
+      {/* ---------------------------------------------------------------
+          03B — WHEN IT FITS
+
+          Why a reader would consider distributed delivery at all. Everything
+          around it describes what ZED sells; this describes their situation,
+          which is why it is lighter than the sections either side.
+          --------------------------------------------------------------- */}
+      {s.whenItFits && (
+        <section className="border-b border-border" aria-labelledby="when-it-fits">
+          <div className="container-page section-y">
+            <SectionHeader
+              align="left"
+              eyebrow={s.whenItFits.eyebrow}
+              heading={s.whenItFits.heading}
+              sub={s.whenItFits.intro}
+              headingId="when-it-fits"
+            />
+            <WhenItFits data={s.whenItFits} />
+          </div>
+        </section>
+      )}
 
       {/* ---------------------------------------------------------------
           04 — PLATFORMS WE WORK WITH (S19-S23)
