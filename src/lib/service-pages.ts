@@ -315,7 +315,14 @@ export const DRAFT_SERVICES: readonly ServiceSlug[] = [
   "ai-data",
   "guidewire",
   "product-engineering",
-  "offshore-nearshore",
+  // Offshore & Nearshore came off the list once its copy, hero image and
+  // photographs were real. The banner and the per-page noindex go with it.
+  //
+  // [CONFIRM] Consent from the eleven people in the delivery-centre
+  // photographs is still outstanding. It is not a code gate — nothing here
+  // enforces it — and the site-wide noindex in __root.tsx covers every
+  // non-production environment, so nothing is exposed until the production
+  // domain is live. Clear it before then.
 ];
 
 export function isServiceDraft(slug: ServiceSlug): boolean {
