@@ -56,31 +56,27 @@ export type TechIcon = "chart" | "cube" | "cloud" | "layers" | "plug" | "shield"
  * across locales, move the field onto ServiceCapability instead.
  */
 /**
- * Deployment models — the shape of a delivery team and where its people sit.
+ * Engagement — the two independent decisions behind a delivery team.
  *
- * A separate question from the engagement options: those are about how much
- * ownership ZED takes, these are about geography. Keeping them as two named
- * blocks is the only thing stopping a reader from trying to map "Hybrid" onto
- * "Dedicated team".
+ * Exactly two groups: how much ZED owns, and where the people sit. They are
+ * orthogonal, which is the whole reason they share one block — any operating
+ * model can run with any team shape, and saying so is more useful than
+ * describing either list twice.
+ *
+ * `common` marks the choice most engagements start from, at most one per
+ * group. It is explained once by `closing` rather than badged on each row.
  */
-export type DeploymentModels = {
+export type EngagementBlock = {
   eyebrow: string;
   heading: string;
   sub: string;
-  /** Label above each model's fit line. */
-  fitLabel: string;
-  models: {
-    key: "offshore" | "hybrid" | "onsite";
-    title: string;
-    sub: string;
-    /** The node at the top of the little tree. */
-    clientLabel: string;
-    /** One branch, top down. One label for a flat model, two for the hybrid. */
-    tiers: string[];
-    /** The kind of work this model suits. Replaces the source slide's cost row. */
-    fit: string;
-    emphasis?: boolean;
+  groups: {
+    label: string;
+    note: string;
+    options: { title: string; body: string; common?: boolean }[];
   }[];
+  /** One sentence tying the two columns together. Carries the red marker. */
+  closing: string;
 };
 
 export type CapabilityIcon =
@@ -220,37 +216,18 @@ export type ServiceContent = {
   platformsHeading?: string;
 
   /**
-   * Engagement options — three operating models, as cards.
+   * Engagement — how much we own and where the people sit, as one block.
    *
-   * Only Offshore & Nearshore carries this today, and the section does not
-   * render without it. Cards are right here and wrong for the capability grid
-   * above: these are three mutually exclusive choices a buyer picks between,
-   * where the capabilities are one list of things we do.
+   * This was two fields and two sections. See engagement-model.tsx for what
+   * the merge dropped and why. Only Offshore & Nearshore carries it; the
+   * section does not render without it.
    *
-   * `emphasis` gives one card a red top rule. At most one. It marks the model
-   * most engagements start from, not a price tier or an upsell.
+   * [CONFIRM] The onsite option claims ZED can place engineers on a client
+   * site in North America. Confirmed as real in conversation on 7 Sep. If that
+   * stops being true the option comes out rather than being softened, which is
+   * the rule that keeps named nearshore countries off this page.
    */
-  engagement?: {
-    eyebrow: string;
-    heading: string;
-    sub: string;
-    bestWhenLabel: string;
-    options: { label: string; title: string; body: string; bestWhen: string; emphasis?: boolean }[];
-  };
-
-  /**
-   * Deployment models — where the people sit.
-   *
-   * Rebuilt from a supplied slide. See deployment-models.tsx for what was
-   * deliberately left out of it — the cost comparison and the risk ranking —
-   * and why.
-   *
-   * [CONFIRM] The onsite model claims ZED can place engineers on a client site
-   * in North America. Confirmed as real in conversation on 7 Sep. If that ever
-   * stops being true the model comes out rather than being softened, which is
-   * the same rule that keeps named nearshore countries off this page.
-   */
-  deployment?: DeploymentModels;
+  engagement?: EngagementBlock;
 
   /**
    * Photographs of a real office.
@@ -929,64 +906,51 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         },
       ],
       engagement: {
-        eyebrow: "Engagement options",
-        heading: "Choose how much ownership you want us to take.",
-        sub: "Start with the operating model that fits your team. It can evolve as the work changes.",
-        bestWhenLabel: "Best when",
-        options: [
+        eyebrow: "Engagement",
+        heading: "Shape the engagement around the work.",
+        sub: "Two decisions, and they are independent — any operating model can run with any team shape.",
+        groups: [
           {
-            label: "Team extension",
-            title: "You lead. We add capacity.",
-            body: "ZED engineers work inside your existing team, tools and delivery process while your organization retains delivery ownership.",
-            bestWhen: "You already have strong internal delivery leadership.",
+            label: "How much we own",
+            note: "Who carries responsibility for delivery.",
+            options: [
+              {
+                title: "Team extension",
+                body: "You lead. Our engineers work inside your team, tools and process; ownership stays with you. Suits teams with strong internal delivery leadership.",
+              },
+              {
+                title: "Dedicated team",
+                body: "A consistent team works against your roadmap, with defined technical and delivery leadership. Suits sustained capacity around a product or platform.",
+                common: true,
+              },
+              {
+                title: "Managed delivery",
+                body: "You define the outcome; we take responsibility for planning, execution, quality and delivery against an agreed scope.",
+              },
+            ],
           },
           {
-            label: "Dedicated team",
-            title: "A stable team around your roadmap.",
-            body: "A consistent engineering team works against your priorities with defined technical and delivery leadership.",
-            bestWhen: "You need sustained capacity around a product, platform or program.",
-            emphasis: true,
-          },
-          {
-            label: "Managed delivery",
-            title: "You define the outcome. We own delivery.",
-            body: "ZED takes responsibility for planning, execution, quality and delivery against an agreed scope or workstream.",
-            bestWhen: "You want to reduce internal coordination and delivery overhead.",
-          },
-        ],
-      },
-      deployment: {
-        eyebrow: "Deployment models",
-        heading: "Where the people sit.",
-        sub: "The engagement model above decides how much we own. This decides where the work happens — and most engagements land somewhere in the middle rather than at either end.",
-        fitLabel: "Suits",
-        models: [
-          {
-            key: "offshore",
-            title: "Pure offshore",
-            sub: "Delivered end to end from India.",
-            clientLabel: "Your team",
-            tiers: ["Offshore engineers"],
-            fit: "Work that is well specified and does not need daily real-time contact to move forward.",
-          },
-          {
-            key: "hybrid",
-            title: "Hybrid",
-            sub: "The balance most engagements settle on.",
-            clientLabel: "Your team",
-            tiers: ["Onsite / remote", "Offshore engineers"],
-            fit: "Most work. People close to you where collaboration decides the outcome, engineering depth behind them.",
-            emphasis: true,
-          },
-          {
-            key: "onsite",
-            title: "Pure onsite",
-            sub: "In the room with your team.",
-            clientLabel: "Your team",
-            tiers: ["Onsite engineers"],
-            fit: "Work that has to happen in person — discovery, workshops, cutover and go-live.",
+            label: "Where the people sit",
+            note: "Where the work actually happens.",
+            options: [
+              {
+                title: "Pure offshore",
+                body: "Delivered end to end from India. Suits work that is well specified and does not need daily real-time contact to move forward.",
+              },
+              {
+                title: "Hybrid",
+                body: "People close to you where collaboration decides the outcome, with engineering depth in India behind them.",
+                common: true,
+              },
+              {
+                title: "Pure onsite",
+                body: "In the room with your team, for work that has to happen in person — discovery, workshops, cutover and go-live.",
+              },
+            ],
           },
         ],
+        closing:
+          "Most engagements begin as a dedicated team on a hybrid shape, and move from there as the work changes.",
       },
       whyHeading: "Distributed delivery without distributed accountability.",
       whyIntro:
@@ -1497,64 +1461,51 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         },
       ],
       engagement: {
-        eyebrow: "Formules d'engagement",
-        heading: "Choisissez la part de responsabilité que nous prenons.",
-        sub: "Commencez par le modèle qui convient à votre équipe. Il peut évoluer avec le travail.",
-        bestWhenLabel: "Pertinent quand",
-        options: [
+        eyebrow: "Engagement",
+        heading: "Construire l'engagement autour du travail.",
+        sub: "Deux décisions, indépendantes l'une de l'autre — chaque modèle peut se combiner à chaque configuration d'équipe.",
+        groups: [
           {
-            label: "Renfort d'équipe",
-            title: "Vous pilotez. Nous ajoutons de la capacité.",
-            body: "Les ingénieurs de ZED travaillent au sein de votre équipe, de vos outils et de votre processus de livraison ; votre organisation conserve la responsabilité de la livraison.",
-            bestWhen: "Vous disposez déjà d'un pilotage de livraison solide en interne.",
+            label: "Ce que nous prenons en charge",
+            note: "Qui porte la responsabilité de la livraison.",
+            options: [
+              {
+                title: "Renfort d'équipe",
+                body: "Vous pilotez. Nos ingénieurs travaillent dans votre équipe, vos outils et votre processus ; la responsabilité reste chez vous. Convient aux équipes au pilotage interne solide.",
+              },
+              {
+                title: "Équipe dédiée",
+                body: "Une équipe constante travaille sur votre feuille de route, avec un pilotage technique et de livraison défini. Convient à une capacité durable autour d'un produit ou d'une plateforme.",
+                common: true,
+              },
+              {
+                title: "Livraison pilotée",
+                body: "Vous définissez le résultat ; nous prenons en charge la planification, l'exécution, la qualité et la livraison sur un périmètre convenu.",
+              },
+            ],
           },
           {
-            label: "Équipe dédiée",
-            title: "Une équipe stable autour de votre feuille de route.",
-            body: "Une équipe d'ingénierie constante travaille sur vos priorités, avec un pilotage technique et de livraison défini.",
-            bestWhen: "Vous avez besoin d'une capacité durable autour d'un produit, d'une plateforme ou d'un programme.",
-            emphasis: true,
-          },
-          {
-            label: "Livraison pilotée",
-            title: "Vous définissez le résultat. Nous répondons de la livraison.",
-            body: "ZED prend en charge la planification, l'exécution, la qualité et la livraison sur un périmètre ou un chantier convenu.",
-            bestWhen: "Vous voulez réduire la coordination et la charge de pilotage en interne.",
-          },
-        ],
-      },
-      deployment: {
-        eyebrow: "Modèles de déploiement",
-        heading: "Où se trouvent les personnes.",
-        sub: "La formule ci-dessus décide de ce que nous prenons en charge. Ceci décide d'où le travail se fait — et la plupart des engagements se situent entre les deux extrêmes.",
-        fitLabel: "Convient à",
-        models: [
-          {
-            key: "offshore",
-            title: "Tout délocalisé",
-            sub: "Livré de bout en bout depuis l'Inde.",
-            clientLabel: "Votre équipe",
-            tiers: ["Ingénieurs délocalisés"],
-            fit: "Des travaux bien cadrés, qui n'exigent pas un contact quotidien en temps réel pour avancer.",
-          },
-          {
-            key: "hybrid",
-            title: "Hybride",
-            sub: "L'équilibre retenu le plus souvent.",
-            clientLabel: "Votre équipe",
-            tiers: ["Sur site / à distance", "Ingénieurs délocalisés"],
-            fit: "La plupart des travaux. Des personnes proches de vous là où la collaboration décide du résultat, avec la profondeur d'ingénierie derrière.",
-            emphasis: true,
-          },
-          {
-            key: "onsite",
-            title: "Tout sur site",
-            sub: "Dans la même pièce que votre équipe.",
-            clientLabel: "Votre équipe",
-            tiers: ["Ingénieurs sur site"],
-            fit: "Les travaux qui exigent la présence — cadrage, ateliers, bascule et mise en production.",
+            label: "Où se trouvent les personnes",
+            note: "Où le travail se fait réellement.",
+            options: [
+              {
+                title: "Tout délocalisé",
+                body: "Livré de bout en bout depuis l'Inde. Convient aux travaux bien cadrés, qui n'exigent pas un contact quotidien en temps réel.",
+              },
+              {
+                title: "Hybride",
+                body: "Des personnes proches de vous là où la collaboration décide du résultat, avec la profondeur d'ingénierie en Inde derrière.",
+                common: true,
+              },
+              {
+                title: "Tout sur site",
+                body: "Dans la même pièce que votre équipe, pour ce qui exige la présence — cadrage, ateliers, bascule et mise en production.",
+              },
+            ],
           },
         ],
+        closing:
+          "La plupart des engagements démarrent en équipe dédiée sur une configuration hybride, puis évoluent avec le travail.",
       },
       whyHeading: "Une livraison distribuée, une responsabilité qui ne l'est pas.",
       whyIntro:

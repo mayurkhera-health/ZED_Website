@@ -34,7 +34,7 @@ import {
 } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
 import { SectionHeader } from "@/components/section-header";
-import { DeploymentModels } from "@/components/deployment-models";
+import { EngagementModel } from "@/components/engagement-model";
 import {
   CAPABILITY_ICONS,
   isServiceDraft,
@@ -474,72 +474,23 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
       )}
 
       {/* ---------------------------------------------------------------
-          04B — ENGAGEMENT OPTIONS
+          04B — ENGAGEMENT
 
-          Three operating models, as cards. Cards are correct here and were
-          argued against for the capability grid above, and the difference is
-          real: these are three mutually exclusive choices a buyer picks
-          between, so the container is the thing being chosen. The
-          capabilities are one list of work we do.
-
-          Only services carrying `engagement` render this. Today that is
-          Offshore & Nearshore alone — the section is not a slot the other
-          six have to fill.
-
-          The red top rule on one card marks the model most engagements start
-          from. It is not a price tier and there is no "most popular" badge;
-          one card in a different weight is enough, and a fully red card would
-          read as an advertisement inside the page.
+          One block answering two independent questions: how much ZED owns,
+          and where the people sit. It replaces two sections and six cards —
+          see engagement-model.tsx for what the merge dropped and why.
           --------------------------------------------------------------- */}
       {s.engagement && (
-        <section className="border-b border-border" aria-labelledby="engagement-options">
+        <section className="border-b border-border" aria-labelledby="engagement">
           <div className="container-page section-y">
             <SectionHeader
               align="left"
               eyebrow={s.engagement.eyebrow}
               heading={s.engagement.heading}
               sub={s.engagement.sub}
-              headingId="engagement-options"
+              headingId="engagement"
             />
-            <ul className="mt-8 grid gap-4 md:grid-cols-3">
-              {s.engagement.options.map((o) => (
-                <li
-                  key={o.label}
-                  className={`flex flex-col rounded-2xl border border-border bg-background p-6 sm:p-7 ${
-                    o.emphasis ? "border-t-2 border-t-primary" : ""
-                  }`}
-                >
-                  <p className="text-[0.625rem] font-bold uppercase leading-none tracking-[0.1em] text-accent">
-                    {o.label}
-                  </p>
-                  <h3 className="font-display mt-4 text-[1.1875rem] leading-[1.2] tracking-[-0.02em] sm:text-[1.25rem]">
-                    {o.title}
-                  </h3>
-                  <p className="mt-3 text-[0.9375rem] leading-[1.55] text-muted-foreground">
-                    {o.body}
-                  </p>
-                  {/* mt-auto, so the footers line up across three cards whose
-                      bodies differ by a line. */}
-                  <div className="mt-auto pt-6">
-                    <div className="border-t border-border pt-4">
-                      <p className="text-[0.625rem] font-bold uppercase leading-none tracking-[0.1em] text-subtle-foreground">
-                        {s.engagement!.bestWhenLabel}
-                      </p>
-                      <p className="mt-2 text-[0.875rem] leading-[1.5] text-muted-foreground">
-                        {o.bestWhen}
-                      </p>
-                    </div>
-                  </div>
-                </li>
-              ))}
-            </ul>
-
-            {/* Deployment models sit inside this section, under their own
-                heading. They answer a different question — engagement options
-                are about how much ownership ZED takes, deployment models are
-                about where the people sit — and three unlabelled columns under
-                three unlabelled cards would read as one taxonomy. */}
-            {s.deployment && <DeploymentModels data={s.deployment} />}
+            <EngagementModel data={s.engagement} />
           </div>
         </section>
       )}
