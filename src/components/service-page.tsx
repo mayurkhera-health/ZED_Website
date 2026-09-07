@@ -60,12 +60,7 @@ import {
  * --tone-d fails AA as text on every ground the site uses; if any of these is
  * ever used for type, read the table in styles.css first.
  */
-const ROW_TONES = [
-  "var(--tone-a)",
-  "var(--tone-b)",
-  "var(--tone-c)",
-  "var(--tone-d)",
-] as const;
+const ROW_TONES = ["var(--tone-a)", "var(--tone-b)", "var(--tone-c)", "var(--tone-d)"] as const;
 
 const TECH_ICONS: Record<TechIcon, typeof BarChart3> = {
   chart: BarChart3,
@@ -563,10 +558,7 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
                 are not ranked, and numbering them implied they were. */}
             <ol className="mt-12 grid gap-px overflow-hidden bg-border lg:grid-cols-3">
               {pillars.map((pillar) => (
-                <li
-                  key={pillar.title}
-                  className="bg-background py-7 lg:px-8 lg:py-0 lg:first:pl-0"
-                >
+                <li key={pillar.title} className="bg-background py-7 lg:px-8 lg:py-0 lg:first:pl-0">
                   <span className="block h-px w-8 bg-primary" aria-hidden="true" />
                   <h3 className="font-display mt-5 max-w-[18ch] text-[1.375rem] leading-[1.15] tracking-[-0.02em] sm:text-2xl">
                     {pillar.title}
@@ -715,57 +707,24 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
       )}
 
       {/* ---------------------------------------------------------------
-          06B — WHAT HAPPENS NEXT
+          06B — WHAT HAPPENS NEXT — REMOVED
 
-          One sentence. No heading, no button, no eyebrow.
+          The closing block (headline, response promise, "Start a
+          conversation" button) came off every service page at Mayur's
+          direction. The page now ends on the photo band, or on the proof
+          block when SHOW_SERVICE_PROOF is on.
 
-          The headline is back. It came off when the button below it read
-          "Discuss your analytics priorities" and the two were the same
-          sentence twice; the button now reads "Start a conversation", so they
-          are not. Both are per-service and optional, and a service without
-          them falls back to the shared wording.
+          The data behind it is deliberately left in place: `finalCta`,
+          `finalCtaSub` on each service and `startNext` / `startNextCta` in
+          i18n are still populated in both locales. Nothing reads them today.
+          They stay because this section has now been removed and restored
+          twice in one day, and rewriting fourteen records each time is worse
+          than carrying dormant fields. Delete them only when the decision
+          has held for a while.
 
-          The line under the headline is the part no competitor service page
-          reviewed for this project provides: a statement of what actually
-          happens after someone writes.
-
-          The button is deliberately labelled differently from the header's
-          "Let's talk" — same destination, but two controls carrying identical
-          words read as one repeated element rather than two chances to act.
+          The header's "Let's talk" and the hero CTA are now the page's only
+          routes to /contact.
           --------------------------------------------------------------- */}
-      <section aria-label={t.contact.eyebrow}>
-        <div className="container-page section-y grid gap-8 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)] lg:items-center">
-          <div className="max-w-[36rem]">
-            {s.finalCta?.title && (
-              <h2 className="font-display max-w-[20ch] text-[1.75rem] leading-[1.12] tracking-[-0.025em] sm:text-[2.125rem]">
-                {s.finalCta.title}
-              </h2>
-            )}
-            {/* A service can say something more specific about the first
-                conversation than the shared line. Where it does, the shared
-                line still follows it — that sentence carries the response
-                promise, and dropping it on one page would make the promise
-                look conditional. */}
-            <div className={`space-y-3 ${s.finalCta?.title ? "mt-4" : ""}`}>
-              {s.finalCtaSub && (
-                <p className="text-[1.0625rem] leading-[1.6] text-muted-foreground">
-                  {s.finalCtaSub}
-                </p>
-              )}
-              <p className="text-[1.0625rem] leading-[1.6] text-muted-foreground">
-                {t.services.startNext}
-              </p>
-            </div>
-          </div>
-          <div className="lg:justify-self-end">
-            <Link to="/contact" className="btn btn-wrap btn-primary">
-              {s.finalCta?.buttonLabel ?? t.services.startNextCta}
-              <ArrowRight className="arrow-shift h-4 w-4" aria-hidden="true" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
     </>
   );
 }
