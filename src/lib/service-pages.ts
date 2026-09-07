@@ -55,6 +55,34 @@ export type TechIcon = "chart" | "cube" | "cloud" | "layers" | "plug" | "shield"
  * one silently reassigns icons. If capabilities ever stop being one-to-one
  * across locales, move the field onto ServiceCapability instead.
  */
+/**
+ * Deployment models — the shape of a delivery team and where its people sit.
+ *
+ * A separate question from the engagement options: those are about how much
+ * ownership ZED takes, these are about geography. Keeping them as two named
+ * blocks is the only thing stopping a reader from trying to map "Hybrid" onto
+ * "Dedicated team".
+ */
+export type DeploymentModels = {
+  eyebrow: string;
+  heading: string;
+  sub: string;
+  /** Label above each model's fit line. */
+  fitLabel: string;
+  models: {
+    key: "offshore" | "hybrid" | "onsite";
+    title: string;
+    sub: string;
+    /** The node at the top of the little tree. */
+    clientLabel: string;
+    /** One branch, top down. One label for a flat model, two for the hybrid. */
+    tiers: string[];
+    /** The kind of work this model suits. Replaces the source slide's cost row. */
+    fit: string;
+    emphasis?: boolean;
+  }[];
+};
+
 export type CapabilityIcon =
   | "compass"
   | "trending-up"
@@ -209,6 +237,20 @@ export type ServiceContent = {
     bestWhenLabel: string;
     options: { label: string; title: string; body: string; bestWhen: string; emphasis?: boolean }[];
   };
+
+  /**
+   * Deployment models — where the people sit.
+   *
+   * Rebuilt from a supplied slide. See deployment-models.tsx for what was
+   * deliberately left out of it — the cost comparison and the risk ranking —
+   * and why.
+   *
+   * [CONFIRM] The onsite model claims ZED can place engineers on a client site
+   * in North America. Confirmed as real in conversation on 7 Sep. If that ever
+   * stops being true the model comes out rather than being softened, which is
+   * the same rule that keeps named nearshore countries off this page.
+   */
+  deployment?: DeploymentModels;
 
   /**
    * Photographs of a real office.
@@ -904,6 +946,39 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
           },
         ],
       },
+      deployment: {
+        eyebrow: "Deployment models",
+        heading: "Where the people sit.",
+        sub: "The engagement model above decides how much we own. This decides where the work happens — and most engagements land somewhere in the middle rather than at either end.",
+        fitLabel: "Suits",
+        models: [
+          {
+            key: "offshore",
+            title: "Pure offshore",
+            sub: "Delivered end to end from India.",
+            clientLabel: "Your team",
+            tiers: ["Offshore engineers"],
+            fit: "Work that is well specified and does not need daily real-time contact to move forward.",
+          },
+          {
+            key: "hybrid",
+            title: "Hybrid",
+            sub: "The balance most engagements settle on.",
+            clientLabel: "Your team",
+            tiers: ["Onsite / remote", "Offshore engineers"],
+            fit: "Most work. People close to you where collaboration decides the outcome, engineering depth behind them.",
+            emphasis: true,
+          },
+          {
+            key: "onsite",
+            title: "Pure onsite",
+            sub: "In the room with your team.",
+            clientLabel: "Your team",
+            tiers: ["Onsite engineers"],
+            fit: "Work that has to happen in person — discovery, workshops, cutover and go-live.",
+          },
+        ],
+      },
       whyHeading: "Distributed delivery without distributed accountability.",
       whyIntro:
         "We build distributed teams around ownership and continuity — not around filling seats.",
@@ -1422,6 +1497,39 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
             title: "Vous définissez le résultat. Nous répondons de la livraison.",
             body: "ZED prend en charge la planification, l'exécution, la qualité et la livraison sur un périmètre ou un chantier convenu.",
             bestWhen: "Vous voulez réduire la coordination et la charge de pilotage en interne.",
+          },
+        ],
+      },
+      deployment: {
+        eyebrow: "Modèles de déploiement",
+        heading: "Où se trouvent les personnes.",
+        sub: "La formule ci-dessus décide de ce que nous prenons en charge. Ceci décide d'où le travail se fait — et la plupart des engagements se situent entre les deux extrêmes.",
+        fitLabel: "Convient à",
+        models: [
+          {
+            key: "offshore",
+            title: "Tout délocalisé",
+            sub: "Livré de bout en bout depuis l'Inde.",
+            clientLabel: "Votre équipe",
+            tiers: ["Ingénieurs délocalisés"],
+            fit: "Des travaux bien cadrés, qui n'exigent pas un contact quotidien en temps réel pour avancer.",
+          },
+          {
+            key: "hybrid",
+            title: "Hybride",
+            sub: "L'équilibre retenu le plus souvent.",
+            clientLabel: "Votre équipe",
+            tiers: ["Sur site / à distance", "Ingénieurs délocalisés"],
+            fit: "La plupart des travaux. Des personnes proches de vous là où la collaboration décide du résultat, avec la profondeur d'ingénierie derrière.",
+            emphasis: true,
+          },
+          {
+            key: "onsite",
+            title: "Tout sur site",
+            sub: "Dans la même pièce que votre équipe.",
+            clientLabel: "Votre équipe",
+            tiers: ["Ingénieurs sur site"],
+            fit: "Les travaux qui exigent la présence — cadrage, ateliers, bascule et mise en production.",
           },
         ],
       },

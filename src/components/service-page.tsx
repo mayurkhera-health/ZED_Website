@@ -34,6 +34,7 @@ import {
 } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
 import { SectionHeader } from "@/components/section-header";
+import { DeploymentModels } from "@/components/deployment-models";
 import {
   CAPABILITY_ICONS,
   isServiceDraft,
@@ -524,6 +525,13 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
                 </li>
               ))}
             </ul>
+
+            {/* Deployment models sit inside this section, under their own
+                heading. They answer a different question — engagement options
+                are about how much ownership ZED takes, deployment models are
+                about where the people sit — and three unlabelled columns under
+                three unlabelled cards would read as one taxonomy. */}
+            {s.deployment && <DeploymentModels data={s.deployment} />}
           </div>
         </section>
       )}
