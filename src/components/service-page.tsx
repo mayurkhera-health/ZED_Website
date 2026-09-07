@@ -258,30 +258,38 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
           no capability list. This is the one section that cannot be drafted
           from the service description, and the only one a competitor could
           not have written.
+
+          Conditional. A service with no `situation` text renders no section
+          rather than an empty band under a heading — which is what happened
+          when Offshore & Nearshore dropped its copy. The heading is shared,
+          so an empty section still looked deliberate and still took a full
+          band of vertical space.
           --------------------------------------------------------------- */}
-      <section className="border-b border-border bg-surface">
-        <div className="container-page section-y split">
-          <SectionHeader
-            align="left"
-            eyebrow={t.services.situationEyebrow}
-            heading={s.situationHeading ?? t.services.situationHeading}
-          />
-          {/* Blank line separates paragraphs. Most services need one; SAP's
+      {s.situation && (
+        <section className="border-b border-border bg-surface">
+          <div className="container-page section-y split">
+            <SectionHeader
+              align="left"
+              eyebrow={t.services.situationEyebrow}
+              heading={s.situationHeading ?? t.services.situationHeading}
+            />
+            {/* Blank line separates paragraphs. Most services need one; SAP's
               runs to two, because the second is the consequence and the first
               does not land without it. Splitting here rather than storing
               markup keeps the data record plain text. */}
-          <div className="max-w-[38rem] space-y-4">
-            {(s.situation ?? "").split("\n\n").map((para) => (
-              <p
-                key={para.slice(0, 24)}
-                className="text-[1.0625rem] leading-[1.65] text-muted-foreground sm:text-[1.125rem]"
-              >
-                {para}
-              </p>
-            ))}
+            <div className="max-w-[38rem] space-y-4">
+              {s.situation.split("\n\n").map((para) => (
+                <p
+                  key={para.slice(0, 24)}
+                  className="text-[1.0625rem] leading-[1.65] text-muted-foreground sm:text-[1.125rem]"
+                >
+                  {para}
+                </p>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* ---------------------------------------------------------------
           03 — WHAT WE HELP YOU DO (S13-S18)

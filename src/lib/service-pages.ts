@@ -884,10 +884,15 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         },
       ],
       technologies: ["Distributed delivery", "Agile delivery", "Embedded QA", "Shared tooling", "Delivery ownership", "Knowledge retention"],
-      situationHeading: "More people does not automatically mean more capacity.",
       buildHeading: "Build the delivery model around the work.",
-      situation:
-        "Distributed delivery starts to break down when knowledge sits in one location, decisions wait for another time zone, or external teams need constant direction before work can move forward.\n\nThe challenge isn't accessing engineering talent. It's adding capacity without adding another layer of management for your internal team.",
+      /**
+       * No `situation` and no `situationHeading`. The section was removed from
+       * this page at Mayur's direction; the template skips it entirely rather
+       * than rendering an empty band under the shared heading.
+       *
+       * The other six keep theirs. The text that was here is in git — commit
+       * 28db711 — if it comes back.
+       */
       /**
        * The same table component the other six use, under different labels.
        * Four rows, four tones — the tone list is exactly four long, so this is
@@ -1443,10 +1448,15 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         },
       ],
       technologies: ["Livraison distribuée", "Livraison agile", "QA intégrée", "Outillage commun", "Responsabilité de livraison", "Rétention des connaissances"],
-      situationHeading: "Plus de personnes ne veut pas dire plus de capacité.",
       buildHeading: "Construire le modèle de livraison autour du travail.",
-      situation:
-        "Une livraison distribuée commence à se déliter quand la connaissance reste au même endroit, quand les décisions attendent un autre fuseau horaire, ou quand les équipes externes ont besoin d'être dirigées en permanence pour avancer.\n\nLa difficulté n'est pas d'accéder aux compétences d'ingénierie. C'est d'ajouter de la capacité sans ajouter une couche de gestion de plus à votre équipe interne.",
+      /**
+       * No `situation` and no `situationHeading`. The section was removed from
+       * this page at Mayur's direction; the template skips it entirely rather
+       * than rendering an empty band under the shared heading.
+       *
+       * The other six keep theirs. The text that was here is in git — commit
+       * 28db711 — if it comes back.
+       */
       platformsEyebrow: "Modèle de livraison",
       platformsHeading: "Une seule équipe. Plusieurs lieux.",
       platformsSub:
