@@ -1001,6 +1001,16 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
           body: "Use India for engineering depth and scale, nearshore capability where collaboration overlap matters, and combine them when the engagement needs both.",
         },
       ],
+      /**
+       * Two frames, not three. The third was a photograph of a roll-up
+       * banner carrying the previous logo lockup — navy circle, script
+       * "Measure What Matters" — while the header, footer and favicon on
+       * this same page use the current flat mark. A visitor reads the
+       * photograph as the real one, so the page was publishing two brands.
+       * It was also the only frame showing collateral rather than people or
+       * a workplace, in the one section on the page that exists to be
+       * evidence. A third frame needs a third real photograph.
+       */
       photoBand: {
         eyebrow: "Delivery centre",
         heading: "The India team.",
@@ -1015,11 +1025,6 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
             src: "/delivery-floor.webp",
             alt: "The engineering floor seen through a glass wall, with shared desks and daylight from the windows beyond.",
             caption: "The engineering floor.",
-          },
-          {
-            src: "/delivery-office.webp",
-            alt: "A ZEDventures banner at the entrance to the office, beside the glass wall of the engineering floor.",
-            caption: "The entrance.",
           },
         ],
       },
@@ -1560,6 +1565,16 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
           body: "L'Inde pour la profondeur et l'échelle, une capacité de proximité là où le chevauchement compte, et les deux quand l'engagement le demande.",
         },
       ],
+      /**
+       * Two frames, not three. The third was a photograph of a roll-up
+       * banner carrying the previous logo lockup — navy circle, script
+       * "Measure What Matters" — while the header, footer and favicon on
+       * this same page use the current flat mark. A visitor reads the
+       * photograph as the real one, so the page was publishing two brands.
+       * It was also the only frame showing collateral rather than people or
+       * a workplace, in the one section on the page that exists to be
+       * evidence. A third frame needs a third real photograph.
+       */
       photoBand: {
         eyebrow: "Centre de livraison",
         heading: "L'équipe en Inde.",
@@ -1574,11 +1589,6 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
             src: "/delivery-floor.webp",
             alt: "Le plateau d'ingénierie vu à travers une cloison vitrée, avec des postes partagés et la lumière du jour au fond.",
             caption: "Le plateau d'ingénierie.",
-          },
-          {
-            src: "/delivery-office.webp",
-            alt: "Un kakémono ZEDventures à l'entrée du bureau, contre la cloison vitrée du plateau d'ingénierie.",
-            caption: "L'entrée.",
           },
         ],
       },

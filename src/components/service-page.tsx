@@ -607,7 +607,7 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
           city is named in the copy — the site claims India, and India is what
           these photographs support.
           --------------------------------------------------------------- */}
-      {s.photoBand && bandLead && bandRest.length === 2 && (
+      {s.photoBand && bandLead && bandRest.length > 0 && (
         <section className="border-b border-border bg-surface" aria-labelledby="delivery-centre">
           <div className="container-page section-y">
             <SectionHeader
@@ -646,8 +646,13 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
                 </figcaption>
               </figure>
 
-              {/* The right column's two frames add up to exactly the height
-                  of the left one, and become two ordinary 3:2 rows on phones.
+              {/* The right column fills exactly the height of the left one,
+                  as one frame or two, and becomes ordinary 3:2 rows on phones.
+
+                  grid-rows-1 rather than no row template when there is a
+                  single frame: an auto row would size to the caption alone,
+                  because the image is absolutely positioned and contributes
+                  no height of its own.
 
                   The images are absolutely positioned inside their frames on
                   desktop so they contribute no height of their own. Sized
@@ -657,7 +662,11 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
                   for the asymmetric grid. Each caption sits outside that
                   wrapper, so the frames shrink to make room for it rather
                   than pushing the column past the photograph beside it. */}
-              <div className="grid gap-4 lg:grid-rows-2">
+              <div
+                className={`grid gap-4 ${
+                  bandRest.length > 1 ? "lg:grid-rows-2" : "lg:grid-rows-1"
+                }`}
+              >
                 {bandRest.map((photo) => (
                   <figure key={photo.src} className="flex min-h-0 flex-col">
                     <div className="relative aspect-[3/2] w-full lg:aspect-auto lg:min-h-0 lg:flex-1">
