@@ -844,6 +844,10 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
       name: "Offshore & Nearshore Delivery",
       heroImageHint:
         "One workstream moving through a distributed team — connected work, not a map of countries",
+      heroImage: {
+        src: "/offshore-hero.webp",
+        alt: "Two colleagues working together at a laptop in a bright office, with two labelled cards — North America, client engagement, and India, engineering and delivery — joined by a thin line.",
+      },
       outcome: "Add engineering capacity without adding coordination overhead.",
       intro:
         "Build the delivery model around the work. Use India for engineering depth and scale, nearshore teams when working-hour overlap matters, or combine both under one accountable engagement.",
@@ -1418,6 +1422,10 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
       name: "Livraison délocalisée et de proximité",
       heroImageHint:
         "Un même chantier qui circule dans une équipe distribuée — du travail relié, pas une carte de pays",
+      heroImage: {
+        src: "/offshore-hero.webp",
+        alt: "Deux collègues travaillant ensemble sur un portable dans un bureau lumineux, avec deux cartouches — Amérique du Nord, relation client, et Inde, ingénierie et livraison — reliés par un trait fin.",
+      },
       outcome: "Ajouter de la capacité d'ingénierie sans ajouter de coordination.",
       intro:
         "Construire le modèle de livraison autour du travail. L'Inde pour la profondeur et l'échelle, des équipes de proximité quand le chevauchement horaire compte, ou les deux au sein d'un même engagement dont nous répondons.",
