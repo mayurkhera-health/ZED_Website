@@ -609,40 +609,63 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
               sub={s.photoBand.sub}
               headingId="delivery-centre"
             />
+            {/* Captions, not bare frames. A labelled photograph reads as
+                documentation of a real place; three unlabelled ones read as
+                decoration, and the reader spends a moment working out what
+                they are looking at instead of registering that it is real.
+
+                They also carry the discipline: each caption says what the
+                frame shows and nothing more. No city, no headcount, no
+                "state-of-the-art", none of which these photographs prove. */}
             <div className="mt-8 grid gap-4 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]">
-              <img
-                src={bandLead.src}
-                alt={bandLead.alt}
-                width={1446}
-                height={964}
-                loading="lazy"
-                className="aspect-[3/2] w-full rounded-2xl border border-border-strong object-cover"
-              />
+              {/* 4:3, which is the group photograph's native ratio. At 3:2 it
+                  lost the top and bottom of the frame, and the shorter left
+                  column squeezed the two beside it to nearly 2.4:1 — a
+                  letterbox slot that crops a room photograph to a strip. */}
+              <figure className="flex flex-col">
+                <div className="relative aspect-[4/3] w-full">
+                  <img
+                    src={bandLead.src}
+                    alt={bandLead.alt}
+                    width={1600}
+                    height={1200}
+                    loading="lazy"
+                    className="absolute inset-0 h-full w-full rounded-2xl border border-border-strong object-cover"
+                  />
+                </div>
+                <figcaption className="mt-3 text-[0.8125rem] leading-[1.4] text-subtle-foreground">
+                  {bandLead.caption}
+                </figcaption>
+              </figure>
+
               {/* The right column's two frames add up to exactly the height
-                  of the left one, and become two ordinary 3:2 rows on
-                  phones.
+                  of the left one, and become two ordinary 3:2 rows on phones.
 
                   The images are absolutely positioned inside their frames on
                   desktop so they contribute no height of their own. Sized
                   normally they set the row height from their own aspect
                   ratio, the column grew taller than the photograph beside it,
                   and the band lost the alignment that was the whole reason
-                  for the asymmetric grid. */}
+                  for the asymmetric grid. Each caption sits outside that
+                  wrapper, so the frames shrink to make room for it rather
+                  than pushing the column past the photograph beside it. */}
               <div className="grid gap-4 lg:grid-rows-2">
                 {bandRest.map((photo) => (
-                  <div
-                    key={photo.src}
-                    className="relative aspect-[3/2] w-full lg:aspect-auto lg:min-h-0"
-                  >
-                    <img
-                      src={photo.src}
-                      alt={photo.alt}
-                      width={1200}
-                      height={800}
-                      loading="lazy"
-                      className="absolute inset-0 h-full w-full rounded-2xl border border-border-strong object-cover"
-                    />
-                  </div>
+                  <figure key={photo.src} className="flex min-h-0 flex-col">
+                    <div className="relative aspect-[3/2] w-full lg:aspect-auto lg:min-h-0 lg:flex-1">
+                      <img
+                        src={photo.src}
+                        alt={photo.alt}
+                        width={1200}
+                        height={800}
+                        loading="lazy"
+                        className="absolute inset-0 h-full w-full rounded-2xl border border-border-strong object-cover"
+                      />
+                    </div>
+                    <figcaption className="mt-3 text-[0.8125rem] leading-[1.4] text-subtle-foreground">
+                      {photo.caption}
+                    </figcaption>
+                  </figure>
                 ))}
               </div>
             </div>

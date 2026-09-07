@@ -224,7 +224,7 @@ export type ServiceContent = {
     eyebrow: string;
     heading: string;
     sub: string;
-    photos: { src: string; alt: string }[];
+    photos: { src: string; alt: string; caption: string }[];
   };
 
   /** Closing paragraph, replacing the shared "what happens next" line where a
@@ -929,14 +929,17 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
           {
             src: "/delivery-team.webp",
             alt: "Eleven members of the ZEDventures engineering team together in a meeting room.",
+            caption: "The engineering team.",
           },
           {
             src: "/delivery-floor.webp",
             alt: "The engineering floor seen through a glass wall, with shared desks and daylight from the windows beyond.",
+            caption: "The engineering floor.",
           },
           {
             src: "/delivery-office.webp",
             alt: "A ZEDventures banner at the entrance to the office, beside the glass wall of the engineering floor.",
+            caption: "The entrance.",
           },
         ],
       },
@@ -1447,14 +1450,17 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
           {
             src: "/delivery-team.webp",
             alt: "Onze membres de l'équipe d'ingénierie de ZEDventures réunis dans une salle de réunion.",
+            caption: "L'équipe d'ingénierie.",
           },
           {
             src: "/delivery-floor.webp",
             alt: "Le plateau d'ingénierie vu à travers une cloison vitrée, avec des postes partagés et la lumière du jour au fond.",
+            caption: "Le plateau d'ingénierie.",
           },
           {
             src: "/delivery-office.webp",
             alt: "Un kakémono ZEDventures à l'entrée du bureau, contre la cloison vitrée du plateau d'ingénierie.",
+            caption: "L'entrée.",
           },
         ],
       },
