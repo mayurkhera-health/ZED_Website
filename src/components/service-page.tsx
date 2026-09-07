@@ -149,6 +149,12 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
   const groups = s.technologyGroups ?? [];
   const pillars = s.whyPillars ?? [];
 
+  // The photo band renders only with a lead frame and exactly two beside it.
+  // Hoisted because indexed access is checked here, and a band with the wrong
+  // number of photographs should render nothing rather than a broken row.
+  const bandLead = s.photoBand?.photos[0];
+  const bandRest = s.photoBand?.photos.slice(1, 3) ?? [];
+
   // Right-hand hero column exists when there is a real image, or while the
   // page is still a draft and a placeholder is useful. Never otherwise.
   const showImageSlot = Boolean(s.heroImage) || isServiceDraft(slug);
@@ -262,7 +268,7 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
           <SectionHeader
             align="left"
             eyebrow={t.services.situationEyebrow}
-            heading={t.services.situationHeading}
+            heading={s.situationHeading ?? t.services.situationHeading}
           />
           {/* Blank line separates paragraphs. Most services need one; SAP's
               runs to two, because the second is the consequence and the first
@@ -305,7 +311,7 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
           <SectionHeader
             align="left"
             eyebrow={t.services.buildEyebrow}
-            heading={t.services.buildHeading}
+            heading={s.buildHeading ?? t.services.buildHeading}
           />
           {/* No numerals — these are things we do, not steps, and the count
               read as a sequence it does not have. */}
@@ -358,8 +364,8 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
           <div className="container-page section-y">
             <SectionHeader
               align="left"
-              eyebrow={t.services.platformsEyebrow}
-              heading={t.services.platformsHeading}
+              eyebrow={s.platformsEyebrow ?? t.services.platformsEyebrow}
+              heading={s.platformsHeading ?? t.services.platformsHeading}
               sub={s.platformsSub ?? t.services.platformsSub}
             />
             {/* One card, three rows, flat dot-marked chips.
@@ -464,6 +470,70 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
       )}
 
       {/* ---------------------------------------------------------------
+          04B — ENGAGEMENT OPTIONS
+
+          Three operating models, as cards. Cards are correct here and were
+          argued against for the capability grid above, and the difference is
+          real: these are three mutually exclusive choices a buyer picks
+          between, so the container is the thing being chosen. The
+          capabilities are one list of work we do.
+
+          Only services carrying `engagement` render this. Today that is
+          Offshore & Nearshore alone — the section is not a slot the other
+          six have to fill.
+
+          The red top rule on one card marks the model most engagements start
+          from. It is not a price tier and there is no "most popular" badge;
+          one card in a different weight is enough, and a fully red card would
+          read as an advertisement inside the page.
+          --------------------------------------------------------------- */}
+      {s.engagement && (
+        <section className="border-b border-border" aria-labelledby="engagement-options">
+          <div className="container-page section-y">
+            <SectionHeader
+              align="left"
+              eyebrow={s.engagement.eyebrow}
+              heading={s.engagement.heading}
+              sub={s.engagement.sub}
+              headingId="engagement-options"
+            />
+            <ul className="mt-8 grid gap-4 md:grid-cols-3">
+              {s.engagement.options.map((o) => (
+                <li
+                  key={o.label}
+                  className={`flex flex-col rounded-2xl border border-border bg-background p-6 sm:p-7 ${
+                    o.emphasis ? "border-t-2 border-t-primary" : ""
+                  }`}
+                >
+                  <p className="text-[0.625rem] font-bold uppercase leading-none tracking-[0.1em] text-accent">
+                    {o.label}
+                  </p>
+                  <h3 className="font-display mt-4 text-[1.1875rem] leading-[1.2] tracking-[-0.02em] sm:text-[1.25rem]">
+                    {o.title}
+                  </h3>
+                  <p className="mt-3 text-[0.9375rem] leading-[1.55] text-muted-foreground">
+                    {o.body}
+                  </p>
+                  {/* mt-auto, so the footers line up across three cards whose
+                      bodies differ by a line. */}
+                  <div className="mt-auto pt-6">
+                    <div className="border-t border-border pt-4">
+                      <p className="text-[0.625rem] font-bold uppercase leading-none tracking-[0.1em] text-subtle-foreground">
+                        {s.engagement!.bestWhenLabel}
+                      </p>
+                      <p className="mt-2 text-[0.875rem] leading-[1.5] text-muted-foreground">
+                        {o.bestWhen}
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
+      {/* ---------------------------------------------------------------
           05 — WHY ZED (S24-S29)
           The page's one dark band. Eyebrow and pillar numerals use
           --dark-lead (#c7c7ca, 11.73:1) rather than brand red, which
@@ -476,7 +546,12 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
           <div className="container-page section-y">
             <p className="eyebrow text-dark-lead">{t.services.whyEyebrow}</p>
             <h2 className="font-display mt-3 max-w-[20ch] text-[2rem] leading-[1.08] tracking-[-0.025em] sm:text-[2.75rem]">
-              {t.services.whyHeading} {s.name}
+              {/* A service can replace the formula heading ("Why ZED for X")
+                  with a sentence. "Distributed delivery without distributed
+                  accountability" says something; "Why ZED for Offshore &
+                  Nearshore Delivery" only labels the section, which the
+                  eyebrow above it has already done. */}
+              {s.whyHeading ?? `${t.services.whyHeading} ${s.name}`}
             </h2>
             {s.whyIntro && (
               <p className="mt-5 max-w-[47rem] text-[1.0625rem] leading-[1.55] text-dark-lead sm:text-[1.125rem]">
@@ -502,6 +577,75 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
                 </li>
               ))}
             </ol>
+          </div>
+        </section>
+      )}
+
+      {/* ---------------------------------------------------------------
+          05B — DELIVERY CENTRE PHOTOGRAPHS
+
+          Real photographs of a real office, sitting straight after the dark
+          Why ZED band so the claim about accountability is followed by the
+          people it refers to.
+
+          These are not decoration and they are not stock. Everything else on
+          this page is an assertion; this is the only section that is
+          evidence, which is why it is worth the page weight. One large frame
+          and two smaller ones rather than three equal tiles: three of
+          anything reads as a gallery, and a gallery reads as filler.
+
+          [CONFIRM] The group photograph shows identifiable employees and
+          needs their agreement before this page leaves the draft list. No
+          city is named in the copy — the site claims India, and India is what
+          these photographs support.
+          --------------------------------------------------------------- */}
+      {s.photoBand && bandLead && bandRest.length === 2 && (
+        <section className="border-b border-border bg-surface" aria-labelledby="delivery-centre">
+          <div className="container-page section-y">
+            <SectionHeader
+              align="left"
+              eyebrow={s.photoBand.eyebrow}
+              heading={s.photoBand.heading}
+              sub={s.photoBand.sub}
+              headingId="delivery-centre"
+            />
+            <div className="mt-8 grid gap-4 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]">
+              <img
+                src={bandLead.src}
+                alt={bandLead.alt}
+                width={1446}
+                height={964}
+                loading="lazy"
+                className="aspect-[3/2] w-full rounded-2xl border border-border-strong object-cover"
+              />
+              {/* The right column's two frames add up to exactly the height
+                  of the left one, and become two ordinary 3:2 rows on
+                  phones.
+
+                  The images are absolutely positioned inside their frames on
+                  desktop so they contribute no height of their own. Sized
+                  normally they set the row height from their own aspect
+                  ratio, the column grew taller than the photograph beside it,
+                  and the band lost the alignment that was the whole reason
+                  for the asymmetric grid. */}
+              <div className="grid gap-4 lg:grid-rows-2">
+                {bandRest.map((photo) => (
+                  <div
+                    key={photo.src}
+                    className="relative aspect-[3/2] w-full lg:aspect-auto lg:min-h-0"
+                  >
+                    <img
+                      src={photo.src}
+                      alt={photo.alt}
+                      width={1200}
+                      height={800}
+                      loading="lazy"
+                      className="absolute inset-0 h-full w-full rounded-2xl border border-border-strong object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
       )}
@@ -574,13 +718,21 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
                 {s.finalCta.title}
               </h2>
             )}
-            <p
-              className={`text-[1.0625rem] leading-[1.6] text-muted-foreground ${
-                s.finalCta?.title ? "mt-4" : ""
-              }`}
-            >
-              {t.services.startNext}
-            </p>
+            {/* A service can say something more specific about the first
+                conversation than the shared line. Where it does, the shared
+                line still follows it — that sentence carries the response
+                promise, and dropping it on one page would make the promise
+                look conditional. */}
+            <div className={`space-y-3 ${s.finalCta?.title ? "mt-4" : ""}`}>
+              {s.finalCtaSub && (
+                <p className="text-[1.0625rem] leading-[1.6] text-muted-foreground">
+                  {s.finalCtaSub}
+                </p>
+              )}
+              <p className="text-[1.0625rem] leading-[1.6] text-muted-foreground">
+                {t.services.startNext}
+              </p>
+            </div>
           </div>
           <div className="lg:justify-self-end">
             <Link to="/contact" className="btn btn-wrap btn-primary">
