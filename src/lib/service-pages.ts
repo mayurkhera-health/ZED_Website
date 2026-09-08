@@ -380,7 +380,8 @@ export const CAPABILITY_ICONS: Record<ServiceSlug, readonly CapabilityIcon[]> = 
  */
 export const DRAFT_SERVICES: readonly ServiceSlug[] = [
   "ai-data",
-  "guidewire",
+  // Guidewire came off: its copy is Mayur's from the page spec and the hero
+  // image now exists. Nothing on it is placeholder any more.
   "product-engineering",
   // Offshore & Nearshore came off the list once its copy, hero image and
   // photographs were real. The banner and the per-page noindex go with it.
@@ -692,6 +693,10 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
       name: "Guidewire",
       heroImageHint:
         "Guidewire as one platform inside a wider environment \u2014 softly abstracted workplace, white cards, thin connectors, small red nodes. No insurance stock imagery, no Guidewire UI, no shields or umbrellas",
+      heroImage: {
+        src: "/guidewire-hero.webp",
+        alt: "A bright office seen past a desk, with five linked white cards floating over it — a database at the centre joined by thin lines to a chart, a cloud, a laptop and a group of people.",
+      },
       outcome: "Guidewire expertise without the extra complexity.",
       intro:
         "We help insurance companies implement, improve and support Guidewire across policy, billing and claims. Our teams can help with configuration, integration, data, testing, upgrades and ongoing support.",
@@ -1419,6 +1424,10 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
       name: "Guidewire",
       heroImageHint:
         "Guidewire comme une plateforme parmi d'autres dans un environnement plus large \u2014 bureau doucement flouté, cartes blanches, connecteurs fins, petits points rouges. Pas d'imagerie d'assurance, pas d'interface Guidewire, ni bouclier ni parapluie",
+      heroImage: {
+        src: "/guidewire-hero.webp",
+        alt: "Un bureau lumineux vu depuis une table, avec cinq cartouches blancs reliés flottant au-dessus — une base de données au centre, jointe par des traits fins à un graphique, un nuage, un portable et un groupe de personnes.",
+      },
       outcome: "L'expertise Guidewire, sans la complexité en plus.",
       intro:
         "Nous aidons les assureurs à mettre en œuvre, améliorer et exploiter Guidewire pour la police, la facturation et les sinistres. Nos équipes interviennent sur la configuration, l'intégration, les données, les tests, les montées de version et le support continu.",
