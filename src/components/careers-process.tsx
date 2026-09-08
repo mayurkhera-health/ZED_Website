@@ -27,7 +27,7 @@ export function CareersProcess() {
         <p className="eyebrow text-subtle-foreground">{c.processEyebrow}</p>
         <h2
           id="careers-process"
-          className="font-display mt-3 max-w-[24ch] text-[1.75rem] leading-[1.12] tracking-[-0.025em] sm:text-[2.125rem]"
+          className="font-display mt-3 max-w-[40rem] text-[1.75rem] leading-[1.12] tracking-[-0.025em] sm:text-[2.125rem]"
         >
           {c.processHeading}
         </h2>

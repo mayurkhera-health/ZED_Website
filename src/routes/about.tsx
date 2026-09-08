@@ -12,13 +12,15 @@ const SITE = "https://screen-snap-magic-729.lovable.app";
  * in place, so the [CONFIRM] positioning line this flag originally guarded is
  * gone and so is the placeholder.
  *
- * One item is left and it is NOT a code gate: the photograph in Our Team shows
- * eleven identifiable employees and needs their agreement before this page is
- * public. Nothing in the code enforces that, which is the only reason the flag
- * is still true. Flip it to false once consent is cleared — that removes the
- * banner and the page-level noindex together.
+ * The banner and the page-level noindex are off at Mayur's direction.
+ *
+ * [CONFIRM] The photograph in Our Team shows eleven identifiable employees and
+ * their agreement is still outstanding. Nothing here enforces it. The site-wide
+ * noindex in __root.tsx still covers every non-production environment, so the
+ * page is not crawlable until the production domain exists — clear consent
+ * before then.
  */
-export const DRAFT_ABOUT = true;
+export const DRAFT_ABOUT = false;
 
 export const Route = createFileRoute("/about")({
   head: () => ({

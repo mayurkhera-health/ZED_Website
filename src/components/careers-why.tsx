@@ -27,7 +27,7 @@ export function CareersWhy() {
         <p className="eyebrow text-accent">{c.whyEyebrow}</p>
         <h2
           id="careers-why"
-          className="font-display mt-3 max-w-[22ch] text-[1.75rem] leading-[1.12] tracking-[-0.025em] sm:text-[2.125rem]"
+          className="font-display mt-3 max-w-[40rem] text-[1.75rem] leading-[1.12] tracking-[-0.025em] sm:text-[2.125rem]"
         >
           {c.whyHeading}
         </h2>

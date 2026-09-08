@@ -276,7 +276,7 @@ export function AboutBody({ showHeroPlaceholder }: { showHeroPlaceholder: boolea
           <div className="max-w-[36rem]">
             <h2
               id="about-cta"
-              className="font-display max-w-[20ch] text-[1.75rem] leading-[1.12] tracking-[-0.025em] sm:text-[2.125rem]"
+              className="font-display max-w-[40rem] text-[1.75rem] leading-[1.12] tracking-[-0.025em] sm:text-[2.125rem]"
             >
               {a.ctaHeading}
             </h2>

@@ -267,7 +267,13 @@
   }
   @media (min-width: 1024px) {
     .split {
-      grid-template-columns: minmax(0, 24rem) minmax(0, 1fr);
+      /* 28rem, not 24. A 50px heading in a 384px column ran to five lines
+         ("Built to make technology services easier to work with.") while the
+         body column beside it sat half empty. 28rem was not enough either —
+         "Where organizations get stuck." still broke three ways. At 32rem the
+         heading column holds two lines and the body column still clears the
+         38rem its prose is capped at. */
+      grid-template-columns: minmax(0, 32rem) minmax(0, 1fr);
       gap: 4rem;
       align-items: start;
     }

@@ -530,7 +530,7 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
         <section className="section-dark">
           <div className="container-page section-y">
             <p className="eyebrow text-dark-lead">{t.services.whyEyebrow}</p>
-            <h2 className="font-display mt-3 max-w-[20ch] text-[2rem] leading-[1.08] tracking-[-0.025em] sm:text-[2.75rem]">
+            <h2 className="font-display mt-3 max-w-[46rem] text-[2rem] leading-[1.08] tracking-[-0.025em] sm:text-[2.75rem]">
               {/* A service can replace the formula heading ("Why ZED for X")
                   with a sentence. "Distributed delivery without distributed
                   accountability" says something; "Why ZED for Offshore &
