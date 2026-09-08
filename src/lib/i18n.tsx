@@ -11,6 +11,9 @@ const en = {
     ctaSecondary: "Explore our work",
     trustLine:
       "Enterprise engineering · AI & Data · Cloud · SAP · Guidewire · Global delivery",
+    cardTitle: "Global delivery",
+    cardCapabilities: "Capabilities",
+    cardLocations: "Locations",
   },
   services: {
     eyebrow: "What we do",
@@ -456,6 +459,7 @@ const en = {
     contact: "Contact",
     about: "About",
     careers: "Careers",
+    company: "Company",
     talk: "Let's talk",
   },
   about: {
@@ -494,6 +498,9 @@ const fr: Copy = {
     ctaSecondary: "Découvrir nos réalisations",
     trustLine:
       "Ingénierie d'entreprise · IA et données · Infonuagique · SAP · Guidewire · Livraison mondiale",
+    cardTitle: "Livraison mondiale",
+    cardCapabilities: "Expertises",
+    cardLocations: "Bureaux",
   },
   services: {
     eyebrow: "Ce que nous faisons",
@@ -854,6 +861,7 @@ const fr: Copy = {
     contact: "Contact",
     about: "À propos",
     careers: "Carrières",
+    company: "Entreprise",
     talk: "Parlons-en",
   },
   about: {
