@@ -394,7 +394,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         { title: "Data platforms", desc: "Lakes, warehouses and ingestion designed around how the business asks questions." },
         { title: "Orchestration APIs", desc: "The authentication, conversation state and validation layer between a model and your users." },
       ],
-      technologies: ["Azure OpenAI", "Azure AI Search", "Python", "Vector databases", "Databricks", "Airflow"],
+      technologies: ["Databricks Mosaic AI", "Snowflake Cortex", "AWS Bedrock", "Google Vertex AI", "Databricks Lakehouse", "Snowflake Data Cloud", "Google BigQuery", "Microsoft Fabric"],
       /**
        * [CONFIRM] PLACEHOLDER. Restructured from the copy already in this
        * file, not written from experience. The situation paragraph in
@@ -405,10 +405,37 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
        */
       situation:
         "Most enterprise AI stops at a good demo. The prototype answers well in a meeting, then nobody will approve it for customers because no one can say where an answer came from, what it saw, or what it would do on a bad day. Meanwhile the data it needs sits across systems that were never designed to be read together.",
+      /**
+       * Replaced wholesale at Mayur's direction. Azure OpenAI, Azure AI
+       * Search, vector databases, Airflow and Python are gone; the list is now
+       * platform-led rather than component-led.
+       *
+       * Two edits to what was supplied, both to fit the chip component rather
+       * than to change the claim. "AWS Bedrock / Google Vertex AI" became two
+       * chips — a slash inside one chip implies an either/or that a capability
+       * list does not mean. And the Microsoft Fabric gloss ("unifying data
+       * engineering, warehousing and AI in one workspace") is not carried:
+       * chips are product names at 12.5px and a nine-word parenthetical inside
+       * one breaks the row. Same for the second group's supplied heading,
+       * "AI-Ready Storage & Compute (The New \"Big Data\")" — that column is
+       * 170px of 10px uppercase.
+       */
       technologyGroups: [
-        { label: "Models and retrieval", icon: "chart", items: ["Azure OpenAI", "Azure AI Search", "Vector databases"] },
-        { label: "Data platforms", icon: "cube", items: ["Databricks", "Airflow"] },
-        { label: "Engineering", icon: "layers", items: ["Python"] },
+        {
+          label: "Models & GenAI orchestration",
+          icon: "chart",
+          items: ["Databricks Mosaic AI", "Snowflake Cortex", "AWS Bedrock", "Google Vertex AI"],
+        },
+        {
+          label: "AI-ready storage & compute",
+          icon: "cube",
+          items: [
+            "Databricks Lakehouse",
+            "Snowflake Data Cloud",
+            "Google BigQuery",
+            "Microsoft Fabric",
+          ],
+        },
       ],
       platformsSub:
         "We work with the AI and data platforms enterprise teams are already standardising on.",
@@ -1081,13 +1108,25 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         { title: "Plateformes de données", desc: "Lacs, entrepôts et ingestion conçus selon les questions que pose réellement l'entreprise." },
         { title: "API d'orchestration", desc: "La couche d'authentification, d'état conversationnel et de validation entre un modèle et vos utilisateurs." },
       ],
-      technologies: ["Azure OpenAI", "Azure AI Search", "Python", "Bases vectorielles", "Databricks", "Airflow"],
+      technologies: ["Databricks Mosaic AI", "Snowflake Cortex", "AWS Bedrock", "Google Vertex AI", "Databricks Lakehouse", "Snowflake Data Cloud", "Google BigQuery", "Microsoft Fabric"],
       situation:
         "La plupart des projets d'IA en entreprise s'arrêtent à une bonne démonstration. Le prototype répond bien en réunion, puis personne ne veut l'exposer aux clients : nul ne peut dire d'où vient une réponse, ce que le modèle a consulté, ni ce qu'il ferait un mauvais jour. Pendant ce temps, les données nécessaires restent éparpillées dans des systèmes jamais conçus pour être lus ensemble.",
       technologyGroups: [
-        { label: "Modèles et recherche", icon: "chart", items: ["Azure OpenAI", "Azure AI Search", "Bases vectorielles"] },
-        { label: "Plateformes de données", icon: "cube", items: ["Databricks", "Airflow"] },
-        { label: "Ingénierie", icon: "layers", items: ["Python"] },
+        {
+          label: "Modèles et orchestration GenAI",
+          icon: "chart",
+          items: ["Databricks Mosaic AI", "Snowflake Cortex", "AWS Bedrock", "Google Vertex AI"],
+        },
+        {
+          label: "Stockage et calcul prêts pour l'IA",
+          icon: "cube",
+          items: [
+            "Databricks Lakehouse",
+            "Snowflake Data Cloud",
+            "Google BigQuery",
+            "Microsoft Fabric",
+          ],
+        },
       ],
       platformsSub:
         "Nous travaillons avec les plateformes d'IA et de données que les entreprises adoptent aujourd'hui.",
