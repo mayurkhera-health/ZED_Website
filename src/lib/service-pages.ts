@@ -695,42 +695,42 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         src: "/guidewire-hero.webp",
         alt: "A bright office seen past a desk, with five linked white cards floating over it — a database at the centre joined by thin lines to a chart, a cloud, a laptop and a group of people.",
       },
-      outcome: "Guidewire expertise without the extra complexity.",
+      outcome: "Guidewire services without unnecessary complexity.",
       intro:
-        "We help insurance companies implement, improve and support Guidewire across policy, billing and claims. Our teams can help with configuration, integration, data, testing, upgrades and ongoing support.",
+        "We help insurance companies implement, improve and support Guidewire across policy, billing and claims. That includes the work inside Guidewire as well as the integrations, data, testing and applications around it.",
       problems: [
         "An upgrade deferred so long that the version gap is now the project.",
         "Configuration drift nobody has a full picture of.",
         "A cloud migration with no plan for the integrations hanging off the edges.",
       ],
-      situationHeading: "Core insurance systems have to keep up with the business.",
+      situationHeading: "Guidewire has to work with the rest of your business.",
       situation:
-        "Guidewire sits at the center of many important insurance processes. But the platform also has to work with everything around it \u2014 data, customer portals, payment systems, documents, reporting tools and other applications.\n\nWe help clients make those pieces work together.",
-      buildHeading: "Help across the Guidewire lifecycle.",
+        "Guidewire may sit at the center of policy, billing and claims, but it does not operate on its own. It has to connect with customer portals, payment systems, documents, data platforms, reporting tools and other applications.\n\nWe help make those pieces work together.",
+      buildHeading: "Guidewire services from implementation through support.",
       capabilities: [
         {
           title: "Guidewire implementation",
-          desc: "We help configure and build Guidewire around the way your business works \u2014 workflows, rules, integrations and the other changes needed to support day-to-day operations.",
+          desc: "We configure Guidewire around the way your business actually operates. That can include workflows, business rules, integrations and the changes needed to support day-to-day policy, billing and claims processes.",
         },
         {
           title: "Guidewire Cloud & upgrades",
-          desc: "We help teams move to Guidewire Cloud, upgrade existing environments and reduce older customizations where possible, so the platform is easier to support and improve over time.",
+          desc: "Moving to Guidewire Cloud or upgrading an existing environment can also be an opportunity to simplify what has built up over time. We help with the move, the upgrade and, where it makes sense, reducing older customizations that are difficult to maintain.",
         },
         {
           title: "Integration & APIs",
-          desc: "Guidewire rarely works on its own. We help connect it with payment systems, customer portals, document platforms, data services and other enterprise applications.",
+          desc: "Guidewire needs to exchange information with many other systems. We build and support integrations with customer applications, payment platforms, document systems, data services and other enterprise applications.",
         },
         {
           title: "Data migration",
-          desc: "Moving data from older systems takes careful planning. We help with mapping, conversion, validation and reconciliation so policy, billing and claims information moves over correctly.",
+          desc: "Moving years of policy, billing and claims data is rarely straightforward. We help map, convert, validate and reconcile the data so teams know what moved, what changed and what needs attention.",
         },
         {
           title: "Testing",
-          desc: "Changes to a core insurance platform need to be tested carefully. We support functional, integration, regression and automated testing to find issues before they reach production.",
+          desc: "Core system changes can affect processes well beyond the feature being changed. We support functional, integration, regression and automated testing to catch those problems before they reach production.",
         },
         {
           title: "Application support",
-          desc: "The work does not stop after go-live. We help with production support, fixes, enhancements and ongoing Guidewire development.",
+          desc: "After go-live, there will always be fixes, enhancements and new business requirements. We provide ongoing Guidewire development and production support to help teams keep the platform running and continue improving it.",
         },
       ],
       /**
@@ -749,15 +749,15 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         items: [
           {
             title: "PolicyCenter",
-            body: "Policy administration, product configuration, underwriting workflows, renewals and servicing.",
+            body: "Policy administration, product configuration, underwriting workflows, renewals, servicing and the integrations that support them.",
           },
           {
             title: "ClaimCenter",
-            body: "Claims processes from intake through settlement, including workflows, integrations and the related system changes.",
+            body: "Claims processes from intake through settlement, including workflows, integrations and supporting system changes.",
           },
           {
             title: "BillingCenter",
-            body: "Billing, payments, commissions and account-related processes, along with the integrations around them.",
+            body: "Billing, payments, commissions and account processes, along with the systems that exchange information with them.",
           },
         ],
       },
@@ -780,33 +780,33 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
        * light section instead \u2014 one dark band per page.
        */
       whyEyebrow: "Engineering around Guidewire",
-      whyHeading: "Guidewire is only one part of the environment.",
+      whyHeading: "The work usually extends beyond Guidewire.",
       whyIntro:
-        "A Guidewire project usually touches many other systems. We can also help with APIs, connected applications, data platforms, customer portals and other engineering work around the platform \u2014 which makes it easier to solve the full problem instead of looking only at Guidewire.",
+        "A Guidewire project rarely stays inside Guidewire. Customer applications need information from it. Data has to move between systems. Documents need to be generated. Payments need to be processed. Reporting teams need access to the right information.\n\nOur broader engineering teams can work on those pieces too, so you don\'t need to treat every system around Guidewire as a separate project.",
       systemMap: {
         centre: "Guidewire",
         satellites: ["Customer applications", "Data platforms", "APIs & integrations", "Enterprise systems"],
       },
       whyColumns: {
         eyebrow: "Why ZEDventures",
-        heading: "Practical people. Practical delivery.",
+        heading: "A team that can fit into the way you already work.",
         intro: "",
         items: [
           {
-            title: "Stay close to the work",
-            body: "Experienced people remain involved throughout the engagement.",
+            title: "Work alongside your existing team",
+            body: "You may already have internal Guidewire resources, another implementation partner or several vendors involved. We can take responsibility for a specific piece of the work or work alongside the teams already in place.",
           },
           {
-            title: "Work with the team you already have",
-            body: "We can work alongside your internal teams, Guidewire, other implementation partners or existing vendors.",
+            title: "Keep experienced people involved",
+            body: "We believe the people who understand the work should stay involved in the work. We keep communication direct and avoid adding management layers that don't help the project.",
           },
           {
-            title: "Look beyond the platform",
-            body: "We pay attention to the data, integrations and applications around Guidewire, not just the work inside it.",
+            title: "Understand what sits around Guidewire",
+            body: "Sometimes the problem isn't actually inside Guidewire. It may be an integration, a data issue or an application connected to it. We look at the surrounding environment before deciding where the problem needs to be solved.",
           },
           {
-            title: "Keep things simple",
-            body: "We try to avoid unnecessary layers and keep communication direct.",
+            title: "Keep the approach straightforward",
+            body: "Not every problem needs a large transformation program. Sometimes you need an upgrade completed, an integration fixed, additional development capacity or a team to take ownership of ongoing support. We start with what actually needs to get done.",
           },
         ],
       },
@@ -1415,42 +1415,42 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         src: "/guidewire-hero.webp",
         alt: "Un bureau lumineux vu depuis une table, avec cinq cartouches blancs reliés flottant au-dessus — une base de données au centre, jointe par des traits fins à un graphique, un nuage, un portable et un groupe de personnes.",
       },
-      outcome: "L'expertise Guidewire, sans la complexité en plus.",
+      outcome: "Des services Guidewire sans complexité inutile.",
       intro:
-        "Nous aidons les assureurs à mettre en œuvre, améliorer et exploiter Guidewire pour la police, la facturation et les sinistres. Nos équipes interviennent sur la configuration, l'intégration, les données, les tests, les montées de version et le support continu.",
+        "Nous aidons les assureurs à mettre en œuvre, améliorer et exploiter Guidewire pour la police, la facturation et les sinistres. Cela couvre le travail dans Guidewire comme les intégrations, les données, les tests et les applications autour.",
       problems: [
         "Une montée de version repoussée si longtemps que l'écart devient le projet.",
         "Une configuration qui a dérivé, dont personne n'a la vue complète.",
         "Une migration vers le cloud sans plan pour les intégrations en périphérie.",
       ],
-      situationHeading: "Les systèmes cœur d'assurance doivent suivre le rythme du métier.",
+      situationHeading: "Guidewire doit fonctionner avec le reste de votre entreprise.",
       situation:
-        "Guidewire se trouve au centre de nombreux processus d'assurance importants. Mais la plateforme doit aussi fonctionner avec tout ce qui l'entoure \u2014 données, portails clients, systèmes de paiement, documents, outils de reporting et autres applications.\n\nNous aidons nos clients à faire tenir ces pièces ensemble.",
-      buildHeading: "Un appui sur tout le cycle de vie Guidewire.",
+        "Guidewire a beau se trouver au centre de la police, de la facturation et des sinistres, il ne fonctionne pas seul. Il doit se connecter aux portails clients, aux systèmes de paiement, aux documents, aux plateformes de données, aux outils de reporting et à d\'autres applications.\n\nNous aidons à faire tenir ces pièces ensemble.",
+      buildHeading: "Des services Guidewire, de la mise en œuvre au support.",
       capabilities: [
         {
           title: "Mise en œuvre Guidewire",
-          desc: "Nous configurons et construisons Guidewire autour de votre façon de travailler \u2014 flux, règles, intégrations et les autres évolutions nécessaires au quotidien.",
+          desc: "Nous configurons Guidewire autour de votre façon réelle de fonctionner. Cela peut inclure les flux, les règles métier, les intégrations et les évolutions nécessaires aux processus quotidiens de police, de facturation et de sinistres.",
         },
         {
           title: "Guidewire Cloud et montées de version",
-          desc: "Nous accompagnons le passage à Guidewire Cloud, les montées de version et la réduction des anciennes personnalisations lorsque c'est possible, pour une plateforme plus simple à maintenir et à faire évoluer.",
+          desc: "Passer à Guidewire Cloud ou faire évoluer un environnement existant est aussi l'occasion de simplifier ce qui s'est accumulé avec le temps. Nous accompagnons la migration, la montée de version et, là où c'est pertinent, la réduction des anciennes personnalisations difficiles à maintenir.",
         },
         {
           title: "Intégration et API",
-          desc: "Guidewire fonctionne rarement seul. Nous le relions aux systèmes de paiement, portails clients, plateformes documentaires, services de données et autres applications d'entreprise.",
+          desc: "Guidewire doit échanger de l'information avec de nombreux autres systèmes. Nous construisons et maintenons les intégrations avec les applications clients, les plateformes de paiement, les systèmes documentaires, les services de données et les autres applications d'entreprise.",
         },
         {
           title: "Migration de données",
-          desc: "Déplacer les données d'anciens systèmes demande de la préparation. Nous prenons en charge le mapping, la conversion, la validation et la réconciliation pour que les informations de police, de facturation et de sinistres arrivent correctement.",
+          desc: "Déplacer des années de données de police, de facturation et de sinistres est rarement simple. Nous aidons à cartographier, convertir, valider et réconcilier les données, pour que les équipes sachent ce qui a été repris, ce qui a changé et ce qui demande attention.",
         },
         {
           title: "Tests",
-          desc: "Les évolutions d'une plateforme cœur d'assurance doivent être testées avec soin. Nous couvrons les tests fonctionnels, d'intégration, de non-régression et automatisés, pour trouver les problèmes avant la production.",
+          desc: "Une évolution sur un système cœur peut affecter des processus bien au-delà de la fonctionnalité modifiée. Nous couvrons les tests fonctionnels, d'intégration, de non-régression et automatisés, pour détecter ces problèmes avant la production.",
         },
         {
           title: "Support applicatif",
-          desc: "Le travail ne s'arrête pas à la mise en service. Nous assurons le support de production, les correctifs, les évolutions et le développement Guidewire continu.",
+          desc: "Après la mise en service, il y aura toujours des correctifs, des évolutions et de nouveaux besoins métier. Nous assurons le développement Guidewire et le support de production dans la durée, pour que les équipes gardent la plateforme en marche et continuent de l'améliorer.",
         },
       ],
       productColumns: {
@@ -1460,47 +1460,47 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         items: [
           {
             title: "PolicyCenter",
-            body: "Gestion des polices, configuration produit, flux de souscription, renouvellements et actes de gestion.",
+            body: "Gestion des polices, configuration produit, flux de souscription, renouvellements, actes de gestion et les intégrations qui les soutiennent.",
           },
           {
             title: "ClaimCenter",
-            body: "Les processus de sinistres, de la déclaration au règlement : flux, intégrations et évolutions associées.",
+            body: "Les processus de sinistres, de la déclaration au règlement : flux, intégrations et évolutions des systèmes associés.",
           },
           {
             title: "BillingCenter",
-            body: "Facturation, encaissements, commissions et processus liés aux comptes, avec les intégrations autour.",
+            body: "Facturation, encaissements, commissions et processus de compte, ainsi que les systèmes qui échangent de l'information avec eux.",
           },
         ],
       },
       technologies: ["PolicyCenter", "BillingCenter", "ClaimCenter", "Gosu", "Guidewire Cloud", "Intégrations REST"],
       whyEyebrow: "L'ingénierie autour de Guidewire",
-      whyHeading: "Guidewire n'est qu'une partie de l'environnement.",
+      whyHeading: "Le travail dépasse généralement Guidewire.",
       whyIntro:
-        "Un projet Guidewire touche généralement beaucoup d'autres systèmes. Nous intervenons aussi sur les API, les applications connectées, les plateformes de données, les portails clients et le reste de l'ingénierie autour de la plateforme \u2014 ce qui permet de traiter le problème entier plutôt que de ne regarder que Guidewire.",
+        "Un projet Guidewire reste rarement dans Guidewire. Les applications clients ont besoin de ses informations. Les données doivent circuler entre systèmes. Des documents doivent être générés. Des paiements doivent être traités. Les équipes de reporting doivent accéder aux bonnes informations.\n\nNos équipes d\'ingénierie peuvent aussi prendre en charge ces pièces, pour éviter de traiter chaque système autour de Guidewire comme un projet séparé.",
       systemMap: {
         centre: "Guidewire",
         satellites: ["Applications clients", "Plateformes de données", "API et intégrations", "Systèmes d'entreprise"],
       },
       whyColumns: {
         eyebrow: "Pourquoi ZEDventures",
-        heading: "Des gens concrets. Une livraison concrète.",
+        heading: "Une équipe qui s'adapte à votre façon de travailler.",
         intro: "",
         items: [
           {
-            title: "Rester près du travail",
-            body: "Des personnes expérimentées restent impliquées tout au long de l'engagement.",
-          },
-          {
             title: "Travailler avec l'équipe en place",
-            body: "Nous pouvons intervenir aux côtés de vos équipes internes, de Guidewire, d'autres intégrateurs ou de vos prestataires actuels.",
+            body: "Vous avez peut-être déjà des ressources Guidewire internes, un autre intégrateur ou plusieurs prestataires. Nous pouvons prendre la responsabilité d'un périmètre précis ou intervenir aux côtés des équipes déjà présentes.",
           },
           {
-            title: "Regarder au-delà de la plateforme",
-            body: "Nous prêtons attention aux données, aux intégrations et aux applications autour de Guidewire, pas seulement au travail à l'intérieur.",
+            title: "Garder des personnes expérimentées impliquées",
+            body: "Nous pensons que les personnes qui comprennent le travail doivent rester sur le travail. Nous gardons une communication directe et évitons les couches de gestion qui n'aident pas le projet.",
           },
           {
-            title: "Rester simples",
-            body: "Nous évitons les couches inutiles et gardons une communication directe.",
+            title: "Comprendre ce qui entoure Guidewire",
+            body: "Le problème n'est pas toujours dans Guidewire. Ce peut être une intégration, un sujet de données ou une application connectée. Nous regardons l'environnement avant de décider où le problème doit être traité.",
+          },
+          {
+            title: "Garder une approche simple",
+            body: "Tout ne demande pas un grand programme de transformation. Parfois il faut terminer une montée de version, corriger une intégration, ajouter de la capacité de développement ou confier le support à une équipe. Nous partons de ce qu'il faut réellement faire.",
           },
         ],
       },

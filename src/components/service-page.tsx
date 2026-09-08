@@ -569,10 +569,20 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
                   eyebrow above it has already done. */}
               {s.whyHeading ?? `${t.services.whyHeading} ${s.name}`}
             </h2>
+            {/* Blank line splits paragraphs, same convention as `situation`.
+                Most services need one paragraph here; Guidewire's argument
+                needs two, and the second is the consequence of the first. */}
             {s.whyIntro && (
-              <p className="mt-5 max-w-[47rem] text-[1.0625rem] leading-[1.55] text-dark-lead sm:text-[1.125rem]">
-                {s.whyIntro}
-              </p>
+              <div className="mt-5 max-w-[47rem] space-y-4">
+                {s.whyIntro.split("\n\n").map((para) => (
+                  <p
+                    key={para.slice(0, 24)}
+                    className="text-[1.0625rem] leading-[1.55] text-dark-lead sm:text-[1.125rem]"
+                  >
+                    {para}
+                  </p>
+                ))}
+              </div>
             )}
 
             {s.systemMap && <SystemMap {...s.systemMap} />}
