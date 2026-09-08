@@ -463,21 +463,87 @@ const en = {
     talk: "Let's talk",
   },
   about: {
-    eyebrow: "About",
-    heading: "Engineering built around outcomes, not slide decks.",
-    sub: "[CONFIRM] We build and run enterprise systems, and we shape the engagement around how you need to buy it — not the other way round.",
-    diffEyebrow: "What makes us different",
-    diffHeading: "What makes us different",
-    diffItems: [
-      { title: "Engineering-first", desc: "[CONFIRM — is this how you would describe it?] The people who scope the work are the people who build it. You are not handed from a sales conversation to a delivery team that has to start the discovery again." },
-      { title: "Production accountability", desc: "[CONFIRM — do you offer post-go-live support on every engagement, or only some?] We do not treat go-live as the finish line. Where an engagement calls for it we stay on to support and run what we built, rather than handing over a system and a document." },
-      { title: "Flexible delivery", desc: "Fixed scope, time and materials, a dedicated team, or engineers embedded in yours — onsite, offshore or nearshore. Enterprise procurement rarely gets to choose its constraints, so we do not insist on one model." },
+    eyebrow: "About ZEDventures",
+    heading: "Technology is what we do. How we work matters just as much.",
+    intro:
+      "ZEDventures is an enterprise technology services company helping organizations solve complex technology and delivery challenges across SAP, Analytics & AI, GIS & Geospatial, Digital Engineering and global delivery.",
+    intro2:
+      "We bring experienced people close to the work and stay accountable for what we deliver.",
+    servicesLink: "Explore our services",
+    heroImageHint:
+      "Three to five ZED people talking over real work, candid, in a real ZED workplace — nobody looking at the camera",
+
+    whyEyebrow: "Why we're here",
+    whyHeading: "Built to make technology services easier to work with.",
+    whyBody: [
+      "ZEDventures was built around a simple idea: clients should not have to choose between strong technical capability and a team that is responsive, practical and easy to work with.",
+      "As we've grown, that idea has stayed the same. We try to keep things straightforward, bring the right people into the work, and avoid making an engagement more complicated than it needs to be.",
     ],
-    deliveryEyebrow: "Global delivery",
-    deliveryHeading: "Where our teams are",
-    deliveryBody:
-      "Engineering teams in San Jose and Dallas in the United States, and in Hyderabad, India — offshore capacity with US time-zone overlap where the work needs it.",
-    ctaHeading: "Talk to Zed Ventures.",
+    whyDiagram: ["Client", "ZED team", "The work"],
+    whyDiagramNote: "Fewer handoffs. Clearer ownership.",
+
+    believeEyebrow: "What we believe",
+    believeHeading: "Good work starts with good relationships.",
+    believeIntro:
+      "Technology changes quickly. The way we work with people shouldn't. We believe in being straightforward, taking responsibility and thinking beyond the immediate project.",
+    beliefs: [
+      {
+        title: "Be accountable.",
+        body: "We take ownership of the work we commit to. When something is going well, we keep it moving. When it isn't, we raise it early and work with our clients to fix it.",
+      },
+      {
+        title: "Do right by people.",
+        body: "Our business is built around people — our clients, our employees and the consultants who choose to work with us. We try to be fair, communicate clearly and treat people with the same respect we expect in return.",
+      },
+      {
+        title: "Think beyond the project.",
+        body: "We're not interested in solving today's problem in a way that creates another one tomorrow. We look at the longer picture — building solutions clients can live with and relationships that can grow over time.",
+      },
+    ],
+
+    workEyebrow: "How we work",
+    workHeading: "Experienced people. Fewer layers.",
+    workIntro:
+      "Clients should be able to work directly with people who understand the technology and the work being delivered. We keep teams practical and accessible, without adding unnecessary layers between a problem and the people solving it.",
+    workStages: [
+      { title: "Understand", note: "Start with the actual problem." },
+      { title: "Recommend", note: "Say what we believe makes sense." },
+      { title: "Build", note: "Put experienced people into the work." },
+      { title: "Stay involved", note: "Remain accountable after delivery begins." },
+    ],
+    workPrinciples: [
+      {
+        title: "Stay close to the work",
+        body: "Senior people remain involved throughout the engagement. Experience does not disappear once the proposal is signed.",
+      },
+      {
+        title: "Say what we think",
+        body: "We recommend what we believe makes sense, even when that means suggesting a simpler approach or challenging an assumption.",
+      },
+      {
+        title: "Make it work in the real world",
+        body: "A solution has to work with the systems, people, timelines and constraints a client actually has. That's the standard we design and deliver against.",
+      },
+    ],
+
+    teamEyebrow: "Our team",
+    teamHeading: "One ZED team, across locations.",
+    teamBody:
+      "Our people work across North America and India, bringing together client-facing experience and engineering delivery. Wherever the team is based, they work as part of the same organization.",
+    teamPhotos: [
+      { src: "/delivery-team.webp", alt: "The ZEDventures team together in a meeting room.", caption: "The ZEDventures team." },
+      { src: "/delivery-floor.webp", alt: "The engineering floor seen through a glass wall, with shared desks and daylight beyond.", caption: "Our India engineering office." },
+    ],
+    teamLocations: [
+      { place: "North America", role: "Client engagement" },
+      { place: "India", role: "Engineering & delivery" },
+    ],
+    teamLocationsNote: "One ZED team.",
+
+    ctaHeading: "Let's talk about what you're working on.",
+    ctaBody:
+      "Whether you have a specific technology challenge or are simply thinking through what comes next, we're happy to start with a conversation.",
+    ctaButton: "Start a conversation",
   },
   a11y: {
     switchTo: "Passer au français",
@@ -865,21 +931,87 @@ const fr: Copy = {
     talk: "Parlons-en",
   },
   about: {
-    eyebrow: "À propos",
-    heading: "Une ingénierie construite autour des résultats, pas des présentations.",
-    sub: "[À CONFIRMER] Nous concevons et exploitons des systèmes d'entreprise, et nous adaptons le mode d'engagement à votre façon d'acheter — et non l'inverse.",
-    diffEyebrow: "Ce qui nous distingue",
-    diffHeading: "Ce qui nous distingue",
-    diffItems: [
-      { title: "L'ingénierie d'abord", desc: "[À CONFIRMER — est-ce ainsi que vous le décririez ?] Ceux qui cadrent le travail sont ceux qui le réalisent. Vous n'êtes pas transmis d'une conversation commerciale à une équipe de livraison obligée de tout redécouvrir." },
-      { title: "Responsabilité en production", desc: "[À CONFIRMER — proposez-vous un support après mise en production sur tous les projets, ou seulement certains ?] La mise en production n'est pas pour nous la ligne d'arrivée. Lorsque le projet le justifie, nous restons pour exploiter et soutenir ce que nous avons construit, plutôt que de remettre un système et un document." },
-      { title: "Livraison flexible", desc: "Forfait, régie, équipe dédiée ou ingénieurs intégrés à la vôtre — sur site, offshore ou nearshore. Les achats en entreprise choisissent rarement leurs contraintes : nous n'imposons donc pas un modèle unique." },
+    eyebrow: "À propos de ZEDventures",
+    heading: "La technologie, c'est notre métier. Notre façon de travailler compte tout autant.",
+    intro:
+      "ZEDventures est une société de services technologiques d'entreprise qui aide les organisations à résoudre des enjeux complexes de technologie et de livraison : SAP, analytique et IA, SIG et géospatial, ingénierie numérique et livraison mondiale.",
+    intro2:
+      "Nous plaçons des personnes expérimentées au plus près du travail et nous répondons de ce que nous livrons.",
+    servicesLink: "Découvrir nos expertises",
+    heroImageHint:
+      "Trois à cinq personnes de ZED discutant d'un vrai travail, sur le vif, dans un vrai bureau ZED — personne ne regarde l'objectif",
+
+    whyEyebrow: "Pourquoi nous existons",
+    whyHeading: "Conçus pour rendre les services technologiques plus simples à utiliser.",
+    whyBody: [
+      "ZEDventures s'est construite autour d'une idée simple : un client ne devrait pas avoir à choisir entre une vraie capacité technique et une équipe réactive, pragmatique et facile à vivre.",
+      "En grandissant, cette idée n'a pas changé. Nous essayons de rester simples, d'amener les bonnes personnes sur le travail et d'éviter de compliquer un engagement plus que nécessaire.",
     ],
-    deliveryEyebrow: "Livraison mondiale",
-    deliveryHeading: "Où sont nos équipes",
-    deliveryBody:
-      "Des équipes d'ingénierie à San Jose et à Dallas aux États-Unis, ainsi qu'à Hyderabad, en Inde — une capacité délocalisée avec chevauchement horaire américain là où le travail l'exige.",
-    ctaHeading: "Parlons-en.",
+    whyDiagram: ["Client", "Équipe ZED", "Le travail"],
+    whyDiagramNote: "Moins de passations. Une responsabilité plus claire.",
+
+    believeEyebrow: "Ce en quoi nous croyons",
+    believeHeading: "Un bon travail commence par de bonnes relations.",
+    believeIntro:
+      "La technologie change vite. Notre façon de travailler avec les gens ne devrait pas. Nous croyons à la franchise, à la responsabilité et au fait de penser au-delà du projet immédiat.",
+    beliefs: [
+      {
+        title: "Répondre de son travail.",
+        body: "Nous assumons ce sur quoi nous nous engageons. Quand tout avance bien, nous gardons le rythme. Quand ce n'est pas le cas, nous le disons tôt et nous corrigeons avec le client.",
+      },
+      {
+        title: "Bien traiter les gens.",
+        body: "Notre activité repose sur des personnes — nos clients, nos employés et les consultants qui choisissent de travailler avec nous. Nous essayons d'être justes, de communiquer clairement et de traiter chacun avec le respect que nous attendons en retour.",
+      },
+      {
+        title: "Penser au-delà du projet.",
+        body: "Résoudre le problème du jour en en créant un autre pour demain ne nous intéresse pas. Nous regardons plus loin : des solutions avec lesquelles le client peut vivre, et des relations qui peuvent durer.",
+      },
+    ],
+
+    workEyebrow: "Notre façon de travailler",
+    workHeading: "Des personnes expérimentées. Moins d'intermédiaires.",
+    workIntro:
+      "Un client devrait pouvoir parler directement aux personnes qui comprennent la technologie et le travail livré. Nous gardons des équipes concrètes et accessibles, sans ajouter de couches inutiles entre un problème et ceux qui le résolvent.",
+    workStages: [
+      { title: "Comprendre", note: "Partir du problème réel." },
+      { title: "Recommander", note: "Dire ce qui nous paraît juste." },
+      { title: "Construire", note: "Mettre des personnes expérimentées sur le travail." },
+      { title: "Rester engagés", note: "Répondre du travail une fois la livraison lancée." },
+    ],
+    workPrinciples: [
+      {
+        title: "Rester près du travail",
+        body: "Les profils expérimentés restent impliqués tout au long de l'engagement. L'expérience ne disparaît pas une fois la proposition signée.",
+      },
+      {
+        title: "Dire ce que nous pensons",
+        body: "Nous recommandons ce qui nous paraît juste, même quand cela revient à proposer une approche plus simple ou à remettre en question une hypothèse.",
+      },
+      {
+        title: "Que ça marche dans la vraie vie",
+        body: "Une solution doit fonctionner avec les systèmes, les personnes, les délais et les contraintes que le client a réellement. C'est la règle sur laquelle nous concevons et livrons.",
+      },
+    ],
+
+    teamEyebrow: "Notre équipe",
+    teamHeading: "Une seule équipe ZED, sur plusieurs sites.",
+    teamBody:
+      "Nos équipes travaillent en Amérique du Nord et en Inde, réunissant la relation client et la livraison d'ingénierie. Où qu'elles soient basées, elles font partie de la même organisation.",
+    teamPhotos: [
+      { src: "/delivery-team.webp", alt: "L'équipe ZEDventures réunie dans une salle de réunion.", caption: "L'équipe ZEDventures." },
+      { src: "/delivery-floor.webp", alt: "Le plateau d'ingénierie vu à travers une cloison vitrée, avec des postes partagés et la lumière du jour au fond.", caption: "Notre bureau d'ingénierie en Inde." },
+    ],
+    teamLocations: [
+      { place: "Amérique du Nord", role: "Relation client" },
+      { place: "Inde", role: "Ingénierie et livraison" },
+    ],
+    teamLocationsNote: "Une seule équipe ZED.",
+
+    ctaHeading: "Parlons de ce sur quoi vous travaillez.",
+    ctaBody:
+      "Que vous ayez un enjeu technologique précis ou que vous réfléchissiez simplement à la suite, nous commençons volontiers par une conversation.",
+    ctaButton: "Démarrer la conversation",
   },
   a11y: {
     switchTo: "Switch to English",
