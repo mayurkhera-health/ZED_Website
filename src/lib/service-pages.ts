@@ -377,7 +377,10 @@ export const CAPABILITY_ICONS: Record<ServiceSlug, readonly CapabilityIcon[]> = 
  * screen-snap-magic-729.lovable.app domain.
  */
 export const DRAFT_SERVICES: readonly ServiceSlug[] = [
-  "ai-data",
+  // AI & Data came off at Mayur's direction. Its copy reads as finished
+  // prose and the platform groups are his. The one paragraph that was
+  // flagged as restructured rather than written from experience is the
+  // situation paragraph below; it now stands as published copy.
   // Guidewire came off: its copy is Mayur's from the page spec and the hero
   // image now exists. Nothing on it is placeholder any more.
   "product-engineering",

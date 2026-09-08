@@ -10,13 +10,22 @@ const SITE = "https://screen-snap-magic-729.lovable.app";
 /**
  * Privacy policy and terms of use, from one template.
  *
- * DRAFT_LEGAL_PAGES keeps both noindex and banner-marked. Every section body in
- * i18n.tsx is a bracketed placeholder: these are statements about what the
- * company actually does with data and what it will stand behind in a dispute,
- * and neither can be written from outside the company. Flip the flag only once
- * counsel has replaced the text.
+ * A drafted doc carries the banner and its own noindex. Terms is still
+ * drafted: its warranty, liability and governing-law sections are notes to
+ * counsel rather than clauses, so it cannot be shown to anyone.
  */
-export const DRAFT_LEGAL_PAGES = true;
+/**
+ * Split from one flag into two. The pages were gated together, but they are
+ * not in the same state: Privacy is finished prose with one open fact, while
+ * Terms still has three sections whose entire body is a note to counsel.
+ * Publishing them as a pair meant the finished one waited on the unfinished.
+ */
+export const DRAFT_PRIVACY = false;
+export const DRAFT_TERMS = true;
+
+function isDocDraft(doc: string): boolean {
+  return doc === "terms" ? DRAFT_TERMS : DRAFT_PRIVACY;
+}
 
 const DOCS = ["privacy", "terms"] as const;
 type Doc = (typeof DOCS)[number];
@@ -35,7 +44,7 @@ export const Route = createFileRoute("/legal/$doc")({
       meta: [
         { title: `${title} — ZEDventures` },
         { name: "description", content: `${title} for zedventures.com.` },
-        ...(DRAFT_LEGAL_PAGES ? [{ name: "robots", content: "noindex, nofollow" }] : []),
+        ...(isDocDraft(params.doc) ? [{ name: "robots", content: "noindex, nofollow" }] : []),
         { property: "og:title", content: `${title} — ZEDventures` },
         { property: "og:type", content: "website" },
         { property: "og:url", content: url },
@@ -47,12 +56,13 @@ export const Route = createFileRoute("/legal/$doc")({
 });
 
 function LegalPage() {
+  const { doc } = Route.useLoaderData();
   return (
     <LanguageProvider>
       <Header />
       <main className="pt-16 sm:pt-20">
-        {DRAFT_LEGAL_PAGES && (
-          <DraftBanner note="Every section on this page is a placeholder. A privacy policy states what the company actually does with data; it cannot be written from a template. Counsel must review before this is published." />
+        {isDocDraft(doc) && (
+          <DraftBanner note="The warranty, liability and governing-law sections below are notes to counsel rather than clauses. This page is noindex until they are written." />
         )}
         <LegalBody />
       </main>
