@@ -52,7 +52,7 @@ export function AboutBody({ showHeroPlaceholder }: { showHeroPlaceholder: boolea
 
           <div
             className={`mt-10 ${
-              showHeroPlaceholder
+              a.heroImage || showHeroPlaceholder
                 ? "grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-start lg:gap-14"
                 : ""
             }`}
@@ -77,27 +77,44 @@ export function AboutBody({ showHeroPlaceholder }: { showHeroPlaceholder: boolea
               </Link>
             </div>
 
-            {/* The hero photograph the spec asks for does not exist yet: three
-                to five people talking over real work, candid, nobody looking
-                at the camera. The two photographs we do have are a posed group
-                shot and an empty floor, and both are already used further down
-                where they belong. Reusing one here would put the same image
-                twice on one page and would be the staged photography §26 rules
-                out.
+            {/* HERO PHOTOGRAPH — an override, recorded so nobody removes it
+                later thinking it slipped through review.
 
-                So the slot renders a labelled brief, and only while the page
-                is a draft. Off the draft list with no photograph, the hero
-                falls back to the single-column text layout — which reads
-                correctly on its own and cannot leave a grey box in production. */}
-            {showHeroPlaceholder && (
-              <div className="flex aspect-[4/3] w-full flex-col justify-end rounded-2xl border border-dashed border-border-strong bg-surface p-6">
-                <p className="text-[0.625rem] font-bold uppercase leading-none tracking-[0.1em] text-subtle-foreground">
-                  Photograph to source
-                </p>
-                <p className="mt-2 max-w-[28rem] font-mono text-[0.8125rem] leading-[1.5] text-muted-foreground">
-                  {a.heroImageHint}
-                </p>
-              </div>
+                The About spec rules stock photography out of this slot twice:
+                §5 ("real ZED photography, not generated or stock") and §26
+                ("avoid stock photography, people posing around laptops,
+                staged diversity imagery... a slightly imperfect real
+                photograph is preferable to a perfect stock photograph on this
+                particular page"). This image is stock, and it was chosen at
+                Mayur's direction after that was put to him with both quotes.
+
+                The cost, for whoever reads this next: the page opens on people
+                who do not work here, two sections above a photograph of eleven
+                who do. If a real candid shot ever turns up, it replaces this
+                one and the heroImageHint above says what to take.
+
+                The placeholder still renders when there is no image and the
+                page is a draft, so the brief is not lost. */}
+            {a.heroImage ? (
+              <img
+                src={a.heroImage.src}
+                alt={a.heroImage.alt}
+                width={1600}
+                height={1067}
+                loading="eager"
+                className="aspect-[3/2] w-full rounded-2xl object-cover"
+              />
+            ) : (
+              showHeroPlaceholder && (
+                <div className="flex aspect-[4/3] w-full flex-col justify-end rounded-2xl border border-dashed border-border-strong bg-surface p-6">
+                  <p className="text-[0.625rem] font-bold uppercase leading-none tracking-[0.1em] text-subtle-foreground">
+                    Photograph to source
+                  </p>
+                  <p className="mt-2 max-w-[28rem] font-mono text-[0.8125rem] leading-[1.5] text-muted-foreground">
+                    {a.heroImageHint}
+                  </p>
+                </div>
+              )
             )}
           </div>
         </div>

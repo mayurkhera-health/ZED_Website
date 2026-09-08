@@ -8,18 +8,15 @@ import { AboutBody } from "@/components/about-body";
 const SITE = "https://screen-snap-magic-729.lovable.app";
 
 /**
- * The copy on this page is now Mayur's own, supplied in the About page spec,
- * so the [CONFIRM] positioning line this flag originally guarded is gone.
+ * The copy here is Mayur's own, from the About page spec, and the hero image is
+ * in place, so the [CONFIRM] positioning line this flag originally guarded is
+ * gone and so is the placeholder.
  *
- * What is left is the hero photograph: three to five people talking over real
- * work, candid, nobody looking at the camera. It does not exist yet, and while
- * this flag is true the hero slot shows that brief instead. Setting it to false
- * removes the banner, the noindex AND the placeholder in one move — the hero
- * falls back to the single-column text layout, which reads correctly without a
- * photograph, so nothing breaks and no grey box can reach production.
- *
- * The other outstanding item is not a code gate: the team photograph in Our
- * Team shows identifiable employees and needs their agreement.
+ * One item is left and it is NOT a code gate: the photograph in Our Team shows
+ * eleven identifiable employees and needs their agreement before this page is
+ * public. Nothing in the code enforces that, which is the only reason the flag
+ * is still true. Flip it to false once consent is cleared — that removes the
+ * banner and the page-level noindex together.
  */
 export const DRAFT_ABOUT = true;
 
@@ -54,7 +51,7 @@ function AboutPage() {
       <Header />
       <main className="pt-16 sm:pt-20">
         {DRAFT_ABOUT && (
-          <DraftBanner note="The copy here is yours. What is missing is the hero photograph — the brief is in the empty slot at the top right. Add the image, then set DRAFT_ABOUT to false." />
+          <DraftBanner note="Copy and images are in place. The one thing outstanding is consent from the eleven people in the team photograph further down this page — nothing in the code enforces it. Clear that, then set DRAFT_ABOUT to false." />
         )}
         <AboutBody showHeroPlaceholder={DRAFT_ABOUT} />
       </main>

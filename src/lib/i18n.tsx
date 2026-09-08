@@ -472,6 +472,10 @@ const en = {
     servicesLink: "Explore our services",
     heroImageHint:
       "Three to five ZED people talking over real work, candid, in a real ZED workplace — nobody looking at the camera",
+    heroImage: {
+      src: "/about-hero.webp",
+      alt: "Four colleagues around a table in a bright office, talking over a laptop.",
+    },
 
     whyEyebrow: "Why we're here",
     whyHeading: "Built to make technology services easier to work with.",
@@ -940,6 +944,10 @@ const fr: Copy = {
     servicesLink: "Découvrir nos expertises",
     heroImageHint:
       "Trois à cinq personnes de ZED discutant d'un vrai travail, sur le vif, dans un vrai bureau ZED — personne ne regarde l'objectif",
+    heroImage: {
+      src: "/about-hero.webp",
+      alt: "Quatre collègues autour d'une table dans un bureau lumineux, en discussion devant un portable.",
+    },
 
     whyEyebrow: "Pourquoi nous existons",
     whyHeading: "Conçus pour rendre les services technologiques plus simples à utiliser.",
