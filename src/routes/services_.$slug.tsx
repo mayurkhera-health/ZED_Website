@@ -8,6 +8,7 @@ import { ServicePageV12 } from "@/components/service-page";
 import { DraftBanner } from "@/components/draft-banner";
 import {
   isServiceDraft,
+  isServiceHidden,
   HOW_WE_WORK,
   SERVICE_PAGES,
   SERVICE_SLUGS,
@@ -20,11 +21,15 @@ const SITE = "https://screen-snap-magic-729.lovable.app";
 export const Route = createFileRoute("/services_/$slug")({
   loader: ({ params }) => {
     if (!isServiceSlug(params.slug)) throw notFound();
+    // A hidden service is not on the site at all, so its URL behaves like any
+    // other address that does not exist rather than serving a page nothing
+    // links to.
+    if (isServiceHidden(params.slug)) throw notFound();
     return { slug: params.slug as ServiceSlug };
   },
   head: ({ params }) => {
     const slug = params.slug;
-    if (!isServiceSlug(slug)) return {};
+    if (!isServiceSlug(slug) || isServiceHidden(slug)) return {};
     // Metadata is generated from the English content so each service page has
     // its own title and description (S57) rather than inheriting the site's.
     const s = SERVICE_PAGES.en[slug];

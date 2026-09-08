@@ -391,12 +391,47 @@ export const DRAFT_SERVICES: readonly ServiceSlug[] = [
   // domain is live. Clear it before then.
 ];
 
+/**
+ * Services taken off the site entirely.
+ *
+ * Different from DRAFT_SERVICES, and the difference is what a visitor sees.
+ * A draft service is still listed on the homepage and on the services index;
+ * it just carries a banner and a noindex on its own page. A HIDDEN service is
+ * not listed anywhere and its URL 404s, so nothing links to a page we are not
+ * ready to show and no one arrives on one by guessing the slug.
+ *
+ * Product Engineering is hidden at Mayur's direction rather than deleted: the
+ * copy, the capability icons and both locales stay in this file, so restoring
+ * it is removing one line here.
+ *
+ * A hidden slug stays in SERVICE_SLUGS. Removing it there would shift
+ * SERVICE_SLUG_BY_INDEX out of step with the seven entries in t.services.items
+ * and silently relabel every service after it.
+ */
+export const HIDDEN_SERVICES: readonly ServiceSlug[] = ["product-engineering"];
+
+export function isServiceHidden(slug: ServiceSlug): boolean {
+  return (HIDDEN_SERVICES as readonly string[]).includes(slug);
+}
+
 export function isServiceDraft(slug: ServiceSlug): boolean {
   return (DRAFT_SERVICES as readonly string[]).includes(slug);
 }
 
 /** Maps each capability row on the homepage to its service page. */
 export const SERVICE_SLUG_BY_INDEX: ServiceSlug[] = [...SERVICE_SLUGS];
+
+/**
+ * The services to list, paired with their index into t.services.items.
+ *
+ * Both listings walked t.services.items and looked the slug up by position.
+ * Filtering either list on its own would have broken that pairing, so the
+ * pairing is made here once and both callers consume it.
+ */
+export const VISIBLE_SERVICE_ENTRIES: { index: number; slug: ServiceSlug }[] =
+  SERVICE_SLUG_BY_INDEX.map((slug, index) => ({ index, slug })).filter(
+    (e) => !isServiceHidden(e.slug),
+  );
 
 type Locale = "en" | "fr";
 

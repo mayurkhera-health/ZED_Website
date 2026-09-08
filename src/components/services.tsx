@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
 import { SectionHeader } from "@/components/section-header";
-import { SERVICE_SLUG_BY_INDEX } from "@/lib/service-pages";
+import { VISIBLE_SERVICE_ENTRIES } from "@/lib/service-pages";
 
 export function Services() {
   const { t } = useLanguage();
@@ -19,8 +19,9 @@ export function Services() {
           />
         </div>
         <ul className="mt-8">
-          {t.services.items.map((item, i) => {
-            const slug = SERVICE_SLUG_BY_INDEX[i];
+          {VISIBLE_SERVICE_ENTRIES.map(({ index, slug }) => {
+            const item = t.services.items[index];
+            if (!item) return null;
 
             const inner = (
               <div className="grid grid-cols-1 items-baseline gap-x-4 gap-y-2 sm:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] sm:gap-x-8">

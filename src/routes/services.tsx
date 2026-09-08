@@ -3,7 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import { LanguageProvider, useLanguage } from "@/lib/i18n";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-import { SERVICE_SLUG_BY_INDEX } from "@/lib/service-pages";
+import { VISIBLE_SERVICE_ENTRIES } from "@/lib/service-pages";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -70,10 +70,13 @@ function ServicesPageBody() {
           of them: the header nav points here, so the route a visitor actually
           takes — click Services, then look for the one you want — was a dead
           end, and the detail pages were only reachable from the homepage. */}
-      {s.items.map((item, i) => {
-        const isDark = i % 2 === 0;
-        const slug = SERVICE_SLUG_BY_INDEX[i];
-        if (!slug) return null;
+      {VISIBLE_SERVICE_ENTRIES.map(({ index, slug }, position) => {
+        const item = s.items[index];
+        if (!item) return null;
+        /* Alternation follows the position on screen, not the index in the
+           data. Keyed to the data index, hiding one service would put two
+           dark bands next to each other. */
+        const isDark = position % 2 === 0;
         return (
           <section
             key={item.title}
