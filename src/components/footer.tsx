@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useLanguage } from "@/lib/i18n";
+import { SHOW_CAREERS } from "@/lib/careers";
 import { LanguageToggle } from "@/components/language-toggle";
 
 /**
@@ -67,9 +68,12 @@ export function Footer() {
             <li>
               <FooterLink to="/about">{t.nav.about}</FooterLink>
             </li>
-            <li>
-              <FooterLink to="/careers">{t.nav.careers}</FooterLink>
-            </li>
+            {/* Hidden with the header entry; the route itself stays live. */}
+            {SHOW_CAREERS && (
+              <li>
+                <FooterLink to="/careers">{t.nav.careers}</FooterLink>
+              </li>
+            )}
             <li>
               <FooterLink to="/contact">{t.nav.contact}</FooterLink>
             </li>

@@ -6,6 +6,7 @@ import { LanguageToggle } from "@/components/language-toggle";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { HeaderRule } from "@/components/header-rule";
 import { NavGroup } from "@/components/nav-group";
+import { SHOW_CAREERS } from "@/lib/careers";
 
 /**
  * Served straight from public/. The previous source was a Lovable asset-manifest
@@ -38,6 +39,13 @@ const NAV = [
   { kind: "group", key: "company", items: ["/about", "/case-studies"] },
   { kind: "link", to: "/careers", key: "careers" },
 ] as const;
+
+/**
+ * Careers is hidden from navigation while SHOW_CAREERS is false. Filtered
+ * here rather than deleted from NAV so restoring it is a flag, and so the
+ * desktop nav and the mobile sheet can never disagree about what is shown.
+ */
+const VISIBLE_NAV = NAV.filter((item) => item.key !== "careers" || SHOW_CAREERS);
 
 const GROUP_LABELS: Record<string, "about" | "caseStudies"> = {
   "/about": "about",
@@ -81,7 +89,7 @@ export function Header() {
         {/* Desktop navigation — collapses into the sheet below ~640px, where the
             logo plus links plus toggle no longer fit on one line. */}
         <nav className="hidden items-center gap-7 sm:flex lg:gap-8" aria-label="Main navigation">
-          {NAV.map((item) =>
+          {VISIBLE_NAV.map((item) =>
             item.kind === "group" ? (
               <NavGroup
                 key={item.key}
@@ -130,7 +138,7 @@ export function Header() {
                     of it at once, and a tap-to-expand here would hide two
                     links behind an interaction for no gain. The group becomes
                     a label with its links beneath it. */}
-                {NAV.map((item) =>
+                {VISIBLE_NAV.map((item) =>
                   item.kind === "group" ? (
                     <div key={item.key}>
                       <p className="eyebrow text-subtle-foreground">{t.nav[item.key]}</p>

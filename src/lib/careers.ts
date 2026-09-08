@@ -40,6 +40,18 @@
 
 export const DRAFT_CAREERS = true;
 
+/**
+ * Whether Careers appears in navigation.
+ *
+ * False hides it from the header and the footer. The ROUTE stays live and
+ * DRAFT_CAREERS still noindexes it, so a direct link to a posting keeps
+ * working — which is the point: a role can be shared with a candidate
+ * without the section being advertised on the site.
+ *
+ * One line to restore. Nothing else needs to move.
+ */
+export const SHOW_CAREERS = false;
+
 /** Fields that are still placeholders on a given posting. */
 export type UnverifiedField =
   | "text" // wording not yet confirmed against the filing
@@ -219,10 +231,17 @@ export function jobPostingJsonLd(p: JobPosting, url: string): string | null {
     "@context": "https://schema.org",
     "@type": "JobPosting",
     title: p.title,
-    identifier: p.jobCode ? { "@type": "PropertyValue", name: "ZEDventures", value: p.jobCode } : undefined,
+    identifier: p.jobCode
+      ? { "@type": "PropertyValue", name: "ZEDventures", value: p.jobCode }
+      : undefined,
     description: `${p.duties}\n\n${p.requirements}`,
     datePosted: p.postedOn,
-    employmentType: p.employmentType === "Full-time" ? "FULL_TIME" : p.employmentType === "Part-time" ? "PART_TIME" : "CONTRACTOR",
+    employmentType:
+      p.employmentType === "Full-time"
+        ? "FULL_TIME"
+        : p.employmentType === "Part-time"
+          ? "PART_TIME"
+          : "CONTRACTOR",
     hiringOrganization: {
       "@type": "Organization",
       name: "ZEDventures Inc.",
