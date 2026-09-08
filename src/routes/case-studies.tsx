@@ -6,13 +6,13 @@ import { Footer } from "@/components/footer";
 export const Route = createFileRoute("/case-studies")({
   head: () => ({
     meta: [
-      { title: "Case Studies — Zedventures" },
+      { title: "Case Studies — ZEDventures" },
       {
         name: "description",
         content:
-          "Real Zedventures engagements and outcomes: AI help chat, event-driven sales intelligence, unified analytics, and cloud data migration for global enterprises.",
+          "Real ZEDventures engagements and outcomes: AI help chat, event-driven sales intelligence, unified analytics, and cloud data migration for global enterprises.",
       },
-      { property: "og:title", content: "Case Studies — Zedventures" },
+      { property: "og:title", content: "Case Studies — ZEDventures" },
       {
         property: "og:description",
         content:

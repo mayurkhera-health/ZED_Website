@@ -54,7 +54,7 @@ function CareersBody() {
     <>
       <section className="border-b border-border">
         <div className="container-page section-y section-y-card">
-          <SectionHeader align="left" eyebrow={c.eyebrow} heading={c.heading} sub={c.sub} />
+          <SectionHeader as="h1" align="left" eyebrow={c.eyebrow} heading={c.heading} sub={c.sub} />
         </div>
       </section>
 

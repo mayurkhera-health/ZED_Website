@@ -9,17 +9,16 @@ import { Careers } from "@/components/careers";
 import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
 
-
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Zedventures — AI, Data & Product Engineering Partner" },
+      { title: "ZEDventures — AI, Data & Product Engineering Partner" },
       {
         name: "description",
         content:
-          "Zedventures designs, builds, and runs AI, analytics, and geospatial systems that hold up in production.",
+          "ZEDventures designs, builds, and runs AI, analytics, and geospatial systems that hold up in production.",
       },
-      { property: "og:title", content: "Zedventures — Technology Partner" },
+      { property: "og:title", content: "ZEDventures — Technology Partner" },
       {
         property: "og:description",
         content:

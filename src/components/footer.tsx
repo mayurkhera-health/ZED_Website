@@ -109,9 +109,13 @@ const LINK_CLS =
 function FooterColumn({ heading, children }: { heading: string; children: React.ReactNode }) {
   return (
     <div>
-      <h2 className="text-[0.6875rem] font-bold uppercase tracking-[0.09em] text-subtle-foreground">
+      {/* A paragraph inside a labelled nav, not an h2. These are navigation
+          group labels; as headings they put EXPLORE / COMPANY / LEGAL into
+          the document outline of every page at the same level as its real
+          sections. */}
+      <p className="text-[0.6875rem] font-bold uppercase tracking-[0.09em] text-subtle-foreground">
         {heading}
-      </h2>
+      </p>
       <ul className="mt-4 flex flex-col gap-3">{children}</ul>
     </div>
   );

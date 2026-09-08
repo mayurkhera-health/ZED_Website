@@ -8,13 +8,13 @@ import { SERVICE_SLUG_BY_INDEX } from "@/lib/service-pages";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services — Zedventures" },
+      { title: "Enterprise Technology Services | ZEDventures" },
       {
         name: "description",
         content:
-          "Explore Zedventures' capabilities: AI & Data, Analytics, GIS & Geospatial, Guidewire, SAP, Product Engineering, and Offshore & Nearshore Delivery.",
+          "Explore ZEDventures' capabilities: AI & Data, Analytics, GIS & Geospatial, Guidewire, SAP, Product Engineering, and Offshore & Nearshore Delivery.",
       },
-      { property: "og:title", content: "Services — Zedventures" },
+      { property: "og:title", content: "Enterprise Technology Services | ZEDventures" },
       {
         property: "og:description",
         content: "Engineering, data, and geospatial systems built to run.",

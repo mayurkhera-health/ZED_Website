@@ -99,7 +99,7 @@ const en = {
       },
       {
         title: "Offshore & Nearshore Delivery",
-        desc: "Extend your team with dedicated engineering talent where it makes sense. Offshore delivery in India gives you deep, cost-efficient capacity for design, development, QA, and support. Nearshore delivery across the Americas provides closer time-zone overlap for real-time collaboration and faster feedback loops. One engagement model, global scale.",
+        desc: "Dedicated engineering teams in India and across the Americas — deep capacity offshore, closer time-zone overlap nearshore, one engagement model.",
       },
     ],
   },
@@ -113,11 +113,11 @@ const en = {
         client: "Enterprise software company",
         short: ["AI Help", "Chat"],
         title: "AI-assisted help, grounded in approved product knowledge",
-        desc: "Their users couldn't find answers. The documentation existed, spread across systems nobody wanted to search, so people opened a support ticket instead. We built a help chat into the web app, the mobile app and the product itself. Every answer comes from documentation the company has already approved — if it isn't in there, the assistant doesn't say it. Answers come back in under a second. They expect it to absorb about 70% of routine Tier-1 tickets.",
+        desc: "Their users couldn't find answers. The documentation existed, spread across systems nobody wanted to search, so people opened a support ticket instead. We built a help chat into the web app, the mobile app and the product itself. Every answer comes from documentation the company has already approved; the assistant is designed to answer from that documentation and to decline questions it cannot support. Answers come back in under a second. The client projects it will resolve about 70% of routine Tier-1 inquiries without a support ticket.",
         stack: ["RAG", "Azure AI Search", "Python API", "LLM orchestration", "Omnichannel UI"],
         outcomes: [
           "70% projected deflection of Tier-1 support tickets",
-          "Near-zero hallucinations — every answer grounded in approved documentation",
+          "Answers grounded in approved product documentation",
           "Sub-second response times replacing manual document browsing",
           "Higher feature adoption through in-product guidance",
         ],
@@ -131,9 +131,9 @@ const en = {
         desc: "Reps were spending an hour before every appointment, digging through the CRM, past transactions, property records and neighborhood data. Now the research runs itself the moment an appointment lands in the calendar. The rep opens a brief instead of building one. Prep went from an hour to under five minutes.",
         stack: ["Azure OpenAI", "RAG", "Python API", "Vector search", "Event-driven architecture"],
         outcomes: [
-          "85% reduction in preparation time — 60 minutes to under 5",
+          "Preparation time reduced from 60 minutes to under 5 minutes",
           "20% projected increase in conversion rates",
-          "100% data utilization across CRM history and neighborhood data",
+          "CRM history and neighborhood data combined in a single appointment brief",
           "2–3 additional high-value appointments per rep, per week",
         ],
       },
@@ -143,10 +143,10 @@ const en = {
         client: "Global relocation enterprise",
         short: ["Unified", "Data"],
         title: "Unified analytics for multi-country operations",
-        desc: "Every region ran its own reporting. Head office had no single view, so anything cross-country got assembled by hand, late. We pulled the regional systems into one platform and put real dashboards on top. They can now see cost, client feedback and performance across every country as it happens, instead of a month later.",
+        desc: "Every region ran its own reporting. Head office had no single view, so anything cross-country got assembled by hand, late. We pulled the regional systems into one platform and built shared dashboards for cost, client feedback and performance. They can now see cost, client feedback and performance across every country as it happens, instead of a month later.",
         stack: ["SQL Azure", "Azure Data Lake", "Azure Data Factory", "Power BI", "C# .NET"],
         outcomes: [
-          "100% real-time visibility into global operations and customer touchpoints",
+          "A unified view of operations and customer touchpoints across participating regions",
           "Standardized reporting for account profitability",
           "Instant isolation of growth opportunities and weak performance areas",
         ],
@@ -157,7 +157,7 @@ const en = {
         client: "Global consumer-electronics company",
         short: ["Cloud", "Shift"],
         title: "Cloud data migration and residency for global compliance",
-        desc: "195 systems, one aging on-premise Hadoop cluster, and hardware contracts they couldn't get out of. Then CCPA arrived and US consumer data had to live somewhere the rest of the world couldn't reach. We separated the US data and rebuilt the estate on Google Cloud. Queries run three to five times faster. Feature releases go out about 20% sooner. Nodes that fail replace themselves.",
+        desc: "195 systems, one aging on-premises Hadoop cluster, and existing hardware contract commitments. The client also needed stronger controls over where US consumer data was stored and who could reach it. We separated the US data and rebuilt the estate on Google Cloud. Queries run three to five times faster. Feature releases go out about 20% sooner. Nodes that fail replace themselves.",
         stack: ["GCP", "Apache Spark", "Hive", "Presto", "IAM & KMS", "Auto-healing clusters"],
         outcomes: [
           "3–5× faster complex query performance",
@@ -359,11 +359,12 @@ const en = {
   contact: {
     eyebrow: "Get in touch",
     line: "Let's talk about your next project.",
+    formHeading: "Send us a note",
     sub: "Tell us what you're trying to solve.",
     name: "Full name",
     email: "Work email",
     company: "Company",
-    message: "What are you looking to build?",
+    message: "How can we help?",
     submit: "Send message",
     successTitle: "Your message is ready to send",
     successBody:
@@ -389,14 +390,14 @@ const en = {
       officesEyebrow: "Our offices",
       offices: [
         { city: "San Jose", region: "California, USA", address: "1762 Technology Drive, Suite 209, San Jose, CA 95110" },
-        { city: "Dallas", region: "Irving, Texas, USA", address: "8629 N MacArthur Blvd, Irving, TX 75063" },
+        { city: "Dallas area", region: "Irving, Texas, USA", address: "8629 N MacArthur Blvd, Irving, TX 75063" },
         { city: "Hyderabad", region: "Telangana, India", address: "1st Floor, Mahaveer Radiance, Opp. Metro Pillar 1708, Madhapur, Telangana 500081" },
       ],
     },
   },
   footer: {
     tagline: "Enterprise systems, built to stay up.",
-    rights: "© 2026 Zedventures. All rights reserved.",
+    rights: "© 2026 ZEDventures. All rights reserved.",
     exploreHeading: "Explore",
     companyHeading: "Company",
     legalHeading: "Legal",
@@ -466,7 +467,7 @@ const en = {
     eyebrow: "About ZEDventures",
     heading: "Technology is what we do. How we work matters just as much.",
     intro:
-      "ZEDventures is an enterprise technology services company helping organizations solve complex technology and delivery challenges across SAP, Analytics & AI, GIS & Geospatial, Digital Engineering and global delivery.",
+      "ZEDventures is an enterprise technology services company helping organizations solve complex technology and delivery challenges across SAP, Analytics, AI & Data, GIS & Geospatial, Guidewire, Product Engineering, and global delivery.",
     intro2:
       "We bring experienced people close to the work and stay accountable for what we deliver.",
     servicesLink: "Explore our services",
@@ -480,8 +481,8 @@ const en = {
     whyEyebrow: "Why we're here",
     whyHeading: "Built to make technology services easier to work with.",
     whyBody: [
-      "ZEDventures was built around a simple idea: clients should not have to choose between strong technical capability and a team that is responsive, practical and easy to work with.",
-      "As we've grown, that idea has stayed the same. We try to keep things straightforward, bring the right people into the work, and avoid making an engagement more complicated than it needs to be.",
+      "ZEDventures was built around a simple idea: clients should not have to choose between strong technical capability and a team that is responsive, practical, and easy to work with.",
+      "As we've grown, that idea has stayed the same. We keep things straightforward, bring the right people into the work, and avoid making an engagement more complicated than it needs to be.",
     ],
     whyDiagram: ["Client", "ZED team", "The work"],
     whyDiagramNote: "Fewer handoffs. Clearer ownership.",
@@ -489,7 +490,7 @@ const en = {
     believeEyebrow: "What we believe",
     believeHeading: "Good work starts with good relationships.",
     believeIntro:
-      "Technology changes quickly. The way we work with people shouldn't. We believe in being straightforward, taking responsibility and thinking beyond the immediate project.",
+      "Technology changes quickly. The way we work with people shouldn't. We believe in being straightforward, taking responsibility, and thinking beyond the immediate project.",
     beliefs: [
       {
         title: "Be accountable.",
@@ -497,7 +498,7 @@ const en = {
       },
       {
         title: "Do right by people.",
-        body: "Our business is built around people — our clients, our employees and the consultants who choose to work with us. We try to be fair, communicate clearly and treat people with the same respect we expect in return.",
+        body: "Our business is built around people — our clients, our employees, and the consultants who choose to work with us. We aim to be fair, communicate clearly, and treat people with the same respect we expect in return.",
       },
       {
         title: "Think beyond the project.",
@@ -526,7 +527,7 @@ const en = {
       },
       {
         title: "Make it work in the real world",
-        body: "A solution has to work with the systems, people, timelines and constraints a client actually has. That's the standard we design and deliver against.",
+        body: "A solution has to work with the systems, people, timelines, and constraints a client actually has. That's the standard we design and deliver against.",
       },
     ],
 
@@ -551,7 +552,7 @@ const en = {
   },
   a11y: {
     switchTo: "Passer au français",
-    logoAlt: "ZEDVentures logo",
+    logoAlt: "ZEDventures logo",
     openMenu: "Open navigation menu",
     menuTitle: "Menu",
   },
@@ -637,7 +638,7 @@ const fr: Copy = {
       },
       {
         title: "Livraison offshore et nearshore",
-        desc: "Étendez votre équipe avec des talents d'ingénierie dédiés, là où c'est le plus pertinent. La livraison offshore en Inde offre une capacité approfondie et économique pour la conception, le développement, l'assurance qualité et le support. La livraison nearshore dans les Amériques garantit un meilleur recouvrement de fuseaux horaires pour une collaboration en temps réel et des boucles de feedback plus rapides. Un modèle d'engagement, une échelle mondiale.",
+        desc: "Des équipes d'ingénierie dédiées en Inde et dans les Amériques — capacité approfondie en offshore, meilleur recouvrement horaire en nearshore, un seul modèle d'engagement.",
       },
     ],
   },
@@ -651,11 +652,11 @@ const fr: Copy = {
         client: "Entreprise de logiciels",
         short: ["Aide", "IA"],
         title: "Une aide assistée par IA, ancrée dans le savoir produit approuvé",
-        desc: "Leurs utilisateurs ne trouvaient pas les réponses. La documentation existait, éparpillée dans des systèmes que personne n'avait envie de fouiller ; les gens ouvraient un ticket à la place. Nous avons intégré une aide conversationnelle au site, à l'application mobile et au produit lui-même. Chaque réponse provient d'une documentation déjà approuvée par l'entreprise — si ce n'est pas écrit, l'assistant ne le dit pas. Les réponses arrivent en moins d'une seconde. Ils prévoient d'absorber ainsi environ 70 % des demandes de niveau 1 courantes.",
+        desc: "Leurs utilisateurs ne trouvaient pas les réponses. La documentation existait, éparpillée dans des systèmes que personne n'avait envie de fouiller ; les gens ouvraient un ticket à la place. Nous avons intégré une aide conversationnelle au site, à l'application mobile et au produit lui-même. Chaque réponse provient d'une documentation déjà approuvée par l'entreprise ; l'assistant est conçu pour répondre à partir de cette documentation et pour décliner ce qu'il ne peut pas appuyer. Les réponses arrivent en moins d'une seconde. Le client estime qu'il traitera environ 70 % des demandes courantes de niveau 1 sans créer de ticket.",
         stack: ["RAG", "Azure AI Search", "API Python", "Orchestration LLM", "Interface omnicanale"],
         outcomes: [
           "Déflexion projetée de 70 % des tickets de support de niveau 1",
-          "Pratiquement aucune hallucination — chaque réponse ancrée dans la documentation approuvée",
+          "Des réponses ancrées dans la documentation produit approuvée",
           "Réponses en moins d'une seconde, sans navigation manuelle dans les documents",
           "Adoption accrue des fonctionnalités grâce au guidage intégré au produit",
         ],
@@ -669,9 +670,9 @@ const fr: Copy = {
         desc: "Les représentants passaient une heure avant chaque rendez-vous à fouiller le CRM, l'historique des transactions, les données de propriétés et celles du quartier. Cette recherche se fait maintenant toute seule, dès qu'un rendez-vous entre au calendrier. Le représentant ouvre un dossier au lieu de le construire. La préparation est passée d'une heure à moins de cinq minutes.",
         stack: ["Azure OpenAI", "RAG", "API Python", "Recherche vectorielle", "Architecture événementielle"],
         outcomes: [
-          "Réduction de 85 % du temps de préparation — de 60 minutes à moins de 5",
+          "Temps de préparation ramené de 60 minutes à moins de 5 minutes",
           "Augmentation projetée de 20 % des taux de conversion",
-          "Utilisation à 100 % des données CRM et de quartier",
+          "Historique CRM et données de quartier réunis dans une seule fiche de rendez-vous",
           "2 à 3 rendez-vous à haute valeur de plus par représentant, par semaine",
         ],
       },
@@ -681,10 +682,10 @@ const fr: Copy = {
         client: "Entreprise mondiale de déménagement",
         short: ["Données", "Unifiées"],
         title: "Analytique unifiée pour des opérations multinationales",
-        desc: "Chaque région faisait ses propres rapports. Le siège n'avait aucune vue d'ensemble : tout ce qui traversait les pays était assemblé à la main, en retard. Nous avons réuni les systèmes régionaux sur une seule plateforme et posé de vrais tableaux de bord par-dessus. Ils voient maintenant les coûts, les retours clients et la performance de chaque pays au fil de l'eau, au lieu d'un mois plus tard.",
+        desc: "Chaque région faisait ses propres rapports. Le siège n'avait aucune vue d'ensemble : tout ce qui traversait les pays était assemblé à la main, en retard. Nous avons réuni les systèmes régionaux sur une seule plateforme et construit des tableaux de bord partagés pour les coûts, les retours clients et la performance. Ils voient maintenant les coûts, les retours clients et la performance de chaque pays au fil de l'eau, au lieu d'un mois plus tard.",
         stack: ["SQL Azure", "Azure Data Lake", "Azure Data Factory", "Power BI", "C# .NET"],
         outcomes: [
-          "Visibilité en temps réel à 100 % sur les opérations mondiales et les points de contact client",
+          "Une vue unifiée des opérations et des points de contact client sur les régions couvertes",
           "Rapports standardisés sur la rentabilité des comptes",
           "Identification immédiate des opportunités de croissance et des zones de faible performance",
         ],
@@ -695,7 +696,7 @@ const fr: Copy = {
         client: "Multinationale de l'électronique grand public",
         short: ["Virage", "Cloud"],
         title: "Migration infonuagique et résidence des données pour la conformité mondiale",
-        desc: "195 systèmes, un cluster Hadoop local vieillissant, et des contrats de matériel dont ils ne pouvaient pas sortir. Puis la CCPA est arrivée : les données des consommateurs américains devaient résider là où le reste du monde ne pouvait pas les atteindre. Nous avons séparé ces données et reconstruit l'ensemble sur Google Cloud. Les requêtes tournent trois à cinq fois plus vite. Les fonctionnalités sortent environ 20 % plus tôt. Les nœuds défaillants se remplacent tout seuls.",
+        desc: "195 systèmes, un cluster Hadoop local vieillissant, et des engagements matériels en cours. Le client avait aussi besoin de mieux contrôler où les données des consommateurs américains étaient stockées et qui pouvait y accéder. Nous avons séparé ces données et reconstruit l'ensemble sur Google Cloud. Les requêtes tournent trois à cinq fois plus vite. Les fonctionnalités sortent environ 20 % plus tôt. Les nœuds défaillants se remplacent tout seuls.",
         stack: ["GCP", "Apache Spark", "Hive", "Presto", "IAM & KMS", "Clusters auto-cicatrisants"],
         outcomes: [
           "Requêtes complexes 3 à 5 fois plus rapides",
@@ -842,11 +843,12 @@ const fr: Copy = {
   contact: {
     eyebrow: "Contactez-nous",
     line: "Parlons de votre prochain projet.",
+    formHeading: "Écrivez-nous",
     sub: "Dites-nous ce que vous cherchez à résoudre.",
     name: "Nom complet",
     email: "Courriel professionnel",
     company: "Entreprise",
-    message: "Que souhaitez-vous réaliser?",
+    message: "Comment pouvons-nous vous aider?",
     submit: "Envoyer le message",
     successTitle: "Votre message est prêt à être envoyé",
     successBody:
@@ -872,14 +874,14 @@ const fr: Copy = {
       officesEyebrow: "Nos bureaux",
       offices: [
         { city: "San Jose", region: "Californie, États-Unis", address: "1762 Technology Drive, Suite 209, San Jose, CA 95110" },
-        { city: "Dallas", region: "Irving, Texas, États-Unis", address: "8629 N MacArthur Blvd, Irving, TX 75063" },
+        { city: "Région de Dallas", region: "Irving, Texas, États-Unis", address: "8629 N MacArthur Blvd, Irving, TX 75063" },
         { city: "Hyderabad", region: "Telangana, Inde", address: "1st Floor, Mahaveer Radiance, Opp. Metro Pillar 1708, Madhapur, Telangana 500081" },
       ],
     },
   },
   footer: {
     tagline: "Des systèmes d'entreprise conçus pour tenir.",
-    rights: "© 2026 Zedventures. Tous droits réservés.",
+    rights: "© 2026 ZEDventures. Tous droits réservés.",
     exploreHeading: "Explorer",
     companyHeading: "Entreprise",
     legalHeading: "Mentions légales",
@@ -938,7 +940,7 @@ const fr: Copy = {
     eyebrow: "À propos de ZEDventures",
     heading: "La technologie, c'est notre métier. Notre façon de travailler compte tout autant.",
     intro:
-      "ZEDventures est une société de services technologiques d'entreprise qui aide les organisations à résoudre des enjeux complexes de technologie et de livraison : SAP, analytique et IA, SIG et géospatial, ingénierie numérique et livraison mondiale.",
+      "ZEDventures est une société de services technologiques d'entreprise qui aide les organisations à résoudre des enjeux complexes de technologie et de livraison : SAP, analytique, IA et données, SIG et géospatial, Guidewire, ingénierie produit et livraison mondiale.",
     intro2:
       "Nous plaçons des personnes expérimentées au plus près du travail et nous répondons de ce que nous livrons.",
     servicesLink: "Découvrir nos expertises",
@@ -953,7 +955,7 @@ const fr: Copy = {
     whyHeading: "Conçus pour rendre les services technologiques plus simples à utiliser.",
     whyBody: [
       "ZEDventures s'est construite autour d'une idée simple : un client ne devrait pas avoir à choisir entre une vraie capacité technique et une équipe réactive, pragmatique et facile à vivre.",
-      "En grandissant, cette idée n'a pas changé. Nous essayons de rester simples, d'amener les bonnes personnes sur le travail et d'éviter de compliquer un engagement plus que nécessaire.",
+      "En grandissant, cette idée n'a pas changé. Nous restons simples, amenons les bonnes personnes sur le travail et évitons de compliquer un engagement plus que nécessaire.",
     ],
     whyDiagram: ["Client", "Équipe ZED", "Le travail"],
     whyDiagramNote: "Moins de passations. Une responsabilité plus claire.",
@@ -1023,7 +1025,7 @@ const fr: Copy = {
   },
   a11y: {
     switchTo: "Switch to English",
-    logoAlt: "Logo ZEDVentures",
+    logoAlt: "Logo ZEDventures",
     openMenu: "Ouvrir le menu de navigation",
     menuTitle: "Menu",
   },

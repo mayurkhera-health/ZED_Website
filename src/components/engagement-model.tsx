@@ -44,9 +44,12 @@ export function EngagementModel({ data }: { data: EngagementBlock }) {
               gi > 0 ? "border-t border-border pt-8 lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0" : ""
             }
           >
-            <p className="text-[0.625rem] font-semibold uppercase leading-none tracking-[0.06em] text-subtle-foreground">
+            {/* An h3, not a p. The section heading is an h2 and the options
+                below are h4s, so a plain paragraph here left a level missing
+                from the outline. The styling is unchanged. */}
+            <h3 className="text-[0.625rem] font-semibold uppercase leading-none tracking-[0.06em] text-subtle-foreground">
               {group.label}
-            </p>
+            </h3>
             <p className="mt-1.5 text-[0.875rem] leading-[1.4] text-muted-foreground">
               {group.note}
             </p>

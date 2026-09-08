@@ -3,12 +3,17 @@ export function SectionHeader({
   heading,
   sub,
   align = "center",
+  as: Tag = "h2",
   headingId,
 }: {
   eyebrow: string;
   heading?: string | undefined;
   sub?: string | undefined;
   align?: "center" | "left";
+  /** "h1" for the block that is the page's title. Default "h2".
+   *  Contact and Careers were rendering their page title as an H2, which left
+   *  both pages with no H1 at all. */
+  as?: "h1" | "h2";
   /** Lets a section point aria-labelledby at this visible heading instead of
    *  duplicating it in a screen-reader-only copy. */
   headingId?: string;
@@ -33,12 +38,12 @@ export function SectionHeader({
     <div className={`flex flex-col ${alignCls}`}>
       <p className="eyebrow text-accent">{eyebrow}</p>
       {heading && (
-        <h2
+        <Tag
           id={headingId}
           className="font-display mt-3 max-w-[74rem] text-[2rem] leading-[1.08] tracking-[-0.02em] sm:text-[2.375rem] lg:text-[3.125rem] lg:leading-[1.05]"
         >
           {heading}
-        </h2>
+        </Tag>
       )}
       {sub && (
         <p className="mt-4 max-w-[44rem] text-[1.0625rem] leading-[1.6] text-muted-foreground">

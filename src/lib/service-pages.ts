@@ -3,7 +3,7 @@
  *
  * Every string below is sample copy written to give the service-page template
  * realistic shape. It describes standard industry capabilities, not claims
- * about Zedventures: there are deliberately no metrics, client names, dates or
+ * about ZEDventures: there are deliberately no metrics, client names, dates or
  * outcome numbers anywhere in this file, because those cannot be invented.
  *
  * A service listed in DRAFT_SERVICES (below) carries a visible draft banner and
@@ -484,7 +484,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         },
       ],
       platformsSub:
-        "We work with the AI and data platforms enterprise teams are already standardising on.",
+        "We work with the AI and data platforms enterprise teams are already standardizing on.",
       whyIntro:
         "We treat enterprise AI as a production systems problem, not a modelling one — the hard part is everything around the model.",
       whyPillars: [
@@ -505,9 +505,9 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         title: "Let's talk about your AI and data priorities.",
         buttonLabel: "Start a conversation",
       },
-      seoTitle: "AI & Data Consulting Services | Zed Ventures",
+      seoTitle: "AI & Data Consulting Services | ZEDventures",
       seoDescription:
-        "Zed Ventures builds enterprise AI and data platforms — retrieval-augmented applications, machine learning pipelines and orchestration built to run in production.",
+        "ZEDventures builds enterprise AI and data platforms, including RAG applications, machine learning pipelines and production orchestration.",
     },
     analytics: {
       name: "Analytics",
@@ -668,7 +668,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
       whyPillars: [
         {
           title: "GIS + enterprise data",
-          body: "We connect spatial information with operational, financial, asset and customer data, so location can be analysed alongside everything else that matters rather than on its own.",
+          body: "We connect spatial information with operational, financial, asset and customer data, so location can be analyzed alongside everything else that matters rather than on its own.",
         },
         {
           title: "Built for operations",
@@ -683,9 +683,9 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         title: "Have a location problem hiding inside a business problem?",
         buttonLabel: "Start a conversation",
       },
-      seoTitle: "GIS & Geospatial Solutions | Zed Ventures",
+      seoTitle: "GIS & Geospatial Solutions | ZEDventures",
       seoDescription:
-        "Zed Ventures builds geospatial systems — spatial data platforms, exposure mapping, imagery-based risk assessment and location analytics for enterprise use.",
+        "ZEDventures builds geospatial systems — spatial data platforms, exposure mapping, imagery-based risk assessment and location analytics for enterprise use.",
     },
     guidewire: {
       name: "Guidewire",
@@ -926,7 +926,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
           body: "Extensions go beside the core, not inside it, and we document the boundary so it survives the people who drew it.",
         },
       ],
-      seoTitle: "SAP Consulting, S/4HANA Migration & BTP Engineering | ZEDventures",
+      seoTitle: "SAP S/4HANA & BTP Consulting | ZEDventures",
       seoDescription:
         "ZEDventures delivers SAP S/4HANA migration, clean-core remediation, BTP extension and Fiori engineering, keeping the core upgradeable after the project ends.",
     },
@@ -985,9 +985,9 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         title: "Let's talk about your product roadmap.",
         buttonLabel: "Start a conversation",
       },
-      seoTitle: "Product Engineering Services | Zed Ventures",
+      seoTitle: "Product Engineering Services | ZEDventures",
       seoDescription:
-        "Zed Ventures provides full-cycle product engineering — architecture, cloud-native development, quality engineering and release operations for enterprise software.",
+        "Product engineering from architecture and cloud-native development to quality engineering, release operations and production support.",
     },
     "offshore-nearshore": {
       name: "Offshore & Nearshore Delivery",
@@ -995,7 +995,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         "One workstream moving through a distributed team — connected work, not a map of countries",
       heroImage: {
         src: "/offshore-hero.webp",
-        alt: "Two colleagues working together at a laptop in a bright office, with two labelled cards — North America, client engagement, and India, engineering and delivery — joined by a thin line.",
+        alt: "Two colleagues working together at a laptop in a bright office, with two labeled cards — North America, client engagement, and India, engineering and delivery — joined by a thin line.",
       },
       outcome: "Add engineering capacity without adding coordination overhead.",
       intro:
@@ -1176,7 +1176,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
        * evidence. A third frame needs a third real photograph.
        */
       photoBand: {
-        eyebrow: "Delivery centre",
+        eyebrow: "Delivery center",
         heading: "The India team.",
         sub: "Our India delivery center gives us a stable engineering base that can support both individual specialists and larger delivery teams. They work as part of the same ZED team, using the same tools, standards and delivery processes as everyone else on the engagement.",
         photos: [
@@ -1198,9 +1198,9 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
       },
       finalCtaSub:
         "Tell us where delivery is constrained — skills, hiring speed, cost, time-zone coverage or execution capacity. We'll help determine which work belongs nearshore, offshore or across a blended team.",
-      seoTitle: "Offshore & Nearshore Software Delivery Services | ZEDventures",
+      seoTitle: "Offshore & Nearshore Delivery | ZEDventures",
       seoDescription:
-        "Scale engineering delivery with integrated offshore, nearshore and blended teams. ZEDventures provides dedicated engineering teams, managed delivery and flexible global delivery models.",
+        "Scale delivery with offshore, nearshore and blended engineering teams for development, QA, integration, modernization and support.",
     },
   },
 
@@ -1268,9 +1268,9 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         title: "Parlons de vos priorités en IA et données.",
         buttonLabel: "Démarrer la conversation",
       },
-      seoTitle: "Services-conseils en IA et données | Zed Ventures",
+      seoTitle: "Services-conseils en IA et données | ZEDventures",
       seoDescription:
-        "Zed Ventures conçoit des plateformes d'IA et de données d'entreprise — applications à recherche augmentée, pipelines d'apprentissage automatique et orchestration prêtes pour la production.",
+        "ZEDventures conçoit des plateformes d'IA et de données d'entreprise : applications RAG, pipelines d'apprentissage automatique et orchestration en production.",
     },
     analytics: {
       name: "Analytique",
@@ -1329,7 +1329,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
       },
       seoTitle: "Conseil et modernisation analytique | ZEDventures",
       seoDescription:
-        "ZEDventures aide les entreprises à évaluer, moderniser, migrer et optimiser leurs environnements analytiques : Power BI, SAP BusinessObjects et plateformes de données modernes.",
+        "ZEDventures évalue, modernise et migre vos environnements analytiques : Power BI, SAP BusinessObjects et plateformes de données modernes.",
     },
     "gis-geospatial": {
       name: "SIG et géomatique",
@@ -1403,9 +1403,9 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         title: "Un problème de localisation caché dans un problème métier ?",
         buttonLabel: "Démarrer la conversation",
       },
-      seoTitle: "Solutions SIG et géospatiales | Zed Ventures",
+      seoTitle: "Solutions SIG et géospatiales | ZEDventures",
       seoDescription:
-        "Zed Ventures conçoit des systèmes géospatiaux — plateformes de données spatiales, cartographie de l'exposition, analyse d'imagerie et analytique de localisation.",
+        "ZEDventures conçoit des systèmes géospatiaux — plateformes de données spatiales, cartographie de l'exposition, analyse d'imagerie et analytique de localisation.",
     },
     guidewire: {
       name: "Guidewire",
@@ -1589,7 +1589,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
           body: "Les extensions se placent à côté du cœur, pas dedans, et nous documentons la frontière pour qu'elle survive à ceux qui l'ont tracée.",
         },
       ],
-      seoTitle: "Conseil SAP, migration S/4HANA et ingénierie BTP | ZEDventures",
+      seoTitle: "Conseil SAP S/4HANA et BTP | ZEDventures",
       seoDescription:
         "ZEDventures livre migration S/4HANA, assainissement du cœur, extensions BTP et ingénierie Fiori, en gardant le cœur évolutif après la fin du projet.",
     },
@@ -1640,9 +1640,9 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         title: "Parlons de votre feuille de route produit.",
         buttonLabel: "Démarrer la conversation",
       },
-      seoTitle: "Services d'ingénierie produit | Zed Ventures",
+      seoTitle: "Services d'ingénierie produit | ZEDventures",
       seoDescription:
-        "Zed Ventures assure l'ingénierie produit de bout en bout — architecture, développement infonuagique natif, qualité et exploitation pour les logiciels d'entreprise.",
+        "Ingénierie produit : architecture, développement infonuagique natif, qualité, exploitation des mises en production et support.",
     },
     "offshore-nearshore": {
       name: "Livraison délocalisée et de proximité",
@@ -1843,9 +1843,9 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
       },
       finalCtaSub:
         "Dites-nous où la livraison est contrainte — compétences, délais de recrutement, coût, couverture horaire ou capacité d'exécution. Nous vous aiderons à déterminer ce qui relève de la proximité, du délocalisé ou d'une équipe mixte.",
-      seoTitle: "Livraison logicielle délocalisée et de proximité | ZEDventures",
+      seoTitle: "Livraison délocalisée et de proximité | ZEDventures",
       seoDescription:
-        "Faites monter en charge votre livraison avec des équipes délocalisées, de proximité et mixtes. ZEDventures propose des équipes d'ingénierie dédiées, une livraison pilotée et des modèles de livraison souples.",
+        "Renforcez votre livraison avec des équipes délocalisées, de proximité et mixtes : développement, qualité, intégration, modernisation et support.",
     },
   },
 };

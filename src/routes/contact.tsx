@@ -9,17 +9,17 @@ import { Mail, Phone, MapPin } from "lucide-react";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Zedventures" },
+      { title: "Contact — ZEDventures" },
       {
         name: "description",
         content:
-          "Reach Zedventures by email, phone, or our contact form. Offices in San Jose, Dallas, and Hyderabad.",
+          "Reach ZEDventures by email, phone, or our contact form. Offices in San Jose, Dallas, and Hyderabad.",
       },
-      { property: "og:title", content: "Contact — Zedventures" },
+      { property: "og:title", content: "Contact — ZEDventures" },
       {
         property: "og:description",
         content:
-          "Reach Zedventures by email, phone, or our contact form. Offices in San Jose, Dallas, and Hyderabad.",
+          "Reach ZEDventures by email, phone, or our contact form. Offices in San Jose, Dallas, and Hyderabad.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -48,7 +48,7 @@ function ContactPageBody() {
     <>
       <section className="border-b border-border">
         <div className="container-page section-y section-y-card">
-          <SectionHeader align="left" eyebrow={p.eyebrow} heading={p.heading} sub={p.sub} />
+          <SectionHeader as="h1" align="left" eyebrow={p.eyebrow} heading={p.heading} sub={p.sub} />
 
           <div className="mt-8 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2">
             <a
@@ -89,7 +89,7 @@ function ContactPageBody() {
             {p.officesEyebrow}
           </p>
           <div className="mt-6 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-3">
-            {p.offices.map((office, i) => (
+            {p.offices.map((office) => (
               <div key={office.city} className="bg-card p-6">
                 <MapPin className="h-4 w-4 text-accent" aria-hidden="true" />
                 <p className="font-display mt-4 text-2xl">{office.city}</p>
@@ -106,7 +106,7 @@ function ContactPageBody() {
           <SectionHeader
             align="left"
             eyebrow={t.contact.eyebrow}
-            heading={t.contact.line}
+            heading={t.contact.formHeading}
             sub={t.contact.sub}
           />
           <ContactForm />
