@@ -136,18 +136,49 @@ than scaling to zero, so a customer never waits for a cold start.
 
 Set per app, never committed. The two environments must not share them.
 
-```
-# staging — a test key, sending to your own inbox
-fly secrets set RESEND_API_KEY=re_test_xxx CONTACT_TO=you@example.com -a zedventures-test
+The contact form sends through Google Workspace SMTP, so the credential is a
+Google **App Password** — not your account password, and not a third-party API
+key. App Passwords only exist once 2-Step Verification is on for that account:
+Google Account -> Security -> App passwords. It is sixteen characters, shown
+once, displayed in four groups of four. The spaces are stripped in code, so
+paste it either way; keep the quotes so your shell does not split it.
 
-# production — the real key, sending to the real inbox
-fly secrets set RESEND_API_KEY=re_live_xxx CONTACT_TO=info@zedventures.com -a <production app>
+**Substitute your own values. Do not paste the lines below as they stand.** The
+placeholders are not credentials, and setting one makes the form worse than
+leaving it unset: a present-but-wrong credential fails at the mail server and
+shows the visitor a red error, where an absent one falls back cleanly to their
+own mail client. This has already happened once.
+
+Staging, pointed at your own inbox:
+
+```
+fly secrets set SMTP_USER=YOUR_ADDRESS SMTP_PASS='YOUR APP PASSWORD' CONTACT_TO=YOUR_OWN_INBOX -a zedventures-test
+```
+
+Production, pointed at the real inbox:
+
+```
+fly secrets set SMTP_USER=YOUR_ADDRESS SMTP_PASS='YOUR APP PASSWORD' CONTACT_TO=info@zedventures.com -a PRODUCTION_APP
 ```
 
 Why separate: if staging shares production's mail settings, testing the contact
 form emails a real prospect from a half-finished site.
 
 `fly secrets list -a <app>` shows what is set (names only, never values).
+
+### Checking it actually works
+
+Submitting the form is the only way to know. Deploy, fill it in, read the panel:
+
+- **"Message sent"** — SMTP worked.
+- **"Your message is ready to send"** and your mail client opens — the
+  fallback. `SMTP_USER` or `SMTP_PASS` is missing.
+- **"That didn't go through"** — the credential is set but wrong, or Google
+  refused it. `fly logs -a <app>`, look for `[contact] smtp send failed`.
+
+Rotating the App Password: revoke the old one in Google Account settings, then
+`fly secrets set SMTP_PASS='...'`. Revoking alone does not stop the site trying
+to send until the secret is replaced.
 
 ## Which environment am I looking at?
 
