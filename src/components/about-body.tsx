@@ -51,7 +51,7 @@ export function AboutBody({ showHeroPlaceholder }: { showHeroPlaceholder: boolea
           </h1>
 
           <div
-            className={`mt-10 ${
+            className={`mt-8 ${
               a.heroImage || showHeroPlaceholder
                 ? "grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-start lg:gap-14"
                 : ""
@@ -70,7 +70,7 @@ export function AboutBody({ showHeroPlaceholder }: { showHeroPlaceholder: boolea
                   anything. */}
               <Link
                 to="/services"
-                className="group mt-7 inline-flex items-center gap-1.5 text-[0.9375rem] font-bold text-accent"
+                className="group mt-6 inline-flex items-center gap-1.5 text-[0.9375rem] font-bold text-accent"
               >
                 {a.servicesLink}
                 <ArrowRight className="arrow-shift h-4 w-4" aria-hidden="true" />

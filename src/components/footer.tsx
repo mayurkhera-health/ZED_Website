@@ -28,7 +28,10 @@ export function Footer() {
 
   return (
     <footer className="section-dark border-t border-border pb-24 sm:pb-0">
-      <div className="container-page py-14 sm:py-16">
+      {/* Asymmetric on purpose, per the spacing spec: 48/56 at the top,
+          32/36 at the bottom. It was 56/64 on both sides, and the even
+          padding put more air under the copyright line than above the logo. */}
+      <div className="container-page pb-8 pt-12 sm:pb-9 sm:pt-14">
         {/* The brand column is wider than the link columns: it carries the mark,
             the line and the language control, so it reads as the anchor rather
             than a fourth list of the same weight. */}
@@ -86,7 +89,7 @@ export function Footer() {
           </FooterColumn>
         </div>
 
-        <div className="mt-12 border-t border-border pt-6">
+        <div className="mt-10 border-t border-border pt-6">
           <p className="text-xs text-muted-foreground">{f.rights}</p>
         </div>
       </div>

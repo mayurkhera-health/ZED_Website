@@ -30,18 +30,20 @@ export function SectionHeader({
        prose is comfortable — the two want different measures, which is
        exactly what one shared cap could not give them.
        In a narrow column the column still wins — these are maxima. */
-    <div className={`flex flex-col gap-3 ${alignCls}`}>
+    <div className={`flex flex-col ${alignCls}`}>
       <p className="eyebrow text-accent">{eyebrow}</p>
       {heading && (
         <h2
           id={headingId}
-          className="font-display max-w-[74rem] text-[2rem] leading-[1.08] tracking-[-0.02em] sm:text-[2.375rem] lg:text-[3.125rem] lg:leading-[1.05]"
+          className="font-display mt-3 max-w-[74rem] text-[2rem] leading-[1.08] tracking-[-0.02em] sm:text-[2.375rem] lg:text-[3.125rem] lg:leading-[1.05]"
         >
           {heading}
         </h2>
       )}
       {sub && (
-        <p className="max-w-[44rem] text-[1.0625rem] leading-[1.6] text-muted-foreground">{sub}</p>
+        <p className="mt-4 max-w-[44rem] text-[1.0625rem] leading-[1.6] text-muted-foreground">
+          {sub}
+        </p>
       )}
     </div>
   );
