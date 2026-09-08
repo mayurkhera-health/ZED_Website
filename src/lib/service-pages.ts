@@ -80,7 +80,12 @@ export type ColumnSet = {
   items: { title: string; body: string }[];
 };
 
-/** Two places joined by one rule, with a line underneath tying them together. */
+/**
+ * Two places joined by one rule, with a line underneath tying them together.
+ *
+ * Used by the About page. No service page carries one — Guidewire did until
+ * the section was removed, and the template block went with it.
+ */
 export type LocationPair = {
   places: { place: string; role: string }[];
   note: string;
@@ -273,14 +278,7 @@ export type ServiceContent = {
    */
   systemMap?: SystemMap;
 
-  /**
-   * North America / India, with the connector between them. Same component
-   * the About page uses.
-   */
-  deliveryEyebrow?: string;
-  deliveryHeading?: string;
-  deliveryBody?: string;
-  deliveryLine?: LocationPair;
+
 
   /**
    * Engagement — how much we own and where the people sit, as one block.
@@ -788,17 +786,6 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
       systemMap: {
         centre: "Guidewire",
         satellites: ["Customer applications", "Data platforms", "APIs & integrations", "Enterprise systems"],
-      },
-      deliveryEyebrow: "How we work",
-      deliveryHeading: "Close to the client. Close to the work.",
-      deliveryBody:
-        "Our North American team works closely with clients, while our India team provides engineering and delivery support. The goal is simple: keep communication clear, keep experienced people involved and make it easy to add the right skills when needed.",
-      deliveryLine: {
-        places: [
-          { place: "North America", role: "Client engagement" },
-          { place: "India", role: "Engineering & delivery" },
-        ],
-        note: "One team. Shared responsibility.",
       },
       whyColumns: {
         eyebrow: "Why ZEDventures",
@@ -1493,17 +1480,6 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
       systemMap: {
         centre: "Guidewire",
         satellites: ["Applications clients", "Plateformes de données", "API et intégrations", "Systèmes d'entreprise"],
-      },
-      deliveryEyebrow: "Notre façon de travailler",
-      deliveryHeading: "Près du client. Près du travail.",
-      deliveryBody:
-        "Notre équipe nord-américaine travaille au contact des clients, pendant que notre équipe en Inde apporte l'ingénierie et la livraison. L'objectif est simple : garder une communication claire, garder des personnes expérimentées impliquées et pouvoir ajouter les bonnes compétences quand il le faut.",
-      deliveryLine: {
-        places: [
-          { place: "Amérique du Nord", role: "Relation client" },
-          { place: "Inde", role: "Ingénierie et livraison" },
-        ],
-        note: "Une seule équipe. Une responsabilité partagée.",
       },
       whyColumns: {
         eyebrow: "Pourquoi ZEDventures",

@@ -36,7 +36,6 @@ import { useLanguage } from "@/lib/i18n";
 import { SectionHeader } from "@/components/section-header";
 import { EngagementModel } from "@/components/engagement-model";
 import { EditorialColumns } from "@/components/editorial-columns";
-import { LocationLine } from "@/components/location-line";
 import { SystemMap } from "@/components/system-map";
 import {
   CAPABILITY_ICONS,
@@ -598,32 +597,6 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
                 ))}
               </ol>
             )}
-          </div>
-        </section>
-      )}
-
-      {/* ---------------------------------------------------------------
-          05A — HOW WE WORK
-
-          North America and India on one rule, using the same component the
-          About page uses so the two statements cannot drift apart. Canada sits
-          inside "North America" and is never named — the site's position is
-          that North America is the client market, and calling Canada out here
-          would turn a delivery line into an expansion announcement.
-          --------------------------------------------------------------- */}
-      {s.deliveryLine && (
-        <section className="border-b border-border" aria-labelledby="how-we-work">
-          <div className="container-page section-y">
-            <SectionHeader
-              align="left"
-              eyebrow={s.deliveryEyebrow ?? ""}
-              heading={s.deliveryHeading}
-              sub={s.deliveryBody}
-              headingId="how-we-work"
-            />
-            <div className="mt-8 border-t border-border pt-7">
-              <LocationLine {...s.deliveryLine} />
-            </div>
           </div>
         </section>
       )}
