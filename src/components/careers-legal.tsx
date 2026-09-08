@@ -51,7 +51,7 @@ export function LegalBlocks() {
 
   return (
     <section className="border-b border-border bg-secondary" aria-labelledby="careers-legal">
-      <div className="container-page section-y">
+      <div className="container-page section-y section-y-card">
         <SectionHeader
           align="left"
           eyebrow={c.eyebrow}
@@ -59,7 +59,7 @@ export function LegalBlocks() {
           sub={c.legalHelper}
           headingId="careers-legal"
         />
-        <div className="mt-9 border-t border-border">
+        <div className="mt-8 border-t border-border">
           {blocks.map((b) => (
             <Disclosure key={b.key} heading={b.heading} body={b.body} />
           ))}

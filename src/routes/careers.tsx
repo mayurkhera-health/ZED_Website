@@ -53,13 +53,13 @@ function CareersBody() {
   return (
     <>
       <section className="border-b border-border">
-        <div className="container-page section-y">
+        <div className="container-page section-y section-y-card">
           <SectionHeader align="left" eyebrow={c.eyebrow} heading={c.heading} sub={c.sub} />
         </div>
       </section>
 
       <section className="border-b border-border">
-        <div className="container-page section-y">
+        <div className="container-page section-y section-y-card">
           {OPEN_POSTINGS.length === 0 ? (
             <p className="max-w-[46rem] text-[1.0625rem] leading-[1.6] text-muted-foreground">
               {c.noRoles}
@@ -69,7 +69,10 @@ function CareersBody() {
               {OPEN_POSTINGS.map((p) => {
                 const pay = formatPay(p);
                 return (
-                  <li key={p.slug} className="border-t border-border first:border-t-0 last:border-b">
+                  <li
+                    key={p.slug}
+                    className="border-t border-border first:border-t-0 last:border-b"
+                  >
                     {/* The whole row is the link, not just the "View role" text —
                         this is a scan list, and a 900px-wide row with a 90px
                         target at the end of it is a worse hit area than the row
@@ -79,7 +82,10 @@ function CareersBody() {
                       to="/careers/$slug"
                       params={{ slug: p.slug }}
                       className="group grid min-h-[3.5rem] gap-x-8 gap-y-3 py-6 transition-colors hover:bg-secondary sm:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)_auto] sm:items-baseline sm:py-[26px]"
-                      style={{ transitionDuration: "var(--dur)", transitionTimingFunction: "var(--ease)" }}
+                      style={{
+                        transitionDuration: "var(--dur)",
+                        transitionTimingFunction: "var(--ease)",
+                      }}
                     >
                       <div>
                         <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1.5">

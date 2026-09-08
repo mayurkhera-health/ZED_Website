@@ -112,8 +112,12 @@ function LegacyBody() {
       {/* 2 — Problems we solve */}
       <section className="border-b border-border">
         <div className="container-page section-y">
-          <SectionHeader align="left" eyebrow={t.services.problemsEyebrow} heading={t.services.problemsHeading} />
-          <ul className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-3">
+          <SectionHeader
+            align="left"
+            eyebrow={t.services.problemsEyebrow}
+            heading={t.services.problemsHeading}
+          />
+          <ul className="mt-8 grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-3">
             {s.problems.map((p, i) => (
               <li key={p} className="bg-card p-7">
                 <p className="text-base leading-[1.55] text-foreground">{p}</p>
@@ -126,14 +130,20 @@ function LegacyBody() {
       {/* 3 — Capabilities */}
       <section className="section-dark border-b border-border">
         <div className="container-page section-y">
-          <SectionHeader align="left" eyebrow={t.services.capsEyebrow} heading={t.services.capsHeading} />
-          <ul className="mt-10 grid gap-x-10 gap-y-9 sm:grid-cols-2">
+          <SectionHeader
+            align="left"
+            eyebrow={t.services.capsEyebrow}
+            heading={t.services.capsHeading}
+          />
+          <ul className="mt-8 grid gap-x-10 gap-y-9 sm:grid-cols-2">
             {s.capabilities.map((c) => (
               <li key={c.title} className="border-t border-border pt-6">
                 <h3 className="font-display text-[1.375rem] leading-[1.15] tracking-[-0.02em] sm:text-2xl">
                   {c.title}
                 </h3>
-                <p className="mt-3 max-w-[34rem] text-base leading-[1.55] text-muted-foreground">{c.desc}</p>
+                <p className="mt-3 max-w-[34rem] text-base leading-[1.55] text-muted-foreground">
+                  {c.desc}
+                </p>
               </li>
             ))}
           </ul>
@@ -143,8 +153,12 @@ function LegacyBody() {
       {/* 4 — How we work */}
       <section className="border-b border-border">
         <div className="container-page section-y">
-          <SectionHeader align="left" eyebrow={t.services.howEyebrow} heading={t.services.howHeading} />
-          <ol className="mt-10">
+          <SectionHeader
+            align="left"
+            eyebrow={t.services.howEyebrow}
+            heading={t.services.howHeading}
+          />
+          <ol className="mt-8">
             {steps.map((st, i) => (
               <li key={st.step} className="border-t border-border py-6 last:border-b">
                 <div className="grid grid-cols-1 items-baseline gap-x-4 gap-y-2 sm:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] sm:gap-x-8">
@@ -164,7 +178,11 @@ function LegacyBody() {
       {/* 5 — Technologies */}
       <section className="border-b border-border">
         <div className="container-page section-y split">
-          <SectionHeader align="left" eyebrow={t.services.techEyebrow} heading={t.services.techHeading} />
+          <SectionHeader
+            align="left"
+            eyebrow={t.services.techEyebrow}
+            heading={t.services.techHeading}
+          />
           <ul className="flex flex-wrap gap-2.5 lg:pt-2">
             {s.technologies.map((tech) => (
               <li
@@ -181,7 +199,11 @@ function LegacyBody() {
       {/* 6 — Related services (S59 internal linking) */}
       <section className="border-b border-border">
         <div className="container-page section-y">
-          <SectionHeader align="left" eyebrow={t.services.relatedEyebrow} heading={t.services.relatedHeading} />
+          <SectionHeader
+            align="left"
+            eyebrow={t.services.relatedEyebrow}
+            heading={t.services.relatedHeading}
+          />
           <ul className="mt-8 grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-3">
             {others.map((o) => (
               <li key={o}>
@@ -207,7 +229,12 @@ function LegacyBody() {
       {/* 7 — CTA */}
       <section className="section-dark">
         <div className="container-page section-y split">
-          <SectionHeader align="left" eyebrow={t.contact.eyebrow} heading={t.services.ctaHeading} sub={t.services.ctaSub} />
+          <SectionHeader
+            align="left"
+            eyebrow={t.contact.eyebrow}
+            heading={t.services.ctaHeading}
+            sub={t.services.ctaSub}
+          />
           <div className="lg:justify-self-end lg:pt-2">
             <Link to="/contact" className="btn btn-primary">
               {t.services.pageCta}

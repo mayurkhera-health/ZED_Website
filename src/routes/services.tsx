@@ -5,7 +5,6 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { SERVICE_SLUG_BY_INDEX } from "@/lib/service-pages";
 
-
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
@@ -18,8 +17,7 @@ export const Route = createFileRoute("/services")({
       { property: "og:title", content: "Services — Zedventures" },
       {
         property: "og:description",
-        content:
-          "Engineering, data, and geospatial systems built to run.",
+        content: "Engineering, data, and geospatial systems built to run.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://screen-snap-magic-729.lovable.app/services" },
@@ -53,7 +51,7 @@ function ServicesPageBody() {
 
   return (
     <>
-      <section className="border-b border-border bg-background px-5 py-10 sm:px-8 sm:py-12 lg:py-14">
+      <section className="border-b border-border bg-background px-5 py-7 sm:px-8 sm:py-8 xl:py-10">
         <div className="mx-auto max-w-6xl">
           <div className="border-l-4 border-primary pl-5 sm:pl-8 md:pl-12">
             <p className="eyebrow text-accent">{s.eyebrow}</p>
@@ -101,7 +99,10 @@ function ServicesPageBody() {
                 <div className="min-w-0 flex-1">
                   <h2
                     className="font-display text-2xl tracking-tight transition-transform group-hover:translate-x-1 sm:text-3xl"
-                    style={{ transitionDuration: "var(--dur)", transitionTimingFunction: "var(--ease)" }}
+                    style={{
+                      transitionDuration: "var(--dur)",
+                      transitionTimingFunction: "var(--ease)",
+                    }}
                   >
                     {item.title}
                   </h2>

@@ -200,15 +200,49 @@
      of nothing between the hero and Capabilities. Half per side lands the seam
      on the intended 64 / 96 / 128, and leaves half that above the first section
      and below the last, which is what you want next to the header and footer. */
+  /* ---- section rhythm ----
+     One step tighter than it was (32/40/48 -> 28/32/40), so the seam between
+     two adjacent sections goes 64/80/96 -> 56/64/80.
+
+     The seam is twice this value, which is the thing to hold in mind when
+     changing it: a 4px edit here moves every section boundary on the site by
+     8px. 40px was reading as a gap rather than a separation on the pages that
+     alternate white and --surface, where the change of ground already does the
+     separating and the padding was doing it a second time.
+
+     Sections that END in a bordered card still measure ~26px wider at the seam,
+     because the card's own bottom padding sits inside the section. That is
+     correct — the padding belongs to the card — and it is why the seams on this
+     site are consistent rather than identical. */
   .section-y {
-    padding-top: 2rem;    /* 32 -> 64 seam */
-    padding-bottom: 2rem;
+    padding-top: 1.75rem;   /* 28 -> 56 seam */
+    padding-bottom: 1.75rem;
   }
   @media (min-width: 768px) {
-    .section-y { padding-top: 2.5rem; padding-bottom: 2.5rem; } /* 40 -> 80 seam */
+    .section-y { padding-top: 2rem; padding-bottom: 2rem; }     /* 32 -> 64 seam */
   }
   @media (min-width: 1280px) {
-    .section-y { padding-top: 3rem; padding-bottom: 3rem; }     /* 48 -> 96 seam */
+    .section-y { padding-top: 2.5rem; padding-bottom: 2.5rem; } /* 40 -> 80 seam */
+  }
+
+  /* A section whose LAST element is a padded card carries that card's bottom
+     padding inside the seam, so it measures ~24px looser than a section that
+     ends in plain text. Measured before this existed: 80px seams next to 106px
+     and 113px ones, on the same page.
+
+     This trims 24px off the bottom padding at every breakpoint, which lands
+     those sections on the same content-to-content seam as everything else —
+     56 / 64 / 80. Apply it only where the trailing element really is a card
+     with ~24px of its own bottom padding; on a section ending in text it makes
+     the seam too tight instead. */
+  .section-y-card {
+    padding-bottom: 0.25rem;
+  }
+  @media (min-width: 768px) {
+    .section-y-card { padding-bottom: 0.5rem; }
+  }
+  @media (min-width: 1280px) {
+    .section-y-card { padding-bottom: 1rem; }
   }
 
   .container-page {

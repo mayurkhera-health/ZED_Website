@@ -47,10 +47,10 @@ function ContactPageBody() {
   return (
     <>
       <section className="border-b border-border">
-        <div className="container-page section-y">
+        <div className="container-page section-y section-y-card">
           <SectionHeader align="left" eyebrow={p.eyebrow} heading={p.heading} sub={p.sub} />
 
-          <div className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2">
+          <div className="mt-8 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2">
             <a
               href={`mailto:${p.email}`}
               className="group flex items-start gap-4 bg-card p-6 transition-colors hover:bg-muted"
@@ -60,7 +60,9 @@ function ContactPageBody() {
                 <span className="block text-xs font-bold uppercase tracking-wider text-muted-foreground">
                   {p.emailLabel}
                 </span>
-                <span className="mt-1 block font-display text-lg group-hover:text-accent">{p.email}</span>
+                <span className="mt-1 block font-display text-lg group-hover:text-accent">
+                  {p.email}
+                </span>
               </span>
             </a>
             <a
@@ -72,7 +74,9 @@ function ContactPageBody() {
                 <span className="block text-xs font-bold uppercase tracking-wider text-muted-foreground">
                   {p.phoneLabel}
                 </span>
-                <span className="mt-1 block font-display text-lg group-hover:text-accent">{p.phone}</span>
+                <span className="mt-1 block font-display text-lg group-hover:text-accent">
+                  {p.phone}
+                </span>
               </span>
             </a>
           </div>
@@ -80,8 +84,10 @@ function ContactPageBody() {
       </section>
 
       <section className="border-b border-border">
-        <div className="container-page section-y">
-          <p className="text-xs font-bold uppercase tracking-widest text-accent">{p.officesEyebrow}</p>
+        <div className="container-page section-y section-y-card">
+          <p className="text-xs font-bold uppercase tracking-widest text-accent">
+            {p.officesEyebrow}
+          </p>
           <div className="mt-6 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-3">
             {p.offices.map((office, i) => (
               <div key={office.city} className="bg-card p-6">
@@ -97,7 +103,12 @@ function ContactPageBody() {
 
       <section className="section-dark">
         <div className="container-page section-y grid gap-10 lg:grid-cols-2 lg:gap-16">
-          <SectionHeader align="left" eyebrow={t.contact.eyebrow} heading={t.contact.line} sub={t.contact.sub} />
+          <SectionHeader
+            align="left"
+            eyebrow={t.contact.eyebrow}
+            heading={t.contact.line}
+            sub={t.contact.sub}
+          />
           <ContactForm />
         </div>
       </section>

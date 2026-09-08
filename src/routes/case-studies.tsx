@@ -51,7 +51,7 @@ function CaseStudiesPageBody() {
 
   return (
     <>
-      <section className="border-b border-border bg-background px-5 py-10 sm:px-8 sm:py-12 lg:py-14">
+      <section className="border-b border-border bg-background px-5 py-7 sm:px-8 sm:py-8 xl:py-10">
         <div className="mx-auto max-w-6xl">
           <div className="border-l-4 border-primary pl-5 sm:pl-8 md:pl-12">
             <p className="eyebrow text-accent">{p.eyebrow}</p>

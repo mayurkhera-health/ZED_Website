@@ -13,7 +13,8 @@ export function SectionHeader({
    *  duplicating it in a screen-reader-only copy. */
   headingId?: string;
 }) {
-  const alignCls = align === "center" ? "mx-auto text-center items-center" : "text-left items-start";
+  const alignCls =
+    align === "center" ? "mx-auto text-center items-center" : "text-left items-start";
   return (
     <div className={`flex max-w-2xl flex-col gap-3 ${alignCls}`}>
       <p className="eyebrow text-accent">{eyebrow}</p>

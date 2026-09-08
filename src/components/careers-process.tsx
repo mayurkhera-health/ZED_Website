@@ -23,7 +23,7 @@ export function CareersProcess() {
 
   return (
     <section className="border-b border-border bg-secondary" aria-labelledby="careers-process">
-      <div className="container-page section-y">
+      <div className="container-page section-y section-y-card">
         <p className="eyebrow text-subtle-foreground">{c.processEyebrow}</p>
         <h2
           id="careers-process"
@@ -43,7 +43,7 @@ export function CareersProcess() {
             numbered list left standing would read as an oversight rather than
             as a distinction. Order still comes from the ol element and from
             reading order; a short red rule marks each step. */}
-        <ol className="mt-10 grid gap-px overflow-hidden bg-border md:grid-cols-4">
+        <ol className="mt-8 grid gap-px overflow-hidden bg-border md:grid-cols-4">
           {c.process.map((step) => (
             <li key={step.title} className="bg-secondary py-6 md:px-6 md:first:pl-0">
               <span className="block h-px w-7 bg-accent" aria-hidden="true" />

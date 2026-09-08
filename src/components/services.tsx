@@ -9,7 +9,7 @@ export function Services() {
 
   return (
     <section id="services" aria-labelledby="services-heading" className="border-t border-border">
-      <div className="container-page section-y">
+      <div className="container-page section-y section-y-card">
         <div className="flex justify-center">
           <SectionHeader
             headingId="services-heading"
@@ -18,7 +18,7 @@ export function Services() {
             sub={t.services.sub}
           />
         </div>
-        <ul className="mt-12">
+        <ul className="mt-8">
           {t.services.items.map((item, i) => {
             const slug = SERVICE_SLUG_BY_INDEX[i];
 
@@ -55,7 +55,10 @@ export function Services() {
                     to="/services/$slug"
                     params={{ slug }}
                     className="group block py-7 transition-colors hover:bg-surface sm:min-h-[8.25rem] sm:py-8"
-                    style={{ transitionDuration: "var(--dur)", transitionTimingFunction: "var(--ease)" }}
+                    style={{
+                      transitionDuration: "var(--dur)",
+                      transitionTimingFunction: "var(--ease)",
+                    }}
                   >
                     {inner}
                   </Link>

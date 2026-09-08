@@ -23,7 +23,7 @@ export function CareersWhy() {
 
   return (
     <section className="border-b border-border" aria-labelledby="careers-why">
-      <div className="container-page section-y">
+      <div className="container-page section-y section-y-card">
         <p className="eyebrow text-accent">{c.whyEyebrow}</p>
         <h2
           id="careers-why"
@@ -35,7 +35,7 @@ export function CareersWhy() {
         {/* Stacks to one column under 768px per the spec's responsive note.
             Dividers switch from horizontal rules to vertical ones at the same
             breakpoint, so the hairline always separates along the stacking axis. */}
-        <ul className="mt-9 grid gap-px overflow-hidden bg-border md:grid-cols-3">
+        <ul className="mt-8 grid gap-px overflow-hidden bg-border md:grid-cols-3">
           {c.why.map((item, i) => {
             const Icon = ICONS[i] ?? Layers;
             return (

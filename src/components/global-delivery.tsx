@@ -30,7 +30,7 @@ export function GlobalDelivery() {
 
   return (
     <section className="border-b border-border" aria-labelledby="global-delivery">
-      <div className="container-page section-y">
+      <div className="container-page section-y section-y-card">
         <p className="eyebrow text-accent">{g.eyebrow}</p>
         <h2
           id="global-delivery"

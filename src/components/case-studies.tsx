@@ -11,7 +11,7 @@ export function CaseStudies() {
           <SectionHeader eyebrow={t.caseStudies.eyebrow} heading={t.caseStudies.heading} />
         </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-y-14 md:grid-cols-2 md:gap-x-12 lg:gap-x-16">
+        <div className="mt-8 grid grid-cols-1 gap-y-12 md:grid-cols-2 md:gap-x-12 lg:gap-x-16">
           {t.caseStudies.items.map((cs, i) => (
             <article
               key={cs.title}

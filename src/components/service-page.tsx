@@ -312,7 +312,7 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
           promises nothing.
           --------------------------------------------------------------- */}
       <section className="border-b border-border">
-        <div className="container-page section-y">
+        <div className="container-page section-y section-y-card">
           <SectionHeader
             align="left"
             eyebrow={t.services.buildEyebrow}
@@ -441,7 +441,7 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
 
                 The frame stays a step above the dividers so the card still
                 reads as one object rather than three stacked strips. */}
-            <dl className="mt-7 max-w-[54rem] overflow-hidden rounded-xl border border-[#a8a8a3] bg-background">
+            <dl className="mt-8 max-w-[54rem] overflow-hidden rounded-xl border border-[#a8a8a3] bg-background">
               {groups.map((g, i) => {
                 const Icon = g.icon ? TECH_ICONS[g.icon] : null;
                 const tone = ROW_TONES[i % ROW_TONES.length];
@@ -505,7 +505,7 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
           --------------------------------------------------------------- */}
       {s.engagement && (
         <section className="border-b border-border" aria-labelledby="engagement">
-          <div className="container-page section-y">
+          <div className="container-page section-y section-y-card">
             <SectionHeader
               align="left"
               eyebrow={s.engagement.eyebrow}
@@ -546,7 +546,7 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
 
             {/* The red rule stays, the numeral does not. Three reasons why us
                 are not ranked, and numbering them implied they were. */}
-            <ol className="mt-12 grid gap-px overflow-hidden bg-border lg:grid-cols-3">
+            <ol className="mt-8 grid gap-px overflow-hidden bg-border lg:grid-cols-3">
               {pillars.map((pillar) => (
                 <li key={pillar.title} className="bg-background py-7 lg:px-8 lg:py-0 lg:first:pl-0">
                   <span className="block h-px w-8 bg-primary" aria-hidden="true" />

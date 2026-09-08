@@ -91,7 +91,7 @@ function PostingBody() {
             {p.title}
           </h1>
 
-          <dl className="mt-10 grid max-w-[52rem] gap-x-10 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
+          <dl className="mt-8 grid max-w-[52rem] gap-x-10 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
             {p.jobCode && <Field label={c.jobCodeLabel}>{p.jobCode}</Field>}
             <Field label={c.locationLabel}>
               {p.locations.map((l) => (

@@ -19,9 +19,7 @@ export function Careers() {
           to="/careers"
           className="mx-auto mt-8 flex w-fit items-center gap-1.5 text-sm font-bold text-accent underline-offset-4 hover:underline"
         >
-          {OPEN_POSTINGS.length > 0
-            ? `${t.careers.cta} (${OPEN_POSTINGS.length})`
-            : t.careers.cta}
+          {OPEN_POSTINGS.length > 0 ? `${t.careers.cta} (${OPEN_POSTINGS.length})` : t.careers.cta}
           <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
         </Link>
       </div>

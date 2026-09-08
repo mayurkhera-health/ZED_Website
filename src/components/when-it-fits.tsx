@@ -20,7 +20,7 @@ import type { WhenItFits as WhenItFitsData } from "@/lib/service-pages";
  */
 export function WhenItFits({ data }: { data: WhenItFitsData }) {
   return (
-    <ol className="mt-10 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
+    <ol className="mt-8 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
       {data.items.map((item, i) => (
         <li
           key={item.title}
