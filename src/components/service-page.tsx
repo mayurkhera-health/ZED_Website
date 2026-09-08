@@ -35,7 +35,9 @@ import {
 import { useLanguage } from "@/lib/i18n";
 import { SectionHeader } from "@/components/section-header";
 import { EngagementModel } from "@/components/engagement-model";
-import { WhenItFits } from "@/components/when-it-fits";
+import { EditorialColumns } from "@/components/editorial-columns";
+import { LocationLine } from "@/components/location-line";
+import { SystemMap } from "@/components/system-map";
 import {
   CAPABILITY_ICONS,
   isServiceDraft,
@@ -374,7 +376,33 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
               sub={s.whenItFits.intro}
               headingId="when-it-fits"
             />
-            <WhenItFits data={s.whenItFits} />
+            <EditorialColumns data={s.whenItFits} />
+          </div>
+        </section>
+      )}
+
+      {/* ---------------------------------------------------------------
+          03C — PRODUCT COLUMNS
+
+          A second editorial column set, for services whose products are peers
+          rather than steps. Guidewire uses it for PolicyCenter / ClaimCenter /
+          BillingCenter: three cards here would sit directly under six and read
+          as one twelve-item feature grid, so this is the calmer treatment.
+
+          Text labels only. No vendor logos or product artwork until approved
+          assets exist.
+          --------------------------------------------------------------- */}
+      {s.productColumns && (
+        <section className="border-b border-border bg-surface" aria-labelledby="product-columns">
+          <div className="container-page section-y">
+            <SectionHeader
+              align="left"
+              eyebrow={s.productColumns.eyebrow}
+              heading={s.productColumns.heading}
+              sub={s.productColumns.intro || undefined}
+              headingId="product-columns"
+            />
+            <EditorialColumns data={s.productColumns} />
           </div>
         </section>
       )}
@@ -526,10 +554,14 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
           decorative rule beside each numeral, which is not load-bearing
           text (S27).
           --------------------------------------------------------------- */}
-      {pillars.length > 0 && (
+      {/* The dark band takes ONE of two shapes: three Why ZED pillars, or a
+          system map arguing about the environment around the platform. A page
+          gets one or the other, never both — the site's rule is one dark band
+          per page, and a second would spend the only visual event it has. */}
+      {(pillars.length > 0 || s.systemMap) && (
         <section className="section-dark">
           <div className="container-page section-y">
-            <p className="eyebrow text-dark-lead">{t.services.whyEyebrow}</p>
+            <p className="eyebrow text-dark-lead">{s.whyEyebrow ?? t.services.whyEyebrow}</p>
             <h2 className="font-display mt-3 max-w-[46rem] text-[2rem] leading-[1.08] tracking-[-0.025em] sm:text-[2.75rem]">
               {/* A service can replace the formula heading ("Why ZED for X")
                   with a sentence. "Distributed delivery without distributed
@@ -544,21 +576,76 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
               </p>
             )}
 
+            {s.systemMap && <SystemMap {...s.systemMap} />}
+
             {/* The red rule stays, the numeral does not. Three reasons why us
                 are not ranked, and numbering them implied they were. */}
-            <ol className="mt-8 grid gap-px overflow-hidden bg-border lg:grid-cols-3">
-              {pillars.map((pillar) => (
-                <li key={pillar.title} className="bg-background py-7 lg:px-8 lg:py-0 lg:first:pl-0">
-                  <span className="block h-px w-8 bg-primary" aria-hidden="true" />
-                  <h3 className="font-display mt-5 max-w-[18ch] text-[1.375rem] leading-[1.15] tracking-[-0.02em] sm:text-2xl">
-                    {pillar.title}
-                  </h3>
-                  <p className="mt-3 max-w-[30rem] text-[0.9375rem] leading-[1.6] text-muted-foreground">
-                    {pillar.body}
-                  </p>
-                </li>
-              ))}
-            </ol>
+            {pillars.length > 0 && (
+              <ol className="mt-8 grid gap-px overflow-hidden bg-border lg:grid-cols-3">
+                {pillars.map((pillar) => (
+                  <li
+                    key={pillar.title}
+                    className="bg-background py-7 lg:px-8 lg:py-0 lg:first:pl-0"
+                  >
+                    <span className="block h-px w-8 bg-primary" aria-hidden="true" />
+                    <h3 className="font-display mt-5 max-w-[18ch] text-[1.375rem] leading-[1.15] tracking-[-0.02em] sm:text-2xl">
+                      {pillar.title}
+                    </h3>
+                    <p className="mt-3 max-w-[30rem] text-[0.9375rem] leading-[1.6] text-muted-foreground">
+                      {pillar.body}
+                    </p>
+                  </li>
+                ))}
+              </ol>
+            )}
+          </div>
+        </section>
+      )}
+
+      {/* ---------------------------------------------------------------
+          05A — HOW WE WORK
+
+          North America and India on one rule, using the same component the
+          About page uses so the two statements cannot drift apart. Canada sits
+          inside "North America" and is never named — the site's position is
+          that North America is the client market, and calling Canada out here
+          would turn a delivery line into an expansion announcement.
+          --------------------------------------------------------------- */}
+      {s.deliveryLine && (
+        <section className="border-b border-border" aria-labelledby="how-we-work">
+          <div className="container-page section-y">
+            <SectionHeader
+              align="left"
+              eyebrow={s.deliveryEyebrow ?? ""}
+              heading={s.deliveryHeading}
+              sub={s.deliveryBody}
+              headingId="how-we-work"
+            />
+            <div className="mt-8 border-t border-border pt-7">
+              <LocationLine {...s.deliveryLine} />
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ---------------------------------------------------------------
+          05C — WHY ZED, AS LIGHT COLUMNS
+
+          For pages whose dark band is spent on something else. Same editorial
+          treatment as the About page's beliefs, which is what the Guidewire
+          spec asks for by name.
+          --------------------------------------------------------------- */}
+      {s.whyColumns && (
+        <section className="border-b border-border bg-surface" aria-labelledby="why-columns">
+          <div className="container-page section-y">
+            <SectionHeader
+              align="left"
+              eyebrow={s.whyColumns.eyebrow}
+              heading={s.whyColumns.heading}
+              sub={s.whyColumns.intro || undefined}
+              headingId="why-columns"
+            />
+            <EditorialColumns data={s.whyColumns} />
           </div>
         </section>
       )}

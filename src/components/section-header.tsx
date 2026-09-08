@@ -6,8 +6,8 @@ export function SectionHeader({
   headingId,
 }: {
   eyebrow: string;
-  heading?: string;
-  sub?: string;
+  heading?: string | undefined;
+  sub?: string | undefined;
   align?: "center" | "left";
   /** Lets a section point aria-labelledby at this visible heading instead of
    *  duplicating it in a screen-reader-only copy. */

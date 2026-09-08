@@ -67,17 +67,29 @@ export type TechIcon = "chart" | "cube" | "cloud" | "layers" | "plug" | "shield"
  * group. It is explained once by `closing` rather than badged on each row.
  */
 /**
- * "When it fits" — four reasons a customer would consider distributed
- * delivery at all. An interlude between what we sell and how it is bought.
+ * A set of editorial columns — three or four short peers under one heading.
  *
- * Four items, no more: the layout is four columns on desktop and 2x2 on
- * tablet, and a fifth would strand one item on its own row.
+ * Four items maximum: the layout is four columns on desktop and 2x2 on tablet,
+ * and a fifth would strand one item on its own row.
  */
-export type WhenItFits = {
+export type ColumnSet = {
   eyebrow: string;
   heading: string;
   intro: string;
+  /** Three or four. The component takes the count from this array. */
   items: { title: string; body: string }[];
+};
+
+/** Two places joined by one rule, with a line underneath tying them together. */
+export type LocationPair = {
+  places: { place: string; role: string }[];
+  note: string;
+};
+
+/** One platform at the centre, up to four systems around it. */
+export type SystemMap = {
+  centre: string;
+  satellites: string[];
 };
 
 export type EngagementBlock = {
@@ -190,6 +202,9 @@ export type ServiceContent = {
   /** Replaces the formula heading "Why ZED for <service>" with a sentence.
    *  Falls back to the formula, which is fine where nothing better exists. */
   whyHeading?: string;
+  /** Replaces the shared "Why ZED" eyebrow. Used where the dark band carries
+   *  an argument about the client's environment rather than about ZED. */
+  whyEyebrow?: string;
   /** One positioning sentence under the Why ZED heading. <=25 words (S25). */
   whyIntro?: string;
   /** Exactly three, and they must differ from every other service's (S29). */
@@ -233,7 +248,39 @@ export type ServiceContent = {
    * The "when it fits" interlude. Sits between the capability cards and the
    * delivery model. Only Offshore & Nearshore carries it.
    */
-  whenItFits?: WhenItFits;
+  whenItFits?: ColumnSet;
+
+  /**
+   * A second editorial column set, rendered between the capability cards and
+   * the platform table. Guidewire uses it for PolicyCenter / ClaimCenter /
+   * BillingCenter — three peers that are products, not steps, and that would
+   * read as a duplicate feature grid if they were cards like the six above.
+   */
+  productColumns?: ColumnSet;
+
+  /**
+   * A third column set, rendered light near the end of the page in place of
+   * the dark Why ZED band. A service uses this OR whyPillars, never both:
+   * one dark band per page is the site's rule and the band is spent elsewhere
+   * when systemMap is present.
+   */
+  whyColumns?: ColumnSet;
+
+  /**
+   * The dark band's content when a service argues about its environment
+   * rather than about ZED. Replaces whyPillars where present, so the page
+   * still has exactly one dark section.
+   */
+  systemMap?: SystemMap;
+
+  /**
+   * North America / India, with the connector between them. Same component
+   * the About page uses.
+   */
+  deliveryEyebrow?: string;
+  deliveryHeading?: string;
+  deliveryBody?: string;
+  deliveryLine?: LocationPair;
 
   /**
    * Engagement — how much we own and where the people sit, as one block.
@@ -310,7 +357,7 @@ export const CAPABILITY_ICONS: Record<ServiceSlug, readonly CapabilityIcon[]> = 
   sap: ["server", "shield", "blocks", "dashboard", "plug", "sparkles"],
   "gis-geospatial": ["map", "database", "map-pin", "alert", "satellite", "plug"],
   "ai-data": ["messages", "workflow", "database", "plug"],
-  guidewire: ["layers", "sliders", "trending-up", "cloud"],
+  guidewire: ["blocks", "cloud", "plug", "arrow-left-right", "check", "shield"],
   "product-engineering": ["blocks", "cloud", "check", "rocket"],
   "offshore-nearshore": ["users", "globe", "clock", "shuffle", "check", "plug"],
 };
@@ -643,62 +690,141 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
     },
     guidewire: {
       name: "Guidewire",
-      heroImageHint: "A policy or claims workflow screen",
-      outcome: "Move PolicyCenter, BillingCenter and ClaimCenter forward without stopping the business on them.",
+      heroImageHint:
+        "Guidewire as one platform inside a wider environment \u2014 softly abstracted workplace, white cards, thin connectors, small red nodes. No insurance stock imagery, no Guidewire UI, no shields or umbrellas",
+      outcome: "Guidewire expertise without the extra complexity.",
       intro:
-        "Claims still have to be paid while you upgrade. Everything about how we sequence an implementation, a version move or a cloud migration follows from that one constraint.",
+        "We help insurance companies implement, improve and support Guidewire across policy, billing and claims. Our teams can help with configuration, integration, data, testing, upgrades and ongoing support.",
       problems: [
         "An upgrade deferred so long that the version gap is now the project.",
         "Configuration drift nobody has a full picture of.",
         "A cloud migration with no plan for the integrations hanging off the edges.",
       ],
+      situationHeading: "Core insurance systems have to keep up with the business.",
+      situation:
+        "Guidewire sits at the center of many important insurance processes. But the platform also has to work with everything around it \u2014 data, customer portals, payment systems, documents, reporting tools and other applications.\n\nWe help clients make those pieces work together.",
+      buildHeading: "Help across the Guidewire lifecycle.",
       capabilities: [
-        { title: "Implementation", desc: "PolicyCenter, BillingCenter and ClaimCenter delivered against real underwriting and claims process." },
-        { title: "Configuration", desc: "Product model and rules work, documented so the next team can follow it." },
-        { title: "Upgrades", desc: "Version moves planned around the customisation that actually exists, not the vanilla product." },
-        { title: "Cloud migration", desc: "Getting to Guidewire Cloud with the integration surface intact." },
+        {
+          title: "Guidewire implementation",
+          desc: "We help configure and build Guidewire around the way your business works \u2014 workflows, rules, integrations and the other changes needed to support day-to-day operations.",
+        },
+        {
+          title: "Guidewire Cloud & upgrades",
+          desc: "We help teams move to Guidewire Cloud, upgrade existing environments and reduce older customizations where possible, so the platform is easier to support and improve over time.",
+        },
+        {
+          title: "Integration & APIs",
+          desc: "Guidewire rarely works on its own. We help connect it with payment systems, customer portals, document platforms, data services and other enterprise applications.",
+        },
+        {
+          title: "Data migration",
+          desc: "Moving data from older systems takes careful planning. We help with mapping, conversion, validation and reconciliation so policy, billing and claims information moves over correctly.",
+        },
+        {
+          title: "Testing",
+          desc: "Changes to a core insurance platform need to be tested carefully. We support functional, integration, regression and automated testing to find issues before they reach production.",
+        },
+        {
+          title: "Application support",
+          desc: "The work does not stop after go-live. We help with production support, fixes, enhancements and ongoing Guidewire development.",
+        },
       ],
+      /**
+       * Three peers, as editorial columns rather than cards. Six cards sit
+       * directly above; three more would read as a second feature grid, and
+       * the spec asks for a calmer, more architectural section after the
+       * capability grid.
+       *
+       * Text labels only. No Guidewire logos, product artwork or recreated UI
+       * until approved assets exist \u2014 spec \u00a720.
+       */
+      productColumns: {
+        eyebrow: "Guidewire platform",
+        heading: "Experience across policy, billing and claims.",
+        intro: "",
+        items: [
+          {
+            title: "PolicyCenter",
+            body: "Policy administration, product configuration, underwriting workflows, renewals and servicing.",
+          },
+          {
+            title: "ClaimCenter",
+            body: "Claims processes from intake through settlement, including workflows, integrations and the related system changes.",
+          },
+          {
+            title: "BillingCenter",
+            body: "Billing, payments, commissions and account-related processes, along with the integrations around them.",
+          },
+        ],
+      },
       technologies: ["PolicyCenter", "BillingCenter", "ClaimCenter", "Gosu", "Guidewire Cloud", "REST integrations"],
       /**
-       * [CONFIRM] PLACEHOLDER. Restructured from the copy already in this
-       * file, not written from experience. The situation paragraph in
-       * particular has to come from someone who has been in the room — that
-       * is what it is for, and it is the reason the Analytics and SAP pages
-       * read differently from a competitor's. This service stays in
-       * DRAFT_SERVICES until it is replaced.
+       * No technologyGroups, so the chip table does not render here. The
+       * spec's page order has eight sections and a chip table is not one of
+       * them — §2 says not to add sections to make the page longer. The three
+       * Guidewire products are the platform section, in productColumns above,
+       * and adding the table put two bg-surface bands next to each other with
+       * nothing between them.
        */
-      situation:
-        "Claims still have to be paid while the platform is worked on. Configuration has drifted over the years, nobody holds a full picture of it, and an upgrade deferred long enough stops being an upgrade and becomes the project. The integrations hanging off the edges are usually what makes it hard.",
-      technologyGroups: [
-        { label: "Guidewire suite", icon: "layers", items: ["PolicyCenter", "BillingCenter", "ClaimCenter"] },
-        { label: "Platform", icon: "cube", items: ["Guidewire Cloud", "Gosu"] },
-        { label: "Integration", icon: "plug", items: ["REST integrations"] },
-      ],
-      platformsSub:
-        "We work across the Guidewire suite and the integration surface around it.",
+      /**
+       * The dark band, and the page's one visual event. It carries the
+       * environment argument rather than a Why ZED list, because that is the
+       * claim this page is actually built on: the platform is one part of the
+       * estate, and most of the difficulty lives at the edges.
+       *
+       * whyPillars is therefore absent and whyColumns carries the reasons in a
+       * light section instead \u2014 one dark band per page.
+       */
+      whyEyebrow: "Engineering around Guidewire",
+      whyHeading: "Guidewire is only one part of the environment.",
       whyIntro:
-        "We sequence Guidewire work around the one constraint that does not move: the business keeps running on it while we work.",
-      whyPillars: [
-        {
-          title: "Insurance domain understanding",
-          body: "Underwriting and claims process first, product model second. Configuration decisions follow from how the business actually works.",
-        },
-        {
-          title: "Platform and integration expertise",
-          body: "The suite and the systems around it. Most of the difficulty in a Guidewire programme lives at the edges, not in the core.",
-        },
-        {
-          title: "Implementation through production",
-          body: "Planned around the customisation that exists rather than the vanilla product, and accountable after go-live.",
-        },
-      ],
+        "A Guidewire project usually touches many other systems. We can also help with APIs, connected applications, data platforms, customer portals and other engineering work around the platform \u2014 which makes it easier to solve the full problem instead of looking only at Guidewire.",
+      systemMap: {
+        centre: "Guidewire",
+        satellites: ["Customer applications", "Data platforms", "APIs & integrations", "Enterprise systems"],
+      },
+      deliveryEyebrow: "How we work",
+      deliveryHeading: "Close to the client. Close to the work.",
+      deliveryBody:
+        "Our North American team works closely with clients, while our India team provides engineering and delivery support. The goal is simple: keep communication clear, keep experienced people involved and make it easy to add the right skills when needed.",
+      deliveryLine: {
+        places: [
+          { place: "North America", role: "Client engagement" },
+          { place: "India", role: "Engineering & delivery" },
+        ],
+        note: "One team. Shared responsibility.",
+      },
+      whyColumns: {
+        eyebrow: "Why ZEDventures",
+        heading: "Practical people. Practical delivery.",
+        intro: "",
+        items: [
+          {
+            title: "Stay close to the work",
+            body: "Experienced people remain involved throughout the engagement.",
+          },
+          {
+            title: "Work with the team you already have",
+            body: "We can work alongside your internal teams, Guidewire, other implementation partners or existing vendors.",
+          },
+          {
+            title: "Look beyond the platform",
+            body: "We pay attention to the data, integrations and applications around Guidewire, not just the work inside it.",
+          },
+          {
+            title: "Keep things simple",
+            body: "We try to avoid unnecessary layers and keep communication direct.",
+          },
+        ],
+      },
       finalCta: {
-        title: "Let's talk about your Guidewire programme.",
+        title: "Let's talk about your Guidewire environment.",
         buttonLabel: "Start a conversation",
       },
-      seoTitle: "Guidewire Consulting Services | Zed Ventures",
+      seoTitle: "Guidewire Services | ZEDventures",
       seoDescription:
-        "Zed Ventures delivers Guidewire implementation, configuration, upgrades and cloud migration across PolicyCenter, BillingCenter and ClaimCenter.",
+        "ZEDventures helps insurance companies implement, integrate, modernize and support Guidewire across policy, billing and claims.",
     },
     sap: {
       name: "SAP",
@@ -1291,54 +1417,115 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
     },
     guidewire: {
       name: "Guidewire",
-      heroImageHint: "Un écran de gestion de police ou de sinistre",
-      outcome: "Faire évoluer PolicyCenter, BillingCenter et ClaimCenter sans arrêter l'activité qui en dépend.",
+      heroImageHint:
+        "Guidewire comme une plateforme parmi d'autres dans un environnement plus large \u2014 bureau doucement flouté, cartes blanches, connecteurs fins, petits points rouges. Pas d'imagerie d'assurance, pas d'interface Guidewire, ni bouclier ni parapluie",
+      outcome: "L'expertise Guidewire, sans la complexité en plus.",
       intro:
-        "Les sinistres doivent continuer d'être réglés pendant la montée de version. Toute notre façon de séquencer une implémentation, un changement de version ou une migration infonuagique découle de cette seule contrainte.",
+        "Nous aidons les assureurs à mettre en œuvre, améliorer et exploiter Guidewire pour la police, la facturation et les sinistres. Nos équipes interviennent sur la configuration, l'intégration, les données, les tests, les montées de version et le support continu.",
       problems: [
-        "Une montée de version reportée si longtemps que l'écart est devenu le projet.",
-        "Une dérive de configuration dont personne n'a la vue complète.",
-        "Une migration infonuagique sans plan pour les intégrations périphériques.",
+        "Une montée de version repoussée si longtemps que l'écart devient le projet.",
+        "Une configuration qui a dérivé, dont personne n'a la vue complète.",
+        "Une migration vers le cloud sans plan pour les intégrations en périphérie.",
       ],
-      capabilities: [
-        { title: "Implémentation", desc: "PolicyCenter, BillingCenter et ClaimCenter livrés selon les processus réels de souscription et de sinistres." },
-        { title: "Configuration", desc: "Modèle produit et règles, documentés pour que l'équipe suivante puisse s'y retrouver." },
-        { title: "Montées de version", desc: "Des passages de version planifiés sur la personnalisation réelle, pas sur le produit standard." },
-        { title: "Migration infonuagique", desc: "Atteindre Guidewire Cloud avec la surface d'intégration intacte." },
-      ],
-      technologies: ["PolicyCenter", "BillingCenter", "ClaimCenter", "Gosu", "Guidewire Cloud", "Intégrations REST"],
+      situationHeading: "Les systèmes cœur d'assurance doivent suivre le rythme du métier.",
       situation:
-        "Les sinistres doivent continuer d'être réglés pendant que la plateforme évolue. La configuration a dérivé au fil des ans, personne n'en a une vue complète, et une montée de version trop longtemps reportée cesse d'être une montée de version pour devenir le projet. Ce sont généralement les intégrations périphériques qui rendent l'exercice difficile.",
-      technologyGroups: [
-        { label: "Suite Guidewire", icon: "layers", items: ["PolicyCenter", "BillingCenter", "ClaimCenter"] },
-        { label: "Plateforme", icon: "cube", items: ["Guidewire Cloud", "Gosu"] },
-        { label: "Intégration", icon: "plug", items: ["Intégrations REST"] },
+        "Guidewire se trouve au centre de nombreux processus d'assurance importants. Mais la plateforme doit aussi fonctionner avec tout ce qui l'entoure \u2014 données, portails clients, systèmes de paiement, documents, outils de reporting et autres applications.\n\nNous aidons nos clients à faire tenir ces pièces ensemble.",
+      buildHeading: "Un appui sur tout le cycle de vie Guidewire.",
+      capabilities: [
+        {
+          title: "Mise en œuvre Guidewire",
+          desc: "Nous configurons et construisons Guidewire autour de votre façon de travailler \u2014 flux, règles, intégrations et les autres évolutions nécessaires au quotidien.",
+        },
+        {
+          title: "Guidewire Cloud et montées de version",
+          desc: "Nous accompagnons le passage à Guidewire Cloud, les montées de version et la réduction des anciennes personnalisations lorsque c'est possible, pour une plateforme plus simple à maintenir et à faire évoluer.",
+        },
+        {
+          title: "Intégration et API",
+          desc: "Guidewire fonctionne rarement seul. Nous le relions aux systèmes de paiement, portails clients, plateformes documentaires, services de données et autres applications d'entreprise.",
+        },
+        {
+          title: "Migration de données",
+          desc: "Déplacer les données d'anciens systèmes demande de la préparation. Nous prenons en charge le mapping, la conversion, la validation et la réconciliation pour que les informations de police, de facturation et de sinistres arrivent correctement.",
+        },
+        {
+          title: "Tests",
+          desc: "Les évolutions d'une plateforme cœur d'assurance doivent être testées avec soin. Nous couvrons les tests fonctionnels, d'intégration, de non-régression et automatisés, pour trouver les problèmes avant la production.",
+        },
+        {
+          title: "Support applicatif",
+          desc: "Le travail ne s'arrête pas à la mise en service. Nous assurons le support de production, les correctifs, les évolutions et le développement Guidewire continu.",
+        },
       ],
-      platformsSub:
-        "Nous intervenons sur la suite Guidewire et sur les intégrations qui l'entourent.",
+      productColumns: {
+        eyebrow: "Plateforme Guidewire",
+        heading: "De l'expérience sur la police, la facturation et les sinistres.",
+        intro: "",
+        items: [
+          {
+            title: "PolicyCenter",
+            body: "Gestion des polices, configuration produit, flux de souscription, renouvellements et actes de gestion.",
+          },
+          {
+            title: "ClaimCenter",
+            body: "Les processus de sinistres, de la déclaration au règlement : flux, intégrations et évolutions associées.",
+          },
+          {
+            title: "BillingCenter",
+            body: "Facturation, encaissements, commissions et processus liés aux comptes, avec les intégrations autour.",
+          },
+        ],
+      },
+      technologies: ["PolicyCenter", "BillingCenter", "ClaimCenter", "Gosu", "Guidewire Cloud", "Intégrations REST"],
+      whyEyebrow: "L'ingénierie autour de Guidewire",
+      whyHeading: "Guidewire n'est qu'une partie de l'environnement.",
       whyIntro:
-        "Nous séquençons les travaux Guidewire autour de la seule contrainte qui ne bouge pas : l'activité continue de tourner dessus pendant le chantier.",
-      whyPillars: [
-        {
-          title: "Compréhension du métier de l'assurance",
-          body: "Souscription et gestion des sinistres d'abord, modèle produit ensuite. Les choix de configuration découlent du fonctionnement réel.",
-        },
-        {
-          title: "Maîtrise plateforme et intégration",
-          body: "La suite et les systèmes autour. L'essentiel de la difficulté d'un programme Guidewire se situe aux interfaces, pas au cœur.",
-        },
-        {
-          title: "De la mise en œuvre à la production",
-          body: "Planifié sur la personnalisation réelle plutôt que sur le produit standard, et responsable après la mise en service.",
-        },
-      ],
+        "Un projet Guidewire touche généralement beaucoup d'autres systèmes. Nous intervenons aussi sur les API, les applications connectées, les plateformes de données, les portails clients et le reste de l'ingénierie autour de la plateforme \u2014 ce qui permet de traiter le problème entier plutôt que de ne regarder que Guidewire.",
+      systemMap: {
+        centre: "Guidewire",
+        satellites: ["Applications clients", "Plateformes de données", "API et intégrations", "Systèmes d'entreprise"],
+      },
+      deliveryEyebrow: "Notre façon de travailler",
+      deliveryHeading: "Près du client. Près du travail.",
+      deliveryBody:
+        "Notre équipe nord-américaine travaille au contact des clients, pendant que notre équipe en Inde apporte l'ingénierie et la livraison. L'objectif est simple : garder une communication claire, garder des personnes expérimentées impliquées et pouvoir ajouter les bonnes compétences quand il le faut.",
+      deliveryLine: {
+        places: [
+          { place: "Amérique du Nord", role: "Relation client" },
+          { place: "Inde", role: "Ingénierie et livraison" },
+        ],
+        note: "Une seule équipe. Une responsabilité partagée.",
+      },
+      whyColumns: {
+        eyebrow: "Pourquoi ZEDventures",
+        heading: "Des gens concrets. Une livraison concrète.",
+        intro: "",
+        items: [
+          {
+            title: "Rester près du travail",
+            body: "Des personnes expérimentées restent impliquées tout au long de l'engagement.",
+          },
+          {
+            title: "Travailler avec l'équipe en place",
+            body: "Nous pouvons intervenir aux côtés de vos équipes internes, de Guidewire, d'autres intégrateurs ou de vos prestataires actuels.",
+          },
+          {
+            title: "Regarder au-delà de la plateforme",
+            body: "Nous prêtons attention aux données, aux intégrations et aux applications autour de Guidewire, pas seulement au travail à l'intérieur.",
+          },
+          {
+            title: "Rester simples",
+            body: "Nous évitons les couches inutiles et gardons une communication directe.",
+          },
+        ],
+      },
       finalCta: {
-        title: "Parlons de votre programme Guidewire.",
+        title: "Parlons de votre environnement Guidewire.",
         buttonLabel: "Démarrer la conversation",
       },
-      seoTitle: "Services-conseils Guidewire | Zed Ventures",
+      seoTitle: "Services Guidewire | ZEDventures",
       seoDescription:
-        "Zed Ventures assure l'implémentation, la configuration, les montées de version et la migration infonuagique Guidewire sur PolicyCenter, BillingCenter et ClaimCenter.",
+        "ZEDventures aide les assureurs à mettre en œuvre, intégrer, moderniser et exploiter Guidewire pour la police, la facturation et les sinistres.",
     },
     sap: {
       name: "SAP",

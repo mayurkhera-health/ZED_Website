@@ -69,7 +69,12 @@ function ServiceDetailBody() {
   // A service that carries `whyPillars` has had its v1.2 copy written and uses
   // the new template. The rest stay on the older layout until theirs is, so the
   // seven convert one at a time and can be compared live (spec S58).
-  if (s.whyPillars && s.whyPillars.length > 0) return <ServicePageV12 slug={slug} />;
+  // whyPillars OR systemMap: Guidewire's dark band carries a system map
+  // instead of three pillars, so keying the template on pillars alone silently
+  // dropped it back to the old layout.
+  if ((s.whyPillars && s.whyPillars.length > 0) || s.systemMap) {
+    return <ServicePageV12 slug={slug} />;
+  }
 
   return <LegacyBody />;
 }
