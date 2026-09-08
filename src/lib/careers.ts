@@ -170,7 +170,7 @@ export const POSTINGS: JobPosting[] = [
     hoursPerWeek: 40,
     pay: { min: 0, max: 0, period: "year", currency: "USD" },
     sponsorship: true,
-    applyEmail: "archana@zedventures.com",
+    applyEmail: "hr@zedventures.com",
     applyPostal: "ZEDventures Inc., 1762 Technology Drive, Suite 108, San Jose, CA 95110",
     postedOn: "2026-01-01",
     status: "open",
