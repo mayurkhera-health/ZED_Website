@@ -1,3 +1,4 @@
+import { SITE_URL as SITE } from "@/lib/site-url";
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { LanguageProvider, useLanguage } from "@/lib/i18n";
 import { Header } from "@/components/header";
@@ -15,7 +16,6 @@ import {
 } from "@/lib/insights";
 import { isServiceSlug, type ServiceSlug } from "@/lib/service-pages";
 
-const SITE = "https://screen-snap-magic-729.lovable.app";
 const TITLE = "Insights | ZEDventures";
 const DESC =
   "Notes on delivery, data and enterprise systems from the people doing the work at ZEDventures.";
@@ -179,7 +179,7 @@ function InsightsBody() {
 function Band({ children }: { children: React.ReactNode }) {
   return (
     <section className="border-t border-border bg-background">
-      <div className="px-5 py-9 sm:px-8 sm:py-11">
+      <div className="px-5 py-7 sm:px-8 sm:py-8">
         <div className="mx-auto max-w-6xl">{children}</div>
       </div>
     </section>

@@ -65,7 +65,11 @@ export function Hero() {
           </p>
         </div>
 
-        <HeroMark className="hidden h-auto w-full lg:block" />
+        {/* The mark, not the card. Chosen deliberately: the card's only
+            unique content was the office list, which /about already carries,
+            so nothing checkable is lost by showing the drawing instead.
+            hero-card.tsx stays in the repo, unimported, if that reverses. */}
+        <HeroMark className="hidden w-full max-w-[22rem] justify-self-end lg:block" />
       </div>
     </section>
   );

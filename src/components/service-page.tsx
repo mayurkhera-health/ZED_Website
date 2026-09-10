@@ -202,7 +202,7 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
               three or four lines of intro plus a button against a 16:9 image
               — which is why they line up on every service rather than on the
               ones whose headline happens to be short. */}
-          <h1 className="font-display max-w-[26ch] text-[2.5rem] leading-[1.02] tracking-[-0.03em] sm:text-5xl lg:text-6xl">
+          <h1 className="font-display h1-page max-w-[26ch]">
             {s.outcome}
           </h1>
 

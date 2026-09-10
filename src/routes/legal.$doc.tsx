@@ -1,11 +1,10 @@
+import { SITE_URL as SITE } from "@/lib/site-url";
 import { createFileRoute, notFound, Link } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
 import { LanguageProvider, useLanguage } from "@/lib/i18n";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { DraftBanner } from "@/components/draft-banner";
-
-const SITE = "https://screen-snap-magic-729.lovable.app";
 
 /**
  * Privacy policy and terms of use, from one template.
@@ -89,7 +88,7 @@ function LegalBody() {
             ZEDventures
           </Link>
           <p className="eyebrow mt-8 text-accent">{d.eyebrow}</p>
-          <h1 className="font-display mt-3 max-w-[20ch] text-[2.5rem] leading-[1.03] tracking-[-0.03em] sm:text-5xl lg:text-6xl">
+          <h1 className="font-display h1-page mt-3 max-w-[24ch]">
             {d.heading}
           </h1>
           <p className="mt-6 max-w-[44rem] text-[1.0625rem] leading-[1.6] text-muted-foreground sm:text-[1.125rem]">

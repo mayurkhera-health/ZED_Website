@@ -1,3 +1,4 @@
+import { SITE_URL as SITE } from "@/lib/site-url";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { LanguageProvider, useLanguage } from "@/lib/i18n";
@@ -21,13 +22,13 @@ export const Route = createFileRoute("/services")({
         content: "Engineering, data, and geospatial systems built to run.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://screen-snap-magic-729.lovable.app/services" },
+      { property: "og:url", content: `${SITE}/services` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       {
         rel: "canonical",
-        href: "https://screen-snap-magic-729.lovable.app/services",
+        href: `${SITE}/services`,
       },
     ],
   }),
@@ -84,7 +85,7 @@ function ServicesPageBody() {
               to="/services/$slug"
               params={{ slug }}
               aria-label={`${item.title} — ${t.services.viewService}`}
-              className="group block px-5 py-8 transition-colors hover:bg-secondary sm:px-8 sm:py-10"
+              className="group block px-5 py-6 transition-colors hover:bg-secondary sm:px-8 sm:py-7"
               style={{ transitionDuration: "var(--dur)", transitionTimingFunction: "var(--ease)" }}
             >
               <div className="mx-auto flex max-w-6xl items-start gap-6">

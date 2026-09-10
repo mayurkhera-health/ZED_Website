@@ -1,3 +1,4 @@
+import { SITE_URL as SITE } from "@/lib/site-url";
 import { createFileRoute, notFound, Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { LanguageProvider, useLanguage } from "@/lib/i18n";
@@ -15,8 +16,6 @@ import {
   isServiceSlug,
   type ServiceSlug,
 } from "@/lib/service-pages";
-
-const SITE = "https://screen-snap-magic-729.lovable.app";
 
 export const Route = createFileRoute("/services_/$slug")({
   loader: ({ params }) => {
@@ -98,7 +97,7 @@ function LegacyBody() {
       <section className="border-b border-border">
         <div className="container-page section-y">
           <p className="eyebrow text-accent">{t.services.eyebrow}</p>
-          <h1 className="font-display mt-3 max-w-[16ch] text-[2.5rem] leading-[1.02] tracking-[-0.03em] sm:text-6xl lg:text-7xl">
+          <h1 className="font-display h1-page mt-3 max-w-[20ch]">
             {s.name}
           </h1>
           <p className="font-display mt-6 max-w-[26ch] text-[1.375rem] leading-[1.25] tracking-[-0.02em] text-accent sm:text-[1.75rem]">

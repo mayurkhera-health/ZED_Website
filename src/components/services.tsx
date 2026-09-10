@@ -55,7 +55,7 @@ export function Services() {
                   <Link
                     to="/services/$slug"
                     params={{ slug }}
-                    className="group block py-7 transition-colors hover:bg-surface sm:min-h-[8.25rem] sm:py-8"
+                    className="group block py-5 transition-colors hover:bg-surface sm:min-h-[6.5rem] sm:py-6"
                     style={{
                       transitionDuration: "var(--dur)",
                       transitionTimingFunction: "var(--ease)",
@@ -64,7 +64,7 @@ export function Services() {
                     {inner}
                   </Link>
                 ) : (
-                  <div className="group py-7 sm:min-h-[8.25rem] sm:py-8">{inner}</div>
+                  <div className="group py-5 sm:min-h-[6.5rem] sm:py-6">{inner}</div>
                 )}
               </li>
             );

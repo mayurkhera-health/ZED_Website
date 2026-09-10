@@ -1,3 +1,4 @@
+import { SITE_URL as SITE } from "@/lib/site-url";
 import { createFileRoute, notFound, Link } from "@tanstack/react-router";
 import { ArrowLeft, Mail } from "lucide-react";
 import { LanguageProvider, useLanguage } from "@/lib/i18n";
@@ -6,8 +7,6 @@ import { Footer } from "@/components/footer";
 import { DraftBanner } from "@/components/draft-banner";
 import { LegalBlocks } from "@/components/careers-legal";
 import { DRAFT_CAREERS, formatPay, getPosting, jobPostingJsonLd } from "@/lib/careers";
-
-const SITE = "https://screen-snap-magic-729.lovable.app";
 
 export const Route = createFileRoute("/careers_/$slug")({
   loader: ({ params }) => {
@@ -87,7 +86,7 @@ function PostingBody() {
           </Link>
 
           <p className="eyebrow mt-8 text-accent">{c.eyebrow}</p>
-          <h1 className="font-display mt-3 max-w-[18ch] text-[2.5rem] leading-[1.03] tracking-[-0.03em] sm:text-5xl lg:text-6xl">
+          <h1 className="font-display h1-page mt-3 max-w-[22ch]">
             {p.title}
           </h1>
 

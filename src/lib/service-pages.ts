@@ -372,9 +372,9 @@ export const CAPABILITY_ICONS: Record<ServiceSlug, readonly CapabilityIcon[]> = 
  * hero image placeholder. Remove a slug only when its copy is real, its
  * technology claims are confirmed, and its hero image exists.
  *
- * Removing the LAST entry does not make the site launch-ready on its own —
- * every route in this app still declares a canonical URL on the old
- * screen-snap-magic-729.lovable.app domain.
+ * Removing the LAST entry does not make the site launch-ready on its own,
+ * but the canonical-URL problem this note used to describe is fixed: every
+ * route now takes its origin from SITE_URL in lib/site-url.ts.
  */
 export const DRAFT_SERVICES: readonly ServiceSlug[] = [
   // AI & Data came off at Mayur's direction. Its copy reads as finished

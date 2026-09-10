@@ -132,7 +132,10 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
-    font-family: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+    /* The reading face. IBM Plex Sans was drawn for technical documentation
+       and has a taller x-height than Hanken Grotesk, so body copy reads
+       slightly larger at the same px value. */
+    font-family: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -178,10 +181,40 @@
   }
 
   .font-display {
-    font-family: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
-    font-weight: 800;
+    /* The display face. Space Grotesk tops out at 700, where Hanken Grotesk
+       went to 800 — so headings are marginally lighter in weight and rather
+       heavier in character. Its widest tracking is already tight, so the
+       -0.02em that Hanken needed is dialled back to -0.015em. */
+    font-family: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+    /* 600, not 700. The reference sets both its H1 and its card titles at
+       600, and Space Grotesk at 700 is noticeably heavier than Hanken Grotesk
+       at 800 was — the face carries more weight per unit than the one it
+       replaced. */
+    font-weight: 600;
+    letter-spacing: -0.015em;
+  }
+
+  /* ---- page title ----
+     ONE H1 scale for the whole site.
+
+     There were seven H1 declarations across seven files and five different
+     desktop sizes: 56, 60, 64 and 72px. Nothing chose those numbers; each page
+     picked its own and they drifted. A visitor moving from a service page to
+     an article met a different title size every time.
+
+     44px at desktop, at Mayur's direction after measuring a reference site he
+     liked. It is smaller than every previous value, which is the point: the
+     old sizes were display-poster sizes on pages that are mostly prose.
+
+     Ramp is 32 / 38 / 44. Leading tightens as the size grows, because a
+     ratio that reads as comfortable at 32px reads as loose at 44px. */
+  .h1-page {
+    font-size: 2rem;          /* 32 */
+    line-height: 1.2;
     letter-spacing: -0.02em;
   }
+  @media (min-width: 640px)  { .h1-page { font-size: 2.375rem; line-height: 1.18; } } /* 38 */
+  @media (min-width: 1024px) { .h1-page { font-size: 2.75rem;  line-height: 1.15; } } /* 44 — 50.6px, the reference value */
 
   .eyebrow {
     font-size: 11px;
@@ -214,15 +247,19 @@
      because the card's own bottom padding sits inside the section. That is
      correct — the padding belongs to the card — and it is why the seams on this
      site are consistent rather than identical. */
+  /* Cut again at Mayur's direction: the seams below were already the result
+     of one measured pass, and with the H1 down to 44px the old padding read
+     as proportionally larger than it had at 64px. Type got smaller; the space
+     around it had to follow. */
   .section-y {
-    padding-top: 1.75rem;   /* 28 -> 56 seam */
-    padding-bottom: 1.75rem;
+    padding-top: 1.5rem;    /* 24 -> 48 seam */
+    padding-bottom: 1.5rem;
   }
   @media (min-width: 768px) {
-    .section-y { padding-top: 2rem; padding-bottom: 2rem; }     /* 32 -> 64 seam */
+    .section-y { padding-top: 1.75rem; padding-bottom: 1.75rem; } /* 28 -> 56 seam */
   }
   @media (min-width: 1280px) {
-    .section-y { padding-top: 2.5rem; padding-bottom: 2.5rem; } /* 40 -> 80 seam */
+    .section-y { padding-top: 2rem; padding-bottom: 2rem; }       /* 32 -> 64 seam */
   }
 
   /* A section whose LAST element is a padded card carries that card's bottom
@@ -239,10 +276,10 @@
     padding-bottom: 0.25rem;
   }
   @media (min-width: 768px) {
-    .section-y-card { padding-bottom: 0.5rem; }
+    .section-y-card { padding-bottom: 0.375rem; }
   }
   @media (min-width: 1280px) {
-    .section-y-card { padding-bottom: 1rem; }
+    .section-y-card { padding-bottom: 0.5rem; }
   }
 
   .container-page {

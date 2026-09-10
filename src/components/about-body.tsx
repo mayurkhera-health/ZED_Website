@@ -46,7 +46,7 @@ export function AboutBody({ showHeroPlaceholder }: { showHeroPlaceholder: boolea
       <section className="border-b border-border">
         <div className="container-page section-y">
           <p className="eyebrow text-accent">{a.eyebrow}</p>
-          <h1 className="font-display mt-3 max-w-[22ch] text-[2.5rem] leading-[1.02] tracking-[-0.03em] sm:text-5xl lg:text-6xl">
+          <h1 className="font-display h1-page mt-3 max-w-[22ch]">
             {a.heading}
           </h1>
 

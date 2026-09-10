@@ -1,3 +1,4 @@
+import { SITE_URL as SITE } from "@/lib/site-url";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, MapPin } from "lucide-react";
 import { LanguageProvider, useLanguage } from "@/lib/i18n";
@@ -9,8 +10,6 @@ import { LegalBlocks } from "@/components/careers-legal";
 import { CareersWhy } from "@/components/careers-why";
 import { CareersProcess } from "@/components/careers-process";
 import { DRAFT_CAREERS, OPEN_POSTINGS, formatPay } from "@/lib/careers";
-
-const SITE = "https://screen-snap-magic-729.lovable.app";
 
 export const Route = createFileRoute("/careers")({
   head: () => ({

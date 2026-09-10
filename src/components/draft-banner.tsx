@@ -10,10 +10,7 @@ import { AlertTriangle } from "lucide-react";
  */
 export function DraftBanner({ note }: { note?: string }) {
   return (
-    <div
-      role="note"
-      className="border-b border-[#E9A23B]/40 bg-[#FFF7E8] text-[#7A4A00]"
-    >
+    <div role="note" className="border-b border-[#E9A23B]/40 bg-[#FFF7E8] text-[#7A4A00]">
       <div className="container-page flex items-start gap-3 py-3">
         <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
         <p className="text-sm leading-relaxed">

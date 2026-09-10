@@ -40,7 +40,14 @@ export function SectionHeader({
       {heading && (
         <Tag
           id={headingId}
-          className="font-display mt-3 max-w-[74rem] text-[2rem] leading-[1.08] tracking-[-0.02em] sm:text-[2.375rem] lg:text-[3.125rem] lg:leading-[1.05]"
+          /* When this renders as the page's H1 it takes the site-wide h1-page
+             scale, so /contact and /careers match every other page title
+             rather than keeping SectionHeader's own section-heading size. */
+          className={`font-display mt-3 max-w-[74rem] ${
+            Tag === "h1"
+              ? "h1-page"
+              : "text-[2rem] leading-[1.08] tracking-[-0.02em] sm:text-[2.375rem] lg:text-[3.125rem] lg:leading-[1.05]"
+          }`}
         >
           {heading}
         </Tag>

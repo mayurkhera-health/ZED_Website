@@ -1,11 +1,10 @@
+import { SITE_URL as SITE } from "@/lib/site-url";
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { LanguageProvider } from "@/lib/i18n";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { ArticleTemplate } from "@/components/article-template";
 import { getArticle } from "@/lib/insights";
-
-const SITE = "https://screen-snap-magic-729.lovable.app";
 
 /**
  * One article.

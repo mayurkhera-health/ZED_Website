@@ -104,7 +104,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&display=swap",
+        // Two families, one job each. Space Grotesk sets headings; IBM Plex
+        // Sans sets everything you actually read. Weights are enumerated
+        // rather than requested as variable ranges — the site uses five of
+        // them and shipping 300..900 of two families is payload nobody sees.
+        href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap",
       },
       {
         rel: "stylesheet",

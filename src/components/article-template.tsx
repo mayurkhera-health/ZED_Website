@@ -86,7 +86,7 @@ export function ArticleTemplate({ article: a }: { article: Article }) {
               </p>
               <h1
                 lang="en"
-                className="font-display mt-2 text-[2rem] leading-[1.08] tracking-[-0.02em] [overflow-wrap:anywhere] sm:text-[2.75rem] sm:leading-[1.05] lg:text-[3.5rem] lg:leading-[1.03]"
+                className="font-display h1-page mt-2 max-w-[26ch] [overflow-wrap:anywhere]"
               >
                 {a.title}
               </h1>
@@ -155,7 +155,7 @@ export function ArticleTemplate({ article: a }: { article: Article }) {
           published post that is exactly what happens. */}
       {related.length > 0 && (
         <section className="border-t border-border bg-background">
-          <div className="px-5 py-9 sm:px-8 sm:py-11">
+          <div className="px-5 py-7 sm:px-8 sm:py-8">
             <div className="mx-auto max-w-6xl">
               <p className="eyebrow text-subtle-foreground">{t.insights.relatedLabel}</p>
               <ul className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7">

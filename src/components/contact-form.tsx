@@ -92,7 +92,9 @@ export function ContactForm() {
     const base =
       "w-full rounded-xl border bg-card px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:border-primary";
     const cls = `${base} ${err ? "border-destructive" : "border-input"}`;
-    const autoComplete = { name: "name", email: "email", company: "organization", message: "off" }[id];
+    const autoComplete = { name: "name", email: "email", company: "organization", message: "off" }[
+      id
+    ];
     const shared = {
       id,
       name: id,
@@ -125,7 +127,11 @@ export function ContactForm() {
           />
         )}
         {err && (
-          <p id={`${id}-error`} role="alert" className="mt-1.5 text-xs font-medium text-destructive">
+          <p
+            id={`${id}-error`}
+            role="alert"
+            className="mt-1.5 text-xs font-medium text-destructive"
+          >
             {err}
           </p>
         )}
@@ -222,7 +228,10 @@ export function ContactForm() {
 
       {/* Honeypot. Off-screen rather than display:none, because some bots skip
           hidden inputs. aria-hidden and tabIndex keep it away from real users. */}
-      <div className="absolute left-[-9999px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
+      <div
+        className="absolute left-[-9999px] top-auto h-px w-px overflow-hidden"
+        aria-hidden="true"
+      >
         <label htmlFor="website">Leave this field empty</label>
         <input
           id="website"

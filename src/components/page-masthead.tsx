@@ -35,15 +35,15 @@ export function PageMasthead({
   sub?: string | undefined;
 }) {
   return (
-    <section className="border-b border-border bg-background px-5 py-7 sm:px-8 sm:py-8 xl:py-10">
+    <section className="border-b border-border bg-background px-5 py-6 sm:px-8 sm:py-7 xl:py-8">
       <div className="mx-auto max-w-6xl">
         <div className="border-l-4 border-primary pl-5 sm:pl-8 md:pl-12">
           <p className="eyebrow text-accent">{eyebrow}</p>
-          <h1 className="font-display mt-[1.25rem] max-w-[20ch] text-[2.5rem] leading-[1.05] tracking-[-0.02em] [overflow-wrap:anywhere] sm:text-[3.25rem] sm:leading-[1.03] lg:text-[4rem] lg:leading-[1.02]">
+          <h1 className="font-display h1-page mt-4 max-w-[24ch] [overflow-wrap:anywhere]">
             {heading}
           </h1>
           {sub && (
-            <p className="mt-5 max-w-[52rem] text-lg leading-relaxed text-muted-foreground sm:text-xl">
+            <p className="mt-4 max-w-[52rem] text-lg leading-relaxed text-muted-foreground sm:text-xl">
               {sub}
             </p>
           )}

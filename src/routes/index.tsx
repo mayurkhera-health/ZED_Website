@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SITE_URL as SITE } from "@/lib/site-url";
 import { LanguageProvider } from "@/lib/i18n";
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
@@ -25,8 +26,14 @@ export const Route = createFileRoute("/")({
           "Engineering intelligence into every enterprise. AI & Data, Analytics, GIS, Guidewire, Product Engineering, Offshore & Nearshore Delivery.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: `${SITE}/` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    // The homepage had neither a canonical nor an og:url — the most linked
+    // page on the site, with nothing telling a crawler which address is the
+    // real one. That matters most where a page is reachable as both the apex
+    // and www.
+    links: [{ rel: "canonical", href: `${SITE}/` }],
   }),
   component: Index,
 });

@@ -1,3 +1,4 @@
+import { SITE_URL as SITE } from "@/lib/site-url";
 import { createFileRoute } from "@tanstack/react-router";
 import { LanguageProvider, useLanguage } from "@/lib/i18n";
 import { Header } from "@/components/header";
@@ -20,13 +21,13 @@ export const Route = createFileRoute("/case-studies")({
           "Real engagements, real outcomes — AI, data, and analytics systems running for global enterprises today.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://screen-snap-magic-729.lovable.app/case-studies" },
+      { property: "og:url", content: `${SITE}/case-studies` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       {
         rel: "canonical",
-        href: "https://screen-snap-magic-729.lovable.app/case-studies",
+        href: `${SITE}/case-studies`,
       },
     ],
   }),
@@ -63,7 +64,7 @@ function CaseStudiesPageBody() {
             // Index-based rather than derived from the tag, because the tag is
             // translated and the anchor must be the same in both locales.
             id={`case-${i + 1}`}
-            className={`scroll-mt-24 border-b border-border px-5 py-8 sm:px-8 sm:py-10 ${
+            className={`scroll-mt-24 border-b border-border px-5 py-6 sm:px-8 sm:py-7 ${
               isDark ? "section-dark" : "bg-background"
             }`}
           >

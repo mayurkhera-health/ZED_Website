@@ -91,7 +91,7 @@ export function InsightCard({
         className={`font-display mt-2 tracking-[-0.02em] transition-colors group-hover:text-accent ${
           featured
             ? "max-w-[44ch] text-[1.375rem] leading-[1.2] sm:text-[1.5625rem] lg:text-[1.75rem]"
-            : "text-[1.0625rem] leading-[1.3]"
+            : "text-[1.1875rem] leading-[1.35]"
         }`}
       >
         {a.title}
@@ -102,8 +102,8 @@ export function InsightCard({
       <p
         className={`text-muted-foreground ${
           featured
-            ? "mt-2 max-w-[44rem] text-[1rem] leading-[1.55]"
-            : "mt-2 line-clamp-3 text-[0.9375rem] leading-[1.5]"
+            ? "mt-2 max-w-[44rem] text-[1.0625rem] leading-[1.6]"
+            : "mt-2 line-clamp-3 text-[0.90625rem] leading-[1.6]"
         }`}
       >
         {summaryOf(a)}

@@ -1,215 +1,101 @@
-# Environments and deploying
+# Deploying to Fly.io
 
-Three copies of this site. Work flows one way — **local → staging → production**
-— so that a mistake is found by someone who is not a customer.
+Everything below was verified from a clean checkout of this repo: `npm install`
+→ `NITRO_PRESET=node-server vite build` → `node .output/server/index.mjs`, with
+`/`, `/services` and `/contact` all returning 200.
 
-| | Where | Who sees it | Deploy command |
-|---|---|---|---|
-| **local** | your laptop | you | `npm run dev` |
-| **staging** | Fly app `zedventures-test` | you, anyone you send the link to | `fly deploy -c fly.staging.toml` |
-| **production** | Fly app named in `fly.production.toml` | customers | `fly deploy -c fly.production.toml` |
+## Step 0 — Fix the logo first (required)
 
-**There is no `fly.toml` in this repo, on purpose.** A bare `fly deploy` fails
-with "Could not find a fly.toml" instead of guessing which app to send your
-changes to. Guessing is how a test change reaches a live site — it has already
-happened once on another project. You must name the target every time.
-
----
-
-## Making a change — the loop
-
-**Every block in this file is safe to paste.** No inline `#` comments — zsh
-does not treat `#` as a comment when typed interactively, so a commented
-command line gets passed to the program as arguments and fails.
-
-1. Pull, in case main moved:
+`src/assets/zedventures-logo.png.asset.json` points at:
 
 ```
-git pull
+/__l5e/assets-v1/883225e3-675b-4a0a-8c77-20a9b61fb548/zedventures-logo.png
 ```
 
-2. Make the change and watch it at http://localhost:8080:
+That path is served by Lovable's platform, not by this app. **Anywhere else —
+Fly, Vercel, your laptop — it returns 404 and the logo renders as broken alt
+text in the header and footer.** Confirmed against the production build.
 
-```
-npm run dev
-```
+1. Open the live Lovable preview, right-click the header logo, **Save image as…**
+2. Save it as `public/zedventures-logo.png` in this repo.
+3. Change the one line in `src/assets/zedventures-logo.png.asset.json`:
 
-3. In a second terminal, check the types:
-
-```
-npx tsc --noEmit
-```
-
-4. Commit and push, so it exists somewhere other than this laptop:
-
-```
-git add -A
-git commit -m "what changed and why"
-git push origin main
+```diff
+-  "url": "/__l5e/assets-v1/883225e3-675b-4a0a-8c77-20a9b61fb548/zedventures-logo.png",
++  "url": "/zedventures-logo.png",
 ```
 
-5. Deploy to staging and look at it:
+Check it locally before deploying: `npm run dev`, then look at the header.
 
-```
-fly deploy -c fly.staging.toml
-```
+## Step 1 — Install the CLI and sign in
 
-6. Only once staging looks right:
-
-```
-fly deploy -c fly.production.toml
+```bash
+brew install flyctl          # macOS; see fly.io/docs/flyctl/install for others
+fly auth login               # opens a browser
 ```
 
-Steps 2 and 6 are the ones that were missing before. Every change used to go
-straight from an editor to a deployed site, which is why a broken logo and a
-fake phone number sat live for weeks and a contact form failure had to be
-debugged by reading server logs.
+## Step 2 — Create the app
 
-Two habits worth keeping:
-
-**Look at the badge before you touch anything.** Bottom-left corner. `local`,
-`staging`, or nothing at all — and nothing at all means you are on production.
-
-**Never type `fly deploy` without `-c`.** There is no fly.toml, so it will
-refuse rather than guess, but the habit is what protects you on the projects
-that still have one.
-
----
-
-## Local
-
-```
-npm install          # once, or after package.json changes
-npm run dev          # http://localhost:8080 (port comes from the Lovable vite preset,
-                     # not from us; 3000 is the CONTAINER port on Fly)
+```bash
+fly launch --no-deploy
 ```
 
-Edit a file and the page reloads. Nothing here reaches anyone. This is where
-bugs should be found and where you should reproduce anything that looks wrong
-on staging before touching a deployment.
+Say **no** when it offers to overwrite the `fly.toml` in this repo — it is
+already configured. Say **no** to Postgres, Redis and Upstash; this site has no
+database.
 
-Before you push, two checks that take seconds:
+`fly launch` will rename `app` in `fly.toml` to something globally unique.
+Also change `primary_region` if `yyz` (Toronto) is not where you want it —
+`sjc` for the Bay Area, `iad` for US East.
 
-```
-npx tsc --noEmit     # types
-npm run lint
-```
+## Step 3 — Deploy
 
-## Staging
-
-```
-fly deploy -c fly.staging.toml
+```bash
+fly deploy
 ```
 
-Deploy `main` here freely — that is what it is for. The build stamps
-`VITE_SITE_ENV=staging`, which does two things automatically:
+First build takes 3–5 minutes. Then:
 
-- every page emits `<meta name="robots" content="noindex, nofollow">`, and the
-  image ships a `robots.txt` that disallows everything, so staging can never
-  appear in a search result competing with the real site;
-- a **STAGING** badge sits in the bottom-left corner of every page, so nobody
-  ever has to read the URL to know which copy they are looking at.
-
-Staging scales to zero when idle, so it costs almost nothing and the first hit
-after a quiet spell takes a second or two to wake.
-
-## Production
-
-Not created yet. Before the first deploy:
-
-1. Choose the app name, `fly apps create <name>`, and put it in
-   `fly.production.toml` in place of `CHANGEME-zedventures-production`.
-2. Set the real secrets (see below).
-3. Point the domain at it: `fly certs add zedventures.com -a <name>`.
-
-```
-fly deploy -c fly.production.toml
+```bash
+fly open        # opens the site
+fly logs        # if something looks wrong
 ```
 
-**Only deploy a commit here that is already running on staging.** That is the
-entire point of having two. Production keeps one machine always running rather
-than scaling to zero, so a customer never waits for a cold start.
+## Redeploying after changes
 
----
-
-## Secrets
-
-Set per app, never committed. The two environments must not share them.
-
-The contact form sends through Google Workspace SMTP, so the credential is a
-Google **App Password** — not your account password, and not a third-party API
-key. App Passwords only exist once 2-Step Verification is on for that account:
-Google Account -> Security -> App passwords. It is sixteen characters, shown
-once, displayed in four groups of four. The spaces are stripped in code, so
-paste it either way; keep the quotes so your shell does not split it.
-
-**Substitute your own values. Do not paste the lines below as they stand.** The
-placeholders are not credentials, and setting one makes the form worse than
-leaving it unset: a present-but-wrong credential fails at the mail server and
-shows the visitor a red error, where an absent one falls back cleanly to their
-own mail client. This has already happened once.
-
-Staging, pointed at your own inbox:
-
-```
-fly secrets set SMTP_USER=YOUR_ADDRESS SMTP_PASS='YOUR APP PASSWORD' CONTACT_TO=YOUR_OWN_INBOX -a zedventures-test
+```bash
+git push        # if you use GitHub
+fly deploy      # rebuilds and ships
 ```
 
-Production, pointed at the real inbox:
+## What the config does
 
-```
-fly secrets set SMTP_USER=YOUR_ADDRESS SMTP_PASS='YOUR APP PASSWORD' CONTACT_TO=info@zedventures.com -a PRODUCTION_APP
-```
+- **`Dockerfile`** — two stages. Builds with Node 22 and `NITRO_PRESET=node-server`,
+  then copies only `.output` into a slim runtime image. The Nitro node-server
+  bundle is self-contained, so the runtime image carries no `node_modules`.
+- **`fly.toml`** — one shared-cpu-1x machine with 512 MB, listening on port 3000,
+  HTTPS forced. `min_machines_running = 0` with auto stop/start means the machine
+  sleeps when nobody is looking at it, so a preview site costs close to nothing.
+  The trade-off: the first request after an idle period takes a second or two
+  to wake the machine.
 
-Why separate: if staging shares production's mail settings, testing the contact
-form emails a real prospect from a half-finished site.
+## Two things that will bite you if you change them
 
-`fly secrets list -a <app>` shows what is set (names only, never values).
+- **`NITRO_PRESET=node-server` is not optional.** `vite.config.ts` uses
+  `@lovable.dev/vite-tanstack-config`, which defaults Nitro to the **Cloudflare
+  Workers** target. Without the env var the build produces a Worker bundle and
+  there is no `.output/server/index.mjs` for the container to run.
+- **The Dockerfile uses `npm`, not `bun`, on purpose.** `bun.lock` pins `culori`
+  to Lovable's private registry (`europe-west4-npm.pkg.dev/lovable-core-prod/…`),
+  which returns **403** outside their sandbox — `bun install --frozen-lockfile`
+  fails in any external build. It also uses `npm install` rather than `npm ci`,
+  because this tree resolves two major versions of `ajv` and `npm ci` rejects
+  that as an out-of-sync lockfile even on a lockfile npm just wrote itself.
 
-### Checking it actually works
+## Before this is a real production site, not just a preview
 
-Submitting the form is the only way to know. Deploy, fill it in, read the panel:
-
-- **"Message sent"** — SMTP worked.
-- **"Your message is ready to send"** and your mail client opens — the
-  fallback. `SMTP_USER` or `SMTP_PASS` is missing.
-- **"That didn't go through"** — the credential is set but wrong, or Google
-  refused it. `fly logs -a <app>`, look for `[contact] smtp send failed`.
-
-Rotating the App Password: revoke the old one in Google Account settings, then
-`fly secrets set SMTP_PASS='...'`. Revoking alone does not stop the site trying
-to send until the secret is replaced.
-
-## Which environment am I looking at?
-
-- A badge in the bottom-left corner says `local` or `staging`.
-- **No badge means production.** If you are about to change something and there
-  is no badge, stop and check where you are.
-
-That check is keyed on "is this production", not "is this staging", so a typo in
-the build argument fails safe: an unrecognised value is treated as
-not-production, meaning noindex and a visible badge. The failure mode is an ugly
-production site, not an indexed staging site.
-
-## Verifying a deploy
-
-```
-fly logs -a <app>              # server output, including [contact] errors
-fly status -a <app>            # machines, health
-fly releases -a <app>          # what was deployed and when
-```
-
----
-
-## Notes on the build
-
-- **npm, not bun.** `bun.lock` pins `culori` to Lovable's private registry,
-  which returns 403 outside their sandbox. `package-lock.json` resolves
-  everything from registry.npmjs.org.
-- **`npm install`, not `npm ci`.** This dependency tree resolves two ajv majors,
-  which `npm ci` rejects as "lock file out of sync" even on a lockfile npm has
-  just generated. Verified from a clean checkout.
-- **`NITRO_PRESET=node-server`.** The Vite config defaults Nitro to the
-  Cloudflare Workers target; Fly runs a plain container. The Dockerfile sets
-  this. Without it the build produces a Workers bundle and `process.env` does
-  not behave the way the server code expects.
+- The contact form hands the message to the visitor's mail client; there is
+  still no backend receiving submissions.
+- `src/lib/i18n.tsx` publishes `+1 (408) 555-0134` — that is a reserved
+  fake-number range.
+- The Careers CTA is still `href="#"`.

@@ -1,11 +1,10 @@
+import { SITE_URL as SITE } from "@/lib/site-url";
 import { createFileRoute } from "@tanstack/react-router";
 import { LanguageProvider } from "@/lib/i18n";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { DraftBanner } from "@/components/draft-banner";
 import { AboutBody } from "@/components/about-body";
-
-const SITE = "https://screen-snap-magic-729.lovable.app";
 
 /**
  * The copy here is Mayur's own, from the About page spec, and the hero image is
