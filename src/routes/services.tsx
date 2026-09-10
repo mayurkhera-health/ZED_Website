@@ -3,6 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import { LanguageProvider, useLanguage } from "@/lib/i18n";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { PageMasthead } from "@/components/page-masthead";
 import { VISIBLE_SERVICE_ENTRIES } from "@/lib/service-pages";
 
 export const Route = createFileRoute("/services")({
@@ -51,19 +52,7 @@ function ServicesPageBody() {
 
   return (
     <>
-      <section className="border-b border-border bg-background px-5 py-7 sm:px-8 sm:py-8 xl:py-10">
-        <div className="mx-auto max-w-6xl">
-          <div className="border-l-4 border-primary pl-5 sm:pl-8 md:pl-12">
-            <p className="eyebrow text-accent">{s.eyebrow}</p>
-            <h1 className="font-display mt-2 text-[2.25rem] leading-[0.95] tracking-tight [overflow-wrap:anywhere] sm:text-7xl sm:leading-[0.9] md:text-8xl lg:text-9xl">
-              {s.heading}
-            </h1>
-            <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
-              {s.sub}
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageMasthead eyebrow={s.eyebrow} heading={s.heading} sub={s.sub} />
 
       {/* Each band links to its own service page.
           Until now this page described the seven services and linked to none

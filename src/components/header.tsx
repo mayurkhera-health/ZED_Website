@@ -36,6 +36,7 @@ const LOGO_H = 208;
  */
 const NAV = [
   { kind: "link", to: "/services", key: "services" },
+  { kind: "link", to: "/insights", key: "insights" },
   { kind: "group", key: "company", items: ["/about", "/case-studies"] },
   { kind: "link", to: "/careers", key: "careers" },
 ] as const;
@@ -47,13 +48,24 @@ const NAV = [
  */
 const VISIBLE_NAV = NAV.filter((item) => item.key !== "careers" || SHOW_CAREERS);
 
+/**
+ * Insights is English-only for now — see the note at the top of lib/insights.ts.
+ * A French reader is not shown a link to a section they cannot read, so the
+ * entry is dropped from the nav in that locale rather than leading them to
+ * English prose. Remove this once an article has a French body.
+ */
+function navFor(lang: string) {
+  return VISIBLE_NAV.filter((item) => item.key !== "insights" || lang === "en");
+}
+
 const GROUP_LABELS: Record<string, "about" | "caseStudies"> = {
   "/about": "about",
   "/case-studies": "caseStudies",
 };
 
 export function Header() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
+  const nav = navFor(lang);
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -89,7 +101,7 @@ export function Header() {
         {/* Desktop navigation — collapses into the sheet below ~640px, where the
             logo plus links plus toggle no longer fit on one line. */}
         <nav className="hidden items-center gap-7 sm:flex lg:gap-8" aria-label="Main navigation">
-          {VISIBLE_NAV.map((item) =>
+          {nav.map((item) =>
             item.kind === "group" ? (
               <NavGroup
                 key={item.key}
@@ -138,7 +150,7 @@ export function Header() {
                     of it at once, and a tap-to-expand here would hide two
                     links behind an interaction for no gain. The group becomes
                     a label with its links beneath it. */}
-                {VISIBLE_NAV.map((item) =>
+                {nav.map((item) =>
                   item.kind === "group" ? (
                     <div key={item.key}>
                       <p className="eyebrow text-subtle-foreground">{t.nav[item.key]}</p>

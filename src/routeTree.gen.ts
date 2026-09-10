@@ -14,8 +14,10 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as CareersRouteImport } from './routes/careers'
 import { Route as CaseStudiesRouteImport } from './routes/case-studies'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as InsightsRouteImport } from './routes/insights'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as CareersSlugRouteImport } from './routes/careers_.$slug'
+import { Route as InsightsSlugRouteImport } from './routes/insights_.$slug'
 import { Route as LegalDocRouteImport } from './routes/legal.$doc'
 import { Route as ServicesSlugRouteImport } from './routes/services_.$slug'
 
@@ -44,6 +46,11 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InsightsRoute = InsightsRouteImport.update({
+  id: '/insights',
+  path: '/insights',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
@@ -52,6 +59,11 @@ const ServicesRoute = ServicesRouteImport.update({
 const CareersSlugRoute = CareersSlugRouteImport.update({
   id: '/careers_/$slug',
   path: '/careers/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InsightsSlugRoute = InsightsSlugRouteImport.update({
+  id: '/insights_/$slug',
+  path: '/insights/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LegalDocRoute = LegalDocRouteImport.update({
@@ -71,8 +83,10 @@ export interface FileRoutesByFullPath {
   '/careers': typeof CareersRoute
   '/case-studies': typeof CaseStudiesRoute
   '/contact': typeof ContactRoute
+  '/insights': typeof InsightsRoute
   '/services': typeof ServicesRoute
   '/careers/$slug': typeof CareersSlugRoute
+  '/insights/$slug': typeof InsightsSlugRoute
   '/legal/$doc': typeof LegalDocRoute
   '/services/$slug': typeof ServicesSlugRoute
 }
@@ -82,8 +96,10 @@ export interface FileRoutesByTo {
   '/careers': typeof CareersRoute
   '/case-studies': typeof CaseStudiesRoute
   '/contact': typeof ContactRoute
+  '/insights': typeof InsightsRoute
   '/services': typeof ServicesRoute
   '/careers/$slug': typeof CareersSlugRoute
+  '/insights/$slug': typeof InsightsSlugRoute
   '/legal/$doc': typeof LegalDocRoute
   '/services/$slug': typeof ServicesSlugRoute
 }
@@ -94,8 +110,10 @@ export interface FileRoutesById {
   '/careers': typeof CareersRoute
   '/case-studies': typeof CaseStudiesRoute
   '/contact': typeof ContactRoute
+  '/insights': typeof InsightsRoute
   '/services': typeof ServicesRoute
   '/careers_/$slug': typeof CareersSlugRoute
+  '/insights_/$slug': typeof InsightsSlugRoute
   '/legal/$doc': typeof LegalDocRoute
   '/services_/$slug': typeof ServicesSlugRoute
 }
@@ -107,8 +125,10 @@ export interface FileRouteTypes {
     | '/careers'
     | '/case-studies'
     | '/contact'
+    | '/insights'
     | '/services'
     | '/careers/$slug'
+    | '/insights/$slug'
     | '/legal/$doc'
     | '/services/$slug'
   fileRoutesByTo: FileRoutesByTo
@@ -118,8 +138,10 @@ export interface FileRouteTypes {
     | '/careers'
     | '/case-studies'
     | '/contact'
+    | '/insights'
     | '/services'
     | '/careers/$slug'
+    | '/insights/$slug'
     | '/legal/$doc'
     | '/services/$slug'
   id:
@@ -129,8 +151,10 @@ export interface FileRouteTypes {
     | '/careers'
     | '/case-studies'
     | '/contact'
+    | '/insights'
     | '/services'
     | '/careers_/$slug'
+    | '/insights_/$slug'
     | '/legal/$doc'
     | '/services_/$slug'
   fileRoutesById: FileRoutesById
@@ -141,8 +165,10 @@ export interface RootRouteChildren {
   CareersRoute: typeof CareersRoute
   CaseStudiesRoute: typeof CaseStudiesRoute
   ContactRoute: typeof ContactRoute
+  InsightsRoute: typeof InsightsRoute
   ServicesRoute: typeof ServicesRoute
   CareersSlugRoute: typeof CareersSlugRoute
+  InsightsSlugRoute: typeof InsightsSlugRoute
   LegalDocRoute: typeof LegalDocRoute
   ServicesSlugRoute: typeof ServicesSlugRoute
 }
@@ -184,6 +210,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/insights': {
+      id: '/insights'
+      path: '/insights'
+      fullPath: '/insights'
+      preLoaderRoute: typeof InsightsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services': {
       id: '/services'
       path: '/services'
@@ -196,6 +229,13 @@ declare module '@tanstack/react-router' {
       path: '/careers/$slug'
       fullPath: '/careers/$slug'
       preLoaderRoute: typeof CareersSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/insights_/$slug': {
+      id: '/insights_/$slug'
+      path: '/insights/$slug'
+      fullPath: '/insights/$slug'
+      preLoaderRoute: typeof InsightsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/legal/$doc': {
@@ -221,8 +261,10 @@ const rootRouteChildren: RootRouteChildren = {
   CareersRoute: CareersRoute,
   CaseStudiesRoute: CaseStudiesRoute,
   ContactRoute: ContactRoute,
+  InsightsRoute: InsightsRoute,
   ServicesRoute: ServicesRoute,
   CareersSlugRoute: CareersSlugRoute,
+  InsightsSlugRoute: InsightsSlugRoute,
   LegalDocRoute: LegalDocRoute,
   ServicesSlugRoute: ServicesSlugRoute,
 }

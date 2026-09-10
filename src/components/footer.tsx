@@ -24,7 +24,7 @@ import { LanguageToggle } from "@/components/language-toggle";
 const LOGO_KNOCKOUT_SRC = "/zedventures-logo-knockout.png";
 
 export function Footer() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const f = t.footer;
 
   return (
@@ -59,6 +59,12 @@ export function Footer() {
             <li>
               <FooterLink to="/services">{t.nav.services}</FooterLink>
             </li>
+            {/* English-only, matching the header. See lib/insights.ts. */}
+            {lang === "en" && (
+              <li>
+                <FooterLink to="/insights">{t.nav.insights}</FooterLink>
+              </li>
+            )}
             <li>
               <FooterLink to="/case-studies">{t.nav.caseStudies}</FooterLink>
             </li>
@@ -125,7 +131,7 @@ function FooterLink({
   to,
   children,
 }: {
-  to: "/services" | "/case-studies" | "/about" | "/careers" | "/contact";
+  to: "/services" | "/insights" | "/case-studies" | "/about" | "/careers" | "/contact";
   children: React.ReactNode;
 }) {
   return (
