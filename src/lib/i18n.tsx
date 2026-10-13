@@ -595,7 +595,6 @@ const en = {
     ventureBody: [
       "AutomateSmall is our own venture, built for businesses with 3 to 50 people.",
       "The problems turned out to be ones we already knew. The same information entered in three places. Follow-ups that only happen if somebody remembers. Invoices going out late. Certifications checked by hand. What these businesses don't have is an operations team, an IT team or a process team \u2014 the owner is doing all three jobs.",
-      "So we took out the enterprise apparatus and kept the engineering. Every engagement starts with a free walkthrough and a written quote before any work begins. No long contracts.",
       "It runs as its own brand, on its own site, because a small-business owner shouldn't have to read enterprise material to work out whether something is for them.",
     ],
     ventureLink: "Visit AutomateSmall",
@@ -1101,7 +1100,6 @@ const fr: Copy = {
     ventureBody: [
       "AutomateSmall is our own venture, built for businesses with 3 to 50 people.",
       "The problems turned out to be ones we already knew. The same information entered in three places. Follow-ups that only happen if somebody remembers. Invoices going out late. Certifications checked by hand. What these businesses don't have is an operations team, an IT team or a process team \u2014 the owner is doing all three jobs.",
-      "So we took out the enterprise apparatus and kept the engineering. Every engagement starts with a free walkthrough and a written quote before any work begins. No long contracts.",
       "It runs as its own brand, on its own site, because a small-business owner shouldn't have to read enterprise material to work out whether something is for them.",
     ],
     ventureLink: "Visit AutomateSmall",
