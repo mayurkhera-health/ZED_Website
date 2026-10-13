@@ -74,12 +74,7 @@ export type Timeline = {
  * thing they are about to read before they commit to it, which is most of
  * what separates this from a marketing blog.
  */
-export const CONTENT_TYPES = [
-  "Point of view",
-  "From the field",
-  "Explainer",
-  "Case note",
-] as const;
+export const CONTENT_TYPES = ["Point of view", "From the field", "Explainer", "Case note"] as const;
 export type ContentType = (typeof CONTENT_TYPES)[number];
 
 export type Article = {
@@ -143,6 +138,60 @@ export type Article = {
  * is named and none should be added.
  */
 export const ARTICLES: readonly Article[] = [
+  {
+    slug: "ai-fails-at-the-handover",
+    title: "AI initiatives rarely fail at the model",
+    standfirst:
+      "They fail at the transfer of responsibility, when no one owns the system after the demo ends.",
+    summary:
+      "A strong prototype creates confidence. What it rarely creates is an operating model \u2014 clear ownership of the data, accountability in production, and a plan for when the system is wrong in front of real users.",
+    contentType: "Point of view",
+    featured: true,
+    seoTitle: "Why AI initiatives stall after the demo | ZEDVentures",
+    seoDescription:
+      "Most AI work stalls after the prototype, not because the model is weak but because nobody owns the system in production. What closes that gap.",
+    capability: "ai-data",
+    published: "2026-10-13",
+    image: {
+      ogSrc: "/insights/ai-ownership-1200x630.jpg",
+      alt: "From prototype to ownership. A prototype on the left, a production system with checks and controls on the right, and an arrow between them marking the transfer of responsibility.",
+    },
+    body: [
+      {
+        kind: "p",
+        text: "Most AI initiatives don't fail because the model is weak. They fail at the transfer of responsibility.",
+      },
+      {
+        kind: "p",
+        text: "A strong prototype creates confidence. What it rarely creates is an operating model. That means clear ownership of the data, defined accountability in production, and a plan for when the system is wrong in a live setting.",
+      },
+      {
+        kind: "p",
+        text: "Without those, the work stalls. The technology was rarely the problem. The problem was that no one was tasked with keeping it reliable after the demonstration ended.",
+      },
+      { kind: "h2", text: "What closes the gap" },
+      { kind: "p", text: "The practical response is disciplined and unglamorous." },
+      {
+        kind: "olist",
+        items: [
+          "Assign ownership. Someone has to be accountable for the system once it is in use, not just while it is being built.",
+          "Stabilize the data contracts. A model is only as dependable as the sources feeding it, and those sources need defined owners and expectations.",
+          "Put monitoring and rollback in place before usage expands. Teams should know when the system is wrong and be able to recover quickly.",
+          "Treat the model as one component in a larger system. That system has to hold under real conditions, with real users and real consequences.",
+        ],
+      },
+      { kind: "h2", text: "How we approach it" },
+      {
+        kind: "p",
+        text: "That is the standard we work to at ZEDVentures when we help teams take AI and data platforms from proof into production. We keep senior judgment close to the build and stay accountable after go-live.",
+      },
+    ],
+    closing: {
+      text: "If your last effort stopped somewhere between \u201cimpressive\u201d and \u201cin use,\u201d the missing piece was probably not intelligence. It was ownership.",
+      ctaLabel: "Talk to us",
+      ctaTo: "/contact",
+    },
+  },
   {
     slug: "offshore-fails-at-the-handoff",
     title: "Offshore rarely fails because of the talent",
