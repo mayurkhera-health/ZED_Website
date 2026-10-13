@@ -42,10 +42,10 @@ export const Route = createFileRoute("/legal/$doc")({
     const url = `${SITE}/legal/${params.doc}`;
     return {
       meta: [
-        { title: `${title} — ZEDventures` },
+        { title: `${title} — ZEDVentures` },
         { name: "description", content: `${title} for zedventures.com.` },
         ...(isDocDraft(params.doc) ? [{ name: "robots", content: "noindex, nofollow" }] : []),
-        { property: "og:title", content: `${title} — ZEDventures` },
+        { property: "og:title", content: `${title} — ZEDVentures` },
         { property: "og:type", content: "website" },
         { property: "og:url", content: url },
       ],
@@ -86,7 +86,7 @@ function LegalBody() {
             className="inline-flex items-center gap-1.5 text-sm font-semibold text-muted-foreground transition-colors hover:text-accent"
           >
             <ArrowLeft className="h-4 w-4" aria-hidden="true" />
-            ZEDventures
+            ZEDVentures
           </Link>
           <p className="eyebrow mt-8 text-accent">{d.eyebrow}</p>
           <h1 className="font-display h1-page mt-3 max-w-[24ch]">

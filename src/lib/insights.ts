@@ -1,5 +1,5 @@
 /**
- * Insights — ZEDventures' writing.
+ * Insights — ZEDVentures' writing.
  *
  * One article is one entry in ARTICLES below. The route, the index listing and
  * the SEO metadata are all generated from this file, so publishing means adding
@@ -147,7 +147,7 @@ export const ARTICLES: readonly Article[] = [
     slug: "offshore-fails-at-the-handoff",
     title: "Offshore rarely fails because of the talent",
     standfirst: "It fails at the handoff, where nobody owns the outcome.",
-    seoTitle: "Why offshore delivery fails at the handoff | ZEDventures",
+    seoTitle: "Why offshore delivery fails at the handoff | ZEDVentures",
     seoDescription:
       "Offshore teams rarely fail on talent. They fail at the handoff, where nobody owns the outcome. When staffing works, what changes, and a test to run.",
     capability: "offshore-nearshore",

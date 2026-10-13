@@ -188,7 +188,7 @@ const en = {
    * then it must not.
    *
    * No "24/7", "always-on" or "around-the-clock" anywhere: contractual claims
-   * ZEDventures has not made elsewhere on this site.
+   * ZEDVentures has not made elsewhere on this site.
    */
   globalDelivery: {
     eyebrow: "Global delivery",
@@ -245,7 +245,7 @@ const en = {
     // yourself and make a real impact" — are unverifiable, read as borrowed from
     // a firm ten times this size, and are the hiring equivalent of the oversold
     // benefits we already decided to keep off this page.
-    sub: "Every open role at ZEDventures, what it requires, and how to apply. We are a consulting firm, so the work is client projects on enterprise systems \u2014 SAP, analytics, GIS, insurance platforms \u2014 delivered onsite, offshore and nearshore. If nothing here fits and you think you would be useful to us, send your resume anyway; we keep them on file.",
+    sub: "Every open role at ZEDVentures, what it requires, and how to apply. We are a consulting firm, so the work is client projects on enterprise systems \u2014 SAP, analytics, GIS, insurance platforms \u2014 delivered onsite, offshore and nearshore. If nothing here fits and you think you would be useful to us, send your resume anyway; we keep them on file.",
     draftNotice:
       "Draft — these postings have not been checked against the filings and the pay ranges are not final. Not for publication.",
     openCount: "open roles",
@@ -347,7 +347,7 @@ const en = {
       accommodation:
         "If you need a reasonable accommodation to apply for a role or to take part in our hiring process — including a way to send us your application other than by post — write to hr@zedventures.com. Tell us what you need and we will work out an arrangement with you.",
       authHeading: "Work authorization",
-      auth: "All roles require authorization to work in the United States. ZEDventures sponsors employment-based visas for some positions; each posting states whether sponsorship is available.",
+      auth: "All roles require authorization to work in the United States. ZEDVentures sponsors employment-based visas for some positions; each posting states whether sponsorship is available.",
       screeningHeading: "Pre-employment checks",
       screening:
         "Offers are conditional on background and reference checks. Depending on the role and the client this may include employment and education verification, criminal record, credit, motor vehicle record and drug testing. We tell you before any check is run and get your written consent first.",
@@ -397,7 +397,7 @@ const en = {
   },
   footer: {
     tagline: "Enterprise systems, built to stay up.",
-    rights: "© 2026 ZEDventures. All rights reserved.",
+    rights: "© 2026 ZEDVentures. All rights reserved.",
     exploreHeading: "Explore",
     companyHeading: "Company",
     legalHeading: "Legal",
@@ -416,7 +416,7 @@ const en = {
    * (contact-server.ts).
    *
    * What is still bracketed, and why each one is: the provider hosting
-   * ZEDventures' own email (a processor for every enquiry and every resume,
+   * ZEDVentures' own email (a processor for every enquiry and every resume,
    * and not visible from this repo); the retention period for job
    * applications, which must match the figure on the careers page; and four
    * clauses that belong to counsel rather than to a template — GDPR
@@ -469,10 +469,10 @@ const en = {
       sub: "The terms that apply to anyone using this website.",
       sections: [
         { heading: "Accepting these terms", body: "By using this website you accept these terms. If you do not accept them, please do not use the site. We may update them; the date at the top of this page shows when they last changed." },
-        { heading: "What this site is", body: "This site describes what ZEDventures does and how to reach us. Nothing on it is an offer, a quote, or a commitment to perform work. If we end up working together, that engagement is governed by the agreement we both sign — not by anything written here. Where this site and a signed agreement disagree, the signed agreement wins." },
+        { heading: "What this site is", body: "This site describes what ZEDVentures does and how to reach us. Nothing on it is an offer, a quote, or a commitment to perform work. If we end up working together, that engagement is governed by the agreement we both sign — not by anything written here. Where this site and a signed agreement disagree, the signed agreement wins." },
         { heading: "Case studies and figures", body: "The case studies on this site describe specific engagements with specific clients, under conditions particular to each. Figures marked as projected are estimates made at the time, not measured results, and none of the figures anywhere on this site is a promise of what we would achieve for you. Your systems, data and constraints are not the ones described." },
         { heading: "Job postings", body: "A posting on our careers page is a description of a role, not an offer of employment. Some postings reproduce wording filed with a government agency and are published as filed, which is why they read the way they do; that wording is not negotiable and is not a description of terms we are offering. Any employment relationship begins with a signed offer letter, not with this site." },
-        { heading: "What belongs to us", body: "The design, text, code, images and the ZEDventures name and logo on this site belong to ZEDventures Inc. or to whoever licensed them to us. You may read, print and share pages for your own reference or to evaluate working with us. Republishing, selling, or presenting this material as your own is not permitted." },
+        { heading: "What belongs to us", body: "The design, text, code, images and the ZEDVentures name and logo on this site belong to ZEDventures Inc. or to whoever licensed them to us. You may read, print and share pages for your own reference or to evaluate working with us. Republishing, selling, or presenting this material as your own is not permitted." },
         { heading: "How you may use the site", body: "Use it normally. Do not try to break it, get into parts of it that are not public, scrape it at a volume that degrades it for other people, or use it to send anything unlawful. Do not use our contact form or job postings to send marketing or recruitment approaches to us." },
         { heading: "No warranties", body: "[CONFIRM WITH COUNSEL — the warranty disclaimer. This is a clause a lawyer should write for your jurisdiction and insurance position, not one to take from a template. It generally states that the site is provided as-is, that we do not warrant it will be uninterrupted or error-free, and that information on it may become out of date.]" },
         { heading: "Limits on liability", body: "[CONFIRM WITH COUNSEL — the limitation of liability. Also a clause to have written rather than borrowed, and the one most likely to be tested if anything ever goes wrong. Note that several jurisdictions limit how far liability can be excluded.]" },
@@ -509,10 +509,10 @@ const en = {
     relatedLabel: "Related insights",
   },
   about: {
-    eyebrow: "About ZEDventures",
+    eyebrow: "About ZEDVentures",
     heading: "Technology is what we do. How we work matters just as much.",
     intro:
-      "ZEDventures is an enterprise technology services company helping organizations solve complex technology and delivery challenges across SAP, Analytics, AI & Data, GIS & Geospatial, Guidewire, Product Engineering, and global delivery.",
+      "ZEDVentures is an enterprise technology services company helping organizations solve complex technology and delivery challenges across SAP, Analytics, AI & Data, GIS & Geospatial, Guidewire, Product Engineering, and global delivery.",
     intro2:
       "We bring experienced people close to the work and stay accountable for what we deliver.",
     servicesLink: "Explore our services",
@@ -526,7 +526,7 @@ const en = {
     whyEyebrow: "Why we're here",
     whyHeading: "Built to make technology services easier to work with.",
     whyBody: [
-      "ZEDventures was built around a simple idea: clients should not have to choose between strong technical capability and a team that is responsive, practical, and easy to work with.",
+      "ZEDVentures was built around a simple idea: clients should not have to choose between strong technical capability and a team that is responsive, practical, and easy to work with.",
       "As we've grown, that idea has stayed the same. We keep things straightforward, bring the right people into the work, and avoid making an engagement more complicated than it needs to be.",
     ],
     whyDiagram: ["Client", "ZED team", "The work"],
@@ -581,7 +581,7 @@ const en = {
     teamBody:
       "Our people work across North America and India, bringing together client-facing experience and engineering delivery. Wherever the team is based, they work as part of the same organization.",
     teamPhotos: [
-      { src: "/delivery-team.webp", alt: "The ZEDventures team together in a meeting room.", caption: "The ZEDventures team." },
+      { src: "/delivery-team.webp", alt: "The ZEDVentures team together in a meeting room.", caption: "The ZEDVentures team." },
       { src: "/delivery-floor.webp", alt: "The engineering floor seen through a glass wall, with shared desks and daylight beyond.", caption: "Our India engineering office." },
     ],
     teamLocations: [
@@ -606,7 +606,7 @@ const en = {
   },
   a11y: {
     switchTo: "Passer au français",
-    logoAlt: "ZEDventures logo",
+    logoAlt: "ZEDVentures logo",
     openMenu: "Open navigation menu",
     menuTitle: "Menu",
   },
@@ -806,7 +806,7 @@ const fr: Copy = {
   careersPage: {
     eyebrow: "Carrières",
     heading: "Postes ouverts",
-    sub: "Tous les postes ouverts chez ZEDventures, leurs exigences et la façon de postuler. Nous sommes un cabinet de conseil : le travail consiste en projets clients sur des systèmes d’entreprise — SAP, analytique, SIG, plateformes d’assurance — livrés sur site, en offshore et en nearshore. Si rien ici ne vous correspond mais que vous pensez pouvoir nous être utile, envoyez tout de même votre CV ; nous les conservons.",
+    sub: "Tous les postes ouverts chez ZEDVentures, leurs exigences et la façon de postuler. Nous sommes un cabinet de conseil : le travail consiste en projets clients sur des systèmes d’entreprise — SAP, analytique, SIG, plateformes d’assurance — livrés sur site, en offshore et en nearshore. Si rien ici ne vous correspond mais que vous pensez pouvoir nous être utile, envoyez tout de même votre CV ; nous les conservons.",
     draftNotice:
       "Brouillon — ces annonces n'ont pas été vérifiées par rapport aux dépôts officiels et les fourchettes de salaire ne sont pas définitives. Ne pas publier.",
     openCount: "postes ouverts",
@@ -885,7 +885,7 @@ const fr: Copy = {
       accommodation:
         "Si vous avez besoin d'un aménagement raisonnable pour postuler ou participer à notre processus de recrutement — y compris un autre moyen que le courrier postal pour nous envoyer votre candidature — écrivez à hr@zedventures.com. Dites-nous ce dont vous avez besoin et nous trouverons une solution avec vous.",
       authHeading: "Autorisation de travail",
-      auth: "Tous les postes exigent une autorisation de travail aux États-Unis. ZEDventures parraine des visas de travail pour certains postes ; chaque annonce précise si le parrainage est disponible.",
+      auth: "Tous les postes exigent une autorisation de travail aux États-Unis. ZEDVentures parraine des visas de travail pour certains postes ; chaque annonce précise si le parrainage est disponible.",
       screeningHeading: "Vérifications préalables à l'embauche",
       screening:
         "Toute offre est conditionnée à des vérifications d'antécédents et de références. Selon le poste et le client, cela peut inclure la vérification des emplois et diplômes, du casier judiciaire, du crédit, du dossier de conduite et un test de dépistage. Nous vous prévenons avant toute vérification et recueillons d'abord votre consentement écrit.",
@@ -935,7 +935,7 @@ const fr: Copy = {
   },
   footer: {
     tagline: "Des systèmes d'entreprise conçus pour tenir.",
-    rights: "© 2026 ZEDventures. Tous droits réservés.",
+    rights: "© 2026 ZEDVentures. Tous droits réservés.",
     exploreHeading: "Explorer",
     companyHeading: "Entreprise",
     legalHeading: "Mentions légales",
@@ -970,10 +970,10 @@ const fr: Copy = {
       sub: "Les conditions applicables à toute personne utilisant ce site.",
       sections: [
         { heading: "Acceptation des conditions", body: "En utilisant ce site, vous acceptez les présentes conditions. Si vous ne les acceptez pas, n'utilisez pas le site. Nous pouvons les modifier ; la date figurant en haut de cette page indique la dernière modification." },
-        { heading: "Ce qu'est ce site", body: "Ce site décrit l'activité de ZEDventures et la façon de nous contacter. Rien de ce qui y figure ne constitue une offre, un devis ou un engagement à réaliser une prestation. Si nous travaillons ensemble, la prestation sera régie par le contrat que nous signerons, et non par ce qui est écrit ici. En cas de divergence entre ce site et un contrat signé, le contrat signé prévaut." },
+        { heading: "Ce qu'est ce site", body: "Ce site décrit l'activité de ZEDVentures et la façon de nous contacter. Rien de ce qui y figure ne constitue une offre, un devis ou un engagement à réaliser une prestation. Si nous travaillons ensemble, la prestation sera régie par le contrat que nous signerons, et non par ce qui est écrit ici. En cas de divergence entre ce site et un contrat signé, le contrat signé prévaut." },
         { heading: "Études de cas et chiffres", body: "Les études de cas présentées décrivent des projets précis, menés pour des clients précis, dans des conditions qui leur sont propres. Les chiffres présentés comme projetés sont des estimations établies à l'époque, et non des résultats mesurés ; aucun chiffre figurant sur ce site ne constitue une promesse de ce que nous obtiendrions pour vous. Vos systèmes, vos données et vos contraintes ne sont pas ceux décrits." },
         { heading: "Offres d'emploi", body: "Une annonce publiée sur notre page carrières décrit un poste ; elle ne constitue pas une offre d'emploi. Certaines annonces reproduisent une formulation déposée auprès d'une administration et sont publiées telles que déposées, ce qui explique leur rédaction ; cette formulation n'est pas négociable et ne décrit pas des conditions que nous proposons. Toute relation de travail débute par une lettre d'offre signée, et non par ce site." },
-        { heading: "Ce qui nous appartient", body: "La conception, les textes, le code, les images ainsi que le nom et le logo ZEDventures figurant sur ce site appartiennent à ZEDventures Inc. ou à leurs concédants. Vous pouvez lire, imprimer et partager ces pages pour votre information ou pour évaluer une collaboration avec nous. Leur republication, leur revente ou leur présentation comme votre propre travail ne sont pas autorisées." },
+        { heading: "Ce qui nous appartient", body: "La conception, les textes, le code, les images ainsi que le nom et le logo ZEDVentures figurant sur ce site appartiennent à ZEDventures Inc. ou à leurs concédants. Vous pouvez lire, imprimer et partager ces pages pour votre information ou pour évaluer une collaboration avec nous. Leur republication, leur revente ou leur présentation comme votre propre travail ne sont pas autorisées." },
         { heading: "Usage du site", body: "Utilisez-le normalement. N'essayez pas de le mettre en défaut, d'accéder à des parties non publiques, de l'aspirer à un volume qui en dégraderait l'usage pour autrui, ni de vous en servir pour transmettre quoi que ce soit d'illicite. N'utilisez pas notre formulaire de contact ni nos annonces pour nous adresser des démarches commerciales ou de recrutement." },
         { heading: "Absence de garantie", body: "[À CONFIRMER AVEC UN CONSEIL JURIDIQUE — la clause d'exclusion de garantie. Elle doit être rédigée pour votre juridiction et votre couverture d'assurance, et non reprise d'un modèle. Elle prévoit généralement que le site est fourni en l'état, sans garantie de fonctionnement ininterrompu ou exempt d'erreurs, et que les informations peuvent ne plus être à jour.]" },
         { heading: "Limitation de responsabilité", body: "[À CONFIRMER AVEC UN CONSEIL JURIDIQUE — la clause de limitation de responsabilité. À faire rédiger plutôt qu'à emprunter : c'est la clause la plus susceptible d'être contestée en cas de litige, et plusieurs juridictions encadrent l'étendue des exclusions admises.]" },
@@ -1010,10 +1010,10 @@ const fr: Copy = {
     relatedLabel: "Insights liés",
   },
   about: {
-    eyebrow: "À propos de ZEDventures",
+    eyebrow: "À propos de ZEDVentures",
     heading: "La technologie, c'est notre métier. Notre façon de travailler compte tout autant.",
     intro:
-      "ZEDventures est une société de services technologiques d'entreprise qui aide les organisations à résoudre des enjeux complexes de technologie et de livraison : SAP, analytique, IA et données, SIG et géospatial, Guidewire, ingénierie produit et livraison mondiale.",
+      "ZEDVentures est une société de services technologiques d'entreprise qui aide les organisations à résoudre des enjeux complexes de technologie et de livraison : SAP, analytique, IA et données, SIG et géospatial, Guidewire, ingénierie produit et livraison mondiale.",
     intro2:
       "Nous plaçons des personnes expérimentées au plus près du travail et nous répondons de ce que nous livrons.",
     servicesLink: "Découvrir nos expertises",
@@ -1027,7 +1027,7 @@ const fr: Copy = {
     whyEyebrow: "Pourquoi nous existons",
     whyHeading: "Conçus pour rendre les services technologiques plus simples à utiliser.",
     whyBody: [
-      "ZEDventures s'est construite autour d'une idée simple : un client ne devrait pas avoir à choisir entre une vraie capacité technique et une équipe réactive, pragmatique et facile à vivre.",
+      "ZEDVentures s'est construite autour d'une idée simple : un client ne devrait pas avoir à choisir entre une vraie capacité technique et une équipe réactive, pragmatique et facile à vivre.",
       "En grandissant, cette idée n'a pas changé. Nous restons simples, amenons les bonnes personnes sur le travail et évitons de compliquer un engagement plus que nécessaire.",
     ],
     whyDiagram: ["Client", "Équipe ZED", "Le travail"],
@@ -1082,7 +1082,7 @@ const fr: Copy = {
     teamBody:
       "Nos équipes travaillent en Amérique du Nord et en Inde, réunissant la relation client et la livraison d'ingénierie. Où qu'elles soient basées, elles font partie de la même organisation.",
     teamPhotos: [
-      { src: "/delivery-team.webp", alt: "L'équipe ZEDventures réunie dans une salle de réunion.", caption: "L'équipe ZEDventures." },
+      { src: "/delivery-team.webp", alt: "L'équipe ZEDVentures réunie dans une salle de réunion.", caption: "L'équipe ZEDVentures." },
       { src: "/delivery-floor.webp", alt: "Le plateau d'ingénierie vu à travers une cloison vitrée, avec des postes partagés et la lumière du jour au fond.", caption: "Notre bureau d'ingénierie en Inde." },
     ],
     teamLocations: [
@@ -1111,7 +1111,7 @@ const fr: Copy = {
   },
   a11y: {
     switchTo: "Switch to English",
-    logoAlt: "Logo ZEDventures",
+    logoAlt: "Logo ZEDVentures",
     openMenu: "Ouvrir le menu de navigation",
     menuTitle: "Menu",
   },

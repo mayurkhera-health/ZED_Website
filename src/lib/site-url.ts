@@ -6,7 +6,7 @@
  *
  * This URL was hard-coded in nine route files, twelve times over, still
  * pointing at the Lovable preview the site was first built on. Every page told
- * search engines that the real version of itself lived on a domain ZEDventures
+ * search engines that the real version of itself lived on a domain ZEDVentures
  * does not control. Changing the domain meant finding all twelve and getting
  * every one right.
  *

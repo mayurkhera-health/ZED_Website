@@ -8,13 +8,13 @@ import { PageMasthead } from "@/components/page-masthead";
 export const Route = createFileRoute("/case-studies")({
   head: () => ({
     meta: [
-      { title: "Case Studies — ZEDventures" },
+      { title: "Case Studies — ZEDVentures" },
       {
         name: "description",
         content:
-          "Real ZEDventures engagements and outcomes: AI help chat, event-driven sales intelligence, unified analytics, and cloud data migration for global enterprises.",
+          "Real ZEDVentures engagements and outcomes: AI help chat, event-driven sales intelligence, unified analytics, and cloud data migration for global enterprises.",
       },
-      { property: "og:title", content: "Case Studies — ZEDventures" },
+      { property: "og:title", content: "Case Studies — ZEDVentures" },
       {
         property: "og:description",
         content:

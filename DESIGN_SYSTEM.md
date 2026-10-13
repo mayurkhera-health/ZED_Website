@@ -1,4 +1,4 @@
-# ZEDventures — Design System
+# ZEDVentures — Design System
 
 **Source of truth: `src/styles.css`.** This file describes what is in the code. If
 the two disagree, the code is right and this file is stale. Every contrast ratio

@@ -10,13 +10,13 @@ import { VISIBLE_SERVICE_ENTRIES } from "@/lib/service-pages";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Enterprise Technology Services | ZEDventures" },
+      { title: "Enterprise Technology Services | ZEDVentures" },
       {
         name: "description",
         content:
-          "Explore ZEDventures' capabilities: AI & Data, Analytics, GIS & Geospatial, Guidewire, SAP, Product Engineering, and Offshore & Nearshore Delivery.",
+          "Explore ZEDVentures' capabilities: AI & Data, Analytics, GIS & Geospatial, Guidewire, SAP, Product Engineering, and Offshore & Nearshore Delivery.",
       },
-      { property: "og:title", content: "Enterprise Technology Services | ZEDventures" },
+      { property: "og:title", content: "Enterprise Technology Services | ZEDVentures" },
       {
         property: "og:description",
         content: "Engineering, data, and geospatial systems built to run.",

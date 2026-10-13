@@ -21,13 +21,13 @@ export const Route = createFileRoute("/careers_/$slug")({
     const jsonLd = jobPostingJsonLd(p, url);
     return {
       meta: [
-        { title: `${p.title} — Careers — ZEDventures` },
+        { title: `${p.title} — Careers — ZEDVentures` },
         {
           name: "description",
-          content: `${p.title} at ZEDventures. ${p.locations[0]}. ${p.employmentType}, ${p.hoursPerWeek} hours per week.`,
+          content: `${p.title} at ZEDVentures. ${p.locations[0]}. ${p.employmentType}, ${p.hoursPerWeek} hours per week.`,
         },
         ...(DRAFT_CAREERS ? [{ name: "robots", content: "noindex, nofollow" }] : []),
-        { property: "og:title", content: `${p.title} — ZEDventures` },
+        { property: "og:title", content: `${p.title} — ZEDVentures` },
         { property: "og:type", content: "website" },
         { property: "og:url", content: url },
       ],

@@ -232,7 +232,7 @@ export function jobPostingJsonLd(p: JobPosting, url: string): string | null {
     "@type": "JobPosting",
     title: p.title,
     identifier: p.jobCode
-      ? { "@type": "PropertyValue", name: "ZEDventures", value: p.jobCode }
+      ? { "@type": "PropertyValue", name: "ZEDVentures", value: p.jobCode }
       : undefined,
     description: `${p.duties}\n\n${p.requirements}`,
     datePosted: p.postedOn,

@@ -22,7 +22,7 @@ import type { ContactPayload } from "@/lib/contact-endpoint";
  * WHY SMTP RATHER THAN A TRANSACTIONAL PROVIDER
  *
  * This used to POST to Resend. It goes through Google instead, because
- * ZEDventures already has Google Workspace and that removes the most common
+ * ZEDVentures already has Google Workspace and that removes the most common
  * failure in this kind of feature: mail that sends successfully and lands in
  * spam. Google is already authorised to send for zedventures.com, so there is
  * no domain to verify, no SPF record to widen and no DKIM key to publish. The
@@ -127,7 +127,7 @@ export const submitEnquiry = createServerFn({ method: "POST" })
         // is a verified "send mail as" alias, so this is set to the account
         // itself. A From header Google silently replaces is worse than an
         // honest one.
-        from: `ZEDventures site <${user}>`,
+        from: `ZEDVentures site <${user}>`,
         to: TO,
         // So a reply in the inbox goes to the visitor, not into a void.
         replyTo: data.email,

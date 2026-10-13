@@ -3,7 +3,7 @@
  *
  * Every string below is sample copy written to give the service-page template
  * realistic shape. It describes standard industry capabilities, not claims
- * about ZEDventures: there are deliberately no metrics, client names, dates or
+ * about ZEDVentures: there are deliberately no metrics, client names, dates or
  * outcome numbers anywhere in this file, because those cannot be invented.
  *
  * A service listed in DRAFT_SERVICES (below) carries a visible draft banner and
@@ -543,9 +543,9 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         title: "Let's talk about your AI and data priorities.",
         buttonLabel: "Start a conversation",
       },
-      seoTitle: "AI & Data Consulting Services | ZEDventures",
+      seoTitle: "AI & Data Consulting Services | ZEDVentures",
       seoDescription:
-        "ZEDventures builds enterprise AI and data platforms, including RAG applications, machine learning pipelines and production orchestration.",
+        "ZEDVentures builds enterprise AI and data platforms, including RAG applications, machine learning pipelines and production orchestration.",
     },
     analytics: {
       name: "Analytics",
@@ -629,9 +629,9 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         title: "Let\u2019s talk about your analytics priorities.",
         buttonLabel: "Start a conversation",
       },
-      seoTitle: "Analytics Consulting & Modernization Services | ZEDventures",
+      seoTitle: "Analytics Consulting & Modernization Services | ZEDVentures",
       seoDescription:
-        "ZEDventures helps enterprises assess, modernize, migrate and optimize analytics environments across Power BI, SAP BusinessObjects and modern data platforms.",
+        "ZEDVentures helps enterprises assess, modernize, migrate and optimize analytics environments across Power BI, SAP BusinessObjects and modern data platforms.",
     },
     "gis-geospatial": {
       name: "GIS & Geospatial",
@@ -721,9 +721,9 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         title: "Have a location problem hiding inside a business problem?",
         buttonLabel: "Start a conversation",
       },
-      seoTitle: "GIS & Geospatial Solutions | ZEDventures",
+      seoTitle: "GIS & Geospatial Solutions | ZEDVentures",
       seoDescription:
-        "ZEDventures builds geospatial systems — spatial data platforms, exposure mapping, imagery-based risk assessment and location analytics for enterprise use.",
+        "ZEDVentures builds geospatial systems — spatial data platforms, exposure mapping, imagery-based risk assessment and location analytics for enterprise use.",
     },
     guidewire: {
       name: "Guidewire",
@@ -826,7 +826,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         satellites: ["Customer applications", "Data platforms", "APIs & integrations", "Enterprise systems"],
       },
       whyColumns: {
-        eyebrow: "Why ZEDventures",
+        eyebrow: "Why ZEDVentures",
         heading: "A team that can fit into the way you already work.",
         intro: "",
         items: [
@@ -852,9 +852,9 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         title: "Let's talk about your Guidewire environment.",
         buttonLabel: "Start a conversation",
       },
-      seoTitle: "Guidewire Services | ZEDventures",
+      seoTitle: "Guidewire Services | ZEDVentures",
       seoDescription:
-        "ZEDventures helps insurance companies implement, integrate, modernize and support Guidewire across policy, billing and claims.",
+        "ZEDVentures helps insurance companies implement, integrate, modernize and support Guidewire across policy, billing and claims.",
     },
     sap: {
       name: "SAP",
@@ -871,7 +871,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
       // what no longer needs carrying forward — is the judgement being sold,
       // and it is the part a competitor could not have written.
       intro:
-        "ZEDventures helps organizations move to S/4HANA, build extensions on BTP, and create better user experiences with Fiori\u2014without rebuilding years of complexity in the new environment. We look carefully at what should move, what should change, and what no longer needs to be carried forward. By keeping customizations away from the core wherever possible, we leave clients with an SAP environment that is easier to maintain, easier to upgrade, and better prepared for what comes next.",
+        "ZEDVentures helps organizations move to S/4HANA, build extensions on BTP, and create better user experiences with Fiori\u2014without rebuilding years of complexity in the new environment. We look carefully at what should move, what should change, and what no longer needs to be carried forward. By keeping customizations away from the core wherever possible, we leave clients with an SAP environment that is easier to maintain, easier to upgrade, and better prepared for what comes next.",
       problems: [
         "Customisation in the core that now blocks every upgrade.",
         "Integrations built point-to-point until nobody can map them.",
@@ -964,9 +964,9 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
           body: "Extensions go beside the core, not inside it, and we document the boundary so it survives the people who drew it.",
         },
       ],
-      seoTitle: "SAP S/4HANA & BTP Consulting | ZEDventures",
+      seoTitle: "SAP S/4HANA & BTP Consulting | ZEDVentures",
       seoDescription:
-        "ZEDventures delivers SAP S/4HANA migration, clean-core remediation, BTP extension and Fiori engineering, keeping the core upgradeable after the project ends.",
+        "ZEDVentures delivers SAP S/4HANA migration, clean-core remediation, BTP extension and Fiori engineering, keeping the core upgradeable after the project ends.",
     },
     "product-engineering": {
       name: "Product Engineering",
@@ -1023,7 +1023,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         title: "Let's talk about your product roadmap.",
         buttonLabel: "Start a conversation",
       },
-      seoTitle: "Product Engineering Services | ZEDventures",
+      seoTitle: "Product Engineering Services | ZEDVentures",
       seoDescription:
         "Product engineering from architecture and cloud-native development to quality engineering, release operations and production support.",
     },
@@ -1220,7 +1220,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         photos: [
           {
             src: "/delivery-team.webp",
-            alt: "Eleven members of the ZEDventures engineering team together in a meeting room.",
+            alt: "Eleven members of the ZEDVentures engineering team together in a meeting room.",
             caption: "The engineering team.",
           },
           {
@@ -1236,7 +1236,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
       },
       finalCtaSub:
         "Tell us where delivery is constrained — skills, hiring speed, cost, time-zone coverage or execution capacity. We'll help determine which work belongs nearshore, offshore or across a blended team.",
-      seoTitle: "Offshore & Nearshore Delivery | ZEDventures",
+      seoTitle: "Offshore & Nearshore Delivery | ZEDVentures",
       seoDescription:
         "Scale delivery with offshore, nearshore and blended engineering teams for development, QA, integration, modernization and support.",
     },
@@ -1306,9 +1306,9 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         title: "Parlons de vos priorités en IA et données.",
         buttonLabel: "Démarrer la conversation",
       },
-      seoTitle: "Services-conseils en IA et données | ZEDventures",
+      seoTitle: "Services-conseils en IA et données | ZEDVentures",
       seoDescription:
-        "ZEDventures conçoit des plateformes d'IA et de données d'entreprise : applications RAG, pipelines d'apprentissage automatique et orchestration en production.",
+        "ZEDVentures conçoit des plateformes d'IA et de données d'entreprise : applications RAG, pipelines d'apprentissage automatique et orchestration en production.",
     },
     analytics: {
       name: "Analytique",
@@ -1365,9 +1365,9 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         title: "Parlons de vos priorités analytiques.",
         buttonLabel: "Démarrer la conversation",
       },
-      seoTitle: "Conseil et modernisation analytique | ZEDventures",
+      seoTitle: "Conseil et modernisation analytique | ZEDVentures",
       seoDescription:
-        "ZEDventures évalue, modernise et migre vos environnements analytiques : Power BI, SAP BusinessObjects et plateformes de données modernes.",
+        "ZEDVentures évalue, modernise et migre vos environnements analytiques : Power BI, SAP BusinessObjects et plateformes de données modernes.",
     },
     "gis-geospatial": {
       name: "SIG et géomatique",
@@ -1441,9 +1441,9 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         title: "Un problème de localisation caché dans un problème métier ?",
         buttonLabel: "Démarrer la conversation",
       },
-      seoTitle: "Solutions SIG et géospatiales | ZEDventures",
+      seoTitle: "Solutions SIG et géospatiales | ZEDVentures",
       seoDescription:
-        "ZEDventures conçoit des systèmes géospatiaux — plateformes de données spatiales, cartographie de l'exposition, analyse d'imagerie et analytique de localisation.",
+        "ZEDVentures conçoit des systèmes géospatiaux — plateformes de données spatiales, cartographie de l'exposition, analyse d'imagerie et analytique de localisation.",
     },
     guidewire: {
       name: "Guidewire",
@@ -1520,7 +1520,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         satellites: ["Applications clients", "Plateformes de données", "API et intégrations", "Systèmes d'entreprise"],
       },
       whyColumns: {
-        eyebrow: "Pourquoi ZEDventures",
+        eyebrow: "Pourquoi ZEDVentures",
         heading: "Une équipe qui s'adapte à votre façon de travailler.",
         intro: "",
         items: [
@@ -1546,9 +1546,9 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         title: "Parlons de votre environnement Guidewire.",
         buttonLabel: "Démarrer la conversation",
       },
-      seoTitle: "Services Guidewire | ZEDventures",
+      seoTitle: "Services Guidewire | ZEDVentures",
       seoDescription:
-        "ZEDventures aide les assureurs à mettre en œuvre, intégrer, moderniser et exploiter Guidewire pour la police, la facturation et les sinistres.",
+        "ZEDVentures aide les assureurs à mettre en œuvre, intégrer, moderniser et exploiter Guidewire pour la police, la facturation et les sinistres.",
     },
     sap: {
       name: "SAP",
@@ -1559,7 +1559,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
       },
       outcome: "Moderniser SAP sans perturber l'activité qu'il fait tourner.",
       intro:
-        "ZEDventures accompagne les organisations vers S/4HANA, construit des extensions sur BTP et améliore l'expérience utilisateur avec Fiori \u2014 sans reconstruire des années de complexité dans le nouvel environnement. Nous examinons de près ce qui doit être repris, ce qui doit changer et ce qu'il n'est plus utile de transporter. En gardant les personnalisations hors du cœur autant que possible, nous laissons un environnement SAP plus simple à maintenir, plus simple à faire évoluer et mieux préparé à la suite.",
+        "ZEDVentures accompagne les organisations vers S/4HANA, construit des extensions sur BTP et améliore l'expérience utilisateur avec Fiori \u2014 sans reconstruire des années de complexité dans le nouvel environnement. Nous examinons de près ce qui doit être repris, ce qui doit changer et ce qu'il n'est plus utile de transporter. En gardant les personnalisations hors du cœur autant que possible, nous laissons un environnement SAP plus simple à maintenir, plus simple à faire évoluer et mieux préparé à la suite.",
       problems: [
         "De la personnalisation dans le cœur qui bloque désormais chaque montée de version.",
         "Des intégrations point à point que plus personne ne sait cartographier.",
@@ -1627,9 +1627,9 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
           body: "Les extensions se placent à côté du cœur, pas dedans, et nous documentons la frontière pour qu'elle survive à ceux qui l'ont tracée.",
         },
       ],
-      seoTitle: "Conseil SAP S/4HANA et BTP | ZEDventures",
+      seoTitle: "Conseil SAP S/4HANA et BTP | ZEDVentures",
       seoDescription:
-        "ZEDventures livre migration S/4HANA, assainissement du cœur, extensions BTP et ingénierie Fiori, en gardant le cœur évolutif après la fin du projet.",
+        "ZEDVentures livre migration S/4HANA, assainissement du cœur, extensions BTP et ingénierie Fiori, en gardant le cœur évolutif après la fin du projet.",
     },
     "product-engineering": {
       name: "Ingénierie produit",
@@ -1678,7 +1678,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         title: "Parlons de votre feuille de route produit.",
         buttonLabel: "Démarrer la conversation",
       },
-      seoTitle: "Services d'ingénierie produit | ZEDventures",
+      seoTitle: "Services d'ingénierie produit | ZEDVentures",
       seoDescription:
         "Ingénierie produit : architecture, développement infonuagique natif, qualité, exploitation des mises en production et support.",
     },
@@ -1865,7 +1865,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         photos: [
           {
             src: "/delivery-team.webp",
-            alt: "Onze membres de l'équipe d'ingénierie de ZEDventures réunis dans une salle de réunion.",
+            alt: "Onze membres de l'équipe d'ingénierie de ZEDVentures réunis dans une salle de réunion.",
             caption: "L'équipe d'ingénierie.",
           },
           {
@@ -1881,7 +1881,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
       },
       finalCtaSub:
         "Dites-nous où la livraison est contrainte — compétences, délais de recrutement, coût, couverture horaire ou capacité d'exécution. Nous vous aiderons à déterminer ce qui relève de la proximité, du délocalisé ou d'une équipe mixte.",
-      seoTitle: "Livraison délocalisée et de proximité | ZEDventures",
+      seoTitle: "Livraison délocalisée et de proximité | ZEDVentures",
       seoDescription:
         "Renforcez votre livraison avec des équipes délocalisées, de proximité et mixtes : développement, qualité, intégration, modernisation et support.",
     },

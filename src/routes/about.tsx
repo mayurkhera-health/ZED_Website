@@ -24,15 +24,15 @@ export const DRAFT_ABOUT = false;
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About ZEDventures | Enterprise technology services" },
+      { title: "About ZEDVentures | Enterprise technology services" },
       {
         name: "description",
         content:
-          "ZEDventures is an enterprise technology services company working across SAP, Analytics & AI, GIS & Geospatial, Digital Engineering and global delivery.",
+          "ZEDVentures is an enterprise technology services company working across SAP, Analytics & AI, GIS & Geospatial, Digital Engineering and global delivery.",
       },
       // Not indexed while the hero photograph is still a brief.
       ...(DRAFT_ABOUT ? [{ name: "robots", content: "noindex, nofollow" }] : []),
-      { property: "og:title", content: "About ZEDventures" },
+      { property: "og:title", content: "About ZEDVentures" },
       {
         property: "og:description",
         content: "Technology is what we do. How we work matters just as much.",

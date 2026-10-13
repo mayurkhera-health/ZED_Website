@@ -16,9 +16,9 @@ import {
 } from "@/lib/insights";
 import { isServiceSlug, type ServiceSlug } from "@/lib/service-pages";
 
-const TITLE = "Insights | ZEDventures";
+const TITLE = "Insights | ZEDVentures";
 const DESC =
-  "Notes on delivery, data and enterprise systems from the people doing the work at ZEDventures.";
+  "Notes on delivery, data and enterprise systems from the people doing the work at ZEDVentures.";
 
 type Search = { topic?: ServiceSlug };
 

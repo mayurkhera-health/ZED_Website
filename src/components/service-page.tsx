@@ -432,7 +432,7 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
                 Its colours are NOT adopted. That spec is FuelUp Youth's
                 system — #064E3B, #1B4332, #40916C, #F7FAF5 are a green
                 palette belonging to a different brand. Everything here maps to
-                ZEDventures tokens instead: chip ground --secondary, chip text
+                ZEDVentures tokens instead: chip ground --secondary, chip text
                 --foreground, label --subtle-foreground, dot and icon --accent.
 
                 Colour carries the grouping. A 3px rail on the left edge of

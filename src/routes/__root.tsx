@@ -79,13 +79,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "ZEDventures — Technology Partner" },
+      { title: "ZEDVentures — Technology Partner" },
       {
         name: "description",
         content:
-          "ZEDventures designs, builds, and runs AI, analytics, and digital platforms that hold up in production.",
+          "ZEDVentures designs, builds, and runs AI, analytics, and digital platforms that hold up in production.",
       },
-      { property: "og:title", content: "ZEDventures — Technology Partner" },
+      { property: "og:title", content: "ZEDVentures — Technology Partner" },
       {
         property: "og:description",
         content:

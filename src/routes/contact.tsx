@@ -9,17 +9,17 @@ import { Mail, Phone, MapPin } from "lucide-react";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — ZEDventures" },
+      { title: "Contact — ZEDVentures" },
       {
         name: "description",
         content:
-          "Reach ZEDventures by email, phone, or our contact form. Offices in San Jose, Dallas, and Hyderabad.",
+          "Reach ZEDVentures by email, phone, or our contact form. Offices in San Jose, Dallas, and Hyderabad.",
       },
-      { property: "og:title", content: "Contact — ZEDventures" },
+      { property: "og:title", content: "Contact — ZEDVentures" },
       {
         property: "og:description",
         content:
-          "Reach ZEDventures by email, phone, or our contact form. Offices in San Jose, Dallas, and Hyderabad.",
+          "Reach ZEDVentures by email, phone, or our contact form. Offices in San Jose, Dallas, and Hyderabad.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

@@ -14,14 +14,14 @@ import { DRAFT_CAREERS, OPEN_POSTINGS, formatPay } from "@/lib/careers";
 export const Route = createFileRoute("/careers")({
   head: () => ({
     meta: [
-      { title: "Careers — ZEDventures" },
+      { title: "Careers — ZEDVentures" },
       {
         name: "description",
         content:
-          "Open roles at ZEDventures. Engineering, SAP, analytics and systems analysis positions in San Jose, California.",
+          "Open roles at ZEDVentures. Engineering, SAP, analytics and systems analysis positions in San Jose, California.",
       },
       ...(DRAFT_CAREERS ? [{ name: "robots", content: "noindex, nofollow" }] : []),
-      { property: "og:title", content: "Careers — ZEDventures" },
+      { property: "og:title", content: "Careers — ZEDVentures" },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE}/careers` },
     ],

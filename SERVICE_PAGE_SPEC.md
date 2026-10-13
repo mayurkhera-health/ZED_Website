@@ -1,4 +1,4 @@
-# ZEDventures — Service Detail Page Specification
+# ZEDVentures — Service Detail Page Specification
 
 **Version 1.1** · Supersedes v1.0
 **Applies to:** AI & Data, Analytics, GIS & Geospatial, Guidewire, SAP, Product Engineering, Offshore & Nearshore Delivery
