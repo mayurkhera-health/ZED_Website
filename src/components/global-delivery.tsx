@@ -34,7 +34,7 @@ export function GlobalDelivery() {
         <p className="eyebrow text-accent">{g.eyebrow}</p>
         <h2
           id="global-delivery"
-          className="font-display mt-3 max-w-[40rem] text-[1.75rem] leading-[1.1] tracking-[-0.025em] sm:text-[2.125rem]"
+          className="font-display h2-section mt-3 max-w-[40rem]"
         >
           {g.heading}
         </h2>
@@ -122,7 +122,7 @@ function Place({
       >
         {place}
       </p>
-      <h3 className="mt-2 max-w-[22ch] text-[1.0625rem] font-bold leading-[1.25] sm:text-[1.125rem]">
+      <h3 className="h-label mt-2 max-w-[22ch]">
         {role}
       </h3>
       <p className="mt-2 max-w-[24rem] text-[0.875rem] leading-[1.55] text-muted-foreground">

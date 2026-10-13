@@ -28,7 +28,7 @@ export function Services() {
                 {/* S26 sets 27-32px here — a deliberate step down from the
                     previous 30/36/48, so seven rows read as a scannable index
                     rather than seven headlines. */}
-                <h3 className="font-display flex items-center gap-2.5 text-[1.625rem] leading-[1.1] tracking-[-0.02em] transition-[color,transform] group-hover:text-accent sm:text-[1.75rem] lg:text-[2rem] motion-safe:group-hover:translate-x-1">
+                <h3 className="font-display h3-sub flex items-center gap-2.5 transition-[color,transform] group-hover:text-accent motion-safe:group-hover:translate-x-1">
                   {item.title}
                   {slug && (
                     <ArrowRight

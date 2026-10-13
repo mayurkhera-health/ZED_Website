@@ -90,7 +90,7 @@ export function InsightCard({
       <h3
         className={`font-display mt-2 tracking-[-0.02em] transition-colors group-hover:text-accent ${
           featured
-            ? "max-w-[44ch] text-[1.375rem] leading-[1.2] sm:text-[1.5625rem] lg:text-[1.75rem]"
+            ? "h2-card max-w-[44ch]"
             : "text-[1.1875rem] leading-[1.35]"
         }`}
       >

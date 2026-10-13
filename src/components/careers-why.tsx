@@ -27,7 +27,7 @@ export function CareersWhy() {
         <p className="eyebrow text-accent">{c.whyEyebrow}</p>
         <h2
           id="careers-why"
-          className="font-display mt-3 max-w-[40rem] text-[1.75rem] leading-[1.12] tracking-[-0.025em] sm:text-[2.125rem]"
+          className="font-display h2-section mt-3 max-w-[40rem]"
         >
           {c.whyHeading}
         </h2>
@@ -41,7 +41,7 @@ export function CareersWhy() {
             return (
               <li key={item.title} className="bg-background py-6 md:px-7 md:first:pl-0">
                 <Icon className="h-5 w-5 text-accent" aria-hidden="true" strokeWidth={1.75} />
-                <h3 className="mt-4 text-[0.9375rem] font-bold leading-[1.35]">{item.title}</h3>
+                <h3 className="h-label mt-4">{item.title}</h3>
                 <p className="mt-1.5 max-w-[30rem] text-sm leading-[1.55] text-muted-foreground">
                   {item.body}
                 </p>

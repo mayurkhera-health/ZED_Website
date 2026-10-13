@@ -24,7 +24,7 @@ export function ConversationCta() {
       <div className="px-5 py-9 sm:px-8 sm:py-10">
         <div className="mx-auto max-w-6xl">
           <div className="max-w-[34rem]">
-            <h2 className="font-display text-[1.5rem] leading-[1.2] tracking-[-0.02em] sm:text-[1.75rem]">
+            <h2 className="font-display h2-card">
               Have a similar problem?
             </h2>
             <p className="mt-3 text-[1.0625rem] leading-[1.6] text-muted-foreground">

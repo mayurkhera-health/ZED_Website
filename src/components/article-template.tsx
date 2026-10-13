@@ -252,7 +252,7 @@ function TimelineCard({ eyebrow, title, steps }: Timeline) {
 function BlockView({ block, first }: { block: Block; first: boolean }) {
   if (block.kind === "h2") {
     return (
-      <h2 className="font-display mt-8 border-t border-border pt-4 text-[1.3125rem] leading-[1.25] tracking-[-0.02em] sm:text-[1.4375rem]">
+      <h2 className="font-display h2-card mt-8 border-t border-border pt-4">
         {block.text}
       </h2>
     );
@@ -270,7 +270,7 @@ function BlockView({ block, first }: { block: Block; first: boolean }) {
 
   if (block.kind === "h3") {
     return (
-      <h3 className="font-display mt-6 text-[1.0625rem] font-bold leading-[1.35] sm:text-[1.125rem]">
+      <h3 className="font-display h3-sub mt-6">
         {block.text}
       </h3>
     );

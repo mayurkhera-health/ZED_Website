@@ -29,7 +29,7 @@ export function Hero() {
                 with the mark. Weight stays 800 (.font-display) — the heavy
                 editorial display type is what keeps this from looking like a
                 template. */}
-            <h1 className="ink-type font-display max-w-[13ch] text-[2.625rem] leading-[1.02] tracking-[-0.025em] sm:max-w-[20ch] sm:text-5xl md:text-[3.25rem] lg:max-w-[16ch] lg:text-[3.75rem] lg:leading-[1.0] lg:tracking-[-0.03em]">
+            <h1 className="ink-type font-display h1-page max-w-[13ch] sm:max-w-[20ch] lg:max-w-[16ch]">
               {t.hero.headline}
             </h1>
           </div>

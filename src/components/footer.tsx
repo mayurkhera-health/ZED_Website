@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { DRAFT_TERMS } from "@/lib/legal-flags";
 import { useLanguage } from "@/lib/i18n";
 import { SHOW_CAREERS } from "@/lib/careers";
 import { LanguageToggle } from "@/components/language-toggle";
@@ -91,11 +92,14 @@ export function Footer() {
                 {f.privacy}
               </Link>
             </li>
-            <li>
-              <Link to="/legal/$doc" params={{ doc: "terms" }} className={LINK_CLS}>
-                {f.terms}
-              </Link>
-            </li>
+            {/* Shown only once Terms is finished. */}
+            {!DRAFT_TERMS && (
+              <li>
+                <Link to="/legal/$doc" params={{ doc: "terms" }} className={LINK_CLS}>
+                  {f.terms}
+                </Link>
+              </li>
+            )}
           </FooterColumn>
         </div>
 

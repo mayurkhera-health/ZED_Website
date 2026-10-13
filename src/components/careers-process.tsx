@@ -27,7 +27,7 @@ export function CareersProcess() {
         <p className="eyebrow text-subtle-foreground">{c.processEyebrow}</p>
         <h2
           id="careers-process"
-          className="font-display mt-3 max-w-[40rem] text-[1.75rem] leading-[1.12] tracking-[-0.025em] sm:text-[2.125rem]"
+          className="font-display h2-section mt-3 max-w-[40rem]"
         >
           {c.processHeading}
         </h2>
@@ -47,7 +47,7 @@ export function CareersProcess() {
           {c.process.map((step) => (
             <li key={step.title} className="bg-secondary py-6 md:px-6 md:first:pl-0">
               <span className="block h-px w-7 bg-accent" aria-hidden="true" />
-              <h3 className="mt-4 text-[0.9375rem] font-bold leading-[1.35]">{step.title}</h3>
+              <h3 className="h-label mt-4">{step.title}</h3>
               <p className="mt-1.5 text-sm leading-[1.55] text-muted-foreground">{step.body}</p>
             </li>
           ))}

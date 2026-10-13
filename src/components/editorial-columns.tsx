@@ -43,7 +43,7 @@ export function EditorialColumns({ data }: { data: ColumnSet }) {
           }
         >
           <span className="block h-px w-7 bg-primary" aria-hidden="true" />
-          <h3 className="mt-4 max-w-[18ch] text-[1.0625rem] font-bold leading-[1.25] sm:text-[1.125rem]">
+          <h3 className="h-label mt-4 max-w-[18ch]">
             {item.title}
           </h3>
           <p className="mt-2 max-w-[24rem] text-[0.875rem] leading-[1.55] text-muted-foreground">

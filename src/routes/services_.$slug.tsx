@@ -147,7 +147,7 @@ function LegacyBody() {
           <ul className="mt-8 grid gap-x-10 gap-y-9 sm:grid-cols-2">
             {s.capabilities.map((c) => (
               <li key={c.title} className="border-t border-border pt-6">
-                <h3 className="font-display text-[1.375rem] leading-[1.15] tracking-[-0.02em] sm:text-2xl">
+                <h3 className="font-display h3-sub">
                   {c.title}
                 </h3>
                 <p className="mt-3 max-w-[34rem] text-base leading-[1.55] text-muted-foreground">
@@ -171,7 +171,7 @@ function LegacyBody() {
             {steps.map((st, i) => (
               <li key={st.step} className="border-t border-border py-6 last:border-b">
                 <div className="grid grid-cols-1 items-baseline gap-x-4 gap-y-2 sm:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] sm:gap-x-8">
-                  <h3 className="font-display text-[1.375rem] leading-[1.15] tracking-[-0.02em] sm:text-2xl">
+                  <h3 className="font-display h3-sub">
                     {st.step}
                   </h3>
                   <p className="max-w-[34rem] text-base leading-[1.55] text-muted-foreground">
@@ -221,7 +221,7 @@ function LegacyBody() {
                   params={{ slug: o }}
                   className="group flex h-full flex-col justify-between gap-6 bg-card p-7 transition-colors hover:bg-muted"
                 >
-                  <h3 className="font-display text-xl leading-[1.15] tracking-[-0.02em]">
+                  <h3 className="font-display h3-sub">
                     {SERVICE_PAGES[lang][o].name}
                   </h3>
                   <span className="flex items-center gap-1.5 text-sm font-bold text-accent">

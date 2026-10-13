@@ -116,7 +116,7 @@ function PostingBody() {
       <section className="border-b border-border">
         <div className="container-page section-y grid gap-10 lg:grid-cols-2 lg:gap-16">
           <div>
-            <h2 className="font-display text-[1.5rem] leading-[1.15] tracking-[-0.02em] sm:text-[1.75rem]">
+            <h2 className="font-display h2-card">
               {c.dutiesHeading}
             </h2>
             <p className="mt-4 max-w-[38rem] whitespace-pre-line text-[1.0625rem] leading-[1.65] text-muted-foreground">
@@ -124,7 +124,7 @@ function PostingBody() {
             </p>
           </div>
           <div>
-            <h2 className="font-display text-[1.5rem] leading-[1.15] tracking-[-0.02em] sm:text-[1.75rem]">
+            <h2 className="font-display h2-card">
               {c.requirementsHeading}
             </h2>
             <p className="mt-4 max-w-[38rem] whitespace-pre-line text-[1.0625rem] leading-[1.65] text-muted-foreground">
@@ -141,7 +141,7 @@ function PostingBody() {
 
       <section className="section-dark border-b border-border">
         <div className="container-page section-y">
-          <h2 className="font-display text-[1.75rem] leading-[1.12] tracking-[-0.025em] sm:text-[2.125rem]">
+          <h2 className="font-display h2-section">
             {c.applyHeading}
           </h2>
           <p className="mt-4 max-w-[42rem] text-[1.0625rem] leading-[1.6] text-muted-foreground">

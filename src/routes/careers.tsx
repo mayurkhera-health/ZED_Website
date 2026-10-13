@@ -88,7 +88,7 @@ function CareersBody() {
                     >
                       <div>
                         <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1.5">
-                          <h2 className="text-[1.1875rem] font-bold leading-[1.25] tracking-[-0.019em]">
+                          <h2 className="font-display h2-card">
                             {p.title}
                           </h2>
                           {p.jobCode && (

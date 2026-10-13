@@ -46,7 +46,7 @@ export function SectionHeader({
           className={`font-display mt-3 max-w-[74rem] ${
             Tag === "h1"
               ? "h1-page"
-              : "text-[2rem] leading-[1.08] tracking-[-0.02em] sm:text-[2.375rem] lg:text-[3.125rem] lg:leading-[1.05]"
+              : "h2-section"
           }`}
         >
           {heading}

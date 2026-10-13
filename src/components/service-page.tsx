@@ -345,7 +345,7 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
                   {/* No max-w on the title. The card is already the measure;
                       a 22ch cap on top of it broke two-word headings onto a
                       second line with half the card empty beside them. */}
-                  <h3 className="font-display mt-3.5 text-[1.25rem] leading-[1.15] tracking-[-0.02em] sm:text-[1.3125rem]">
+                  <h3 className="font-display h3-sub mt-3.5">
                     {c.title}
                   </h3>
                   <p className="mt-2 text-[0.9375rem] leading-[1.55] text-muted-foreground">
@@ -561,7 +561,7 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
         <section className="section-dark">
           <div className="container-page section-y">
             <p className="eyebrow text-dark-lead">{s.whyEyebrow ?? t.services.whyEyebrow}</p>
-            <h2 className="font-display mt-3 max-w-[46rem] text-[2rem] leading-[1.08] tracking-[-0.025em] sm:text-[2.75rem]">
+            <h2 className="font-display h2-section mt-3 max-w-[46rem]">
               {/* A service can replace the formula heading ("Why ZED for X")
                   with a sentence. "Distributed delivery without distributed
                   accountability" says something; "Why ZED for Offshore &
@@ -597,7 +597,7 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
                     className="bg-background py-7 lg:px-8 lg:py-0 lg:first:pl-0"
                   >
                     <span className="block h-px w-8 bg-primary" aria-hidden="true" />
-                    <h3 className="font-display mt-5 max-w-[18ch] text-[1.375rem] leading-[1.15] tracking-[-0.02em] sm:text-2xl">
+                    <h3 className="font-display h3-sub mt-5 max-w-[18ch]">
                       {pillar.title}
                     </h3>
                     <p className="mt-3 max-w-[30rem] text-[0.9375rem] leading-[1.6] text-muted-foreground">

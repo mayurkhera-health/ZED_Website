@@ -30,7 +30,7 @@ export function CaseStudies() {
               </header>
               <div className="flex flex-col gap-6 lg:flex-row lg:gap-8">
                 <div className="lg:w-2/5">
-                  <h3 className="font-display text-4xl font-extrabold uppercase leading-[0.9] tracking-tighter transition-all group-hover:italic group-hover:text-accent lg:text-5xl">
+                  <h3 className="font-display h3-sub font-extrabold uppercase leading-[1.05] tracking-tighter transition-all group-hover:italic group-hover:text-accent">
                     {cs.short.map((line) => (
                       <span key={line} className="block">
                         {line}

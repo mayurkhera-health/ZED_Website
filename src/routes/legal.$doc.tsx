@@ -5,6 +5,8 @@ import { LanguageProvider, useLanguage } from "@/lib/i18n";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { DraftBanner } from "@/components/draft-banner";
+import { IS_PRODUCTION } from "@/lib/site-env";
+import { DRAFT_PRIVACY, DRAFT_TERMS, isLegalDocDraft } from "@/lib/legal-flags";
 
 /**
  * Privacy policy and terms of use, from one template.
@@ -19,12 +21,9 @@ import { DraftBanner } from "@/components/draft-banner";
  * Terms still has three sections whose entire body is a note to counsel.
  * Publishing them as a pair meant the finished one waited on the unfinished.
  */
-export const DRAFT_PRIVACY = false;
-export const DRAFT_TERMS = true;
+export { DRAFT_PRIVACY, DRAFT_TERMS };
 
-function isDocDraft(doc: string): boolean {
-  return doc === "terms" ? DRAFT_TERMS : DRAFT_PRIVACY;
-}
+const isDocDraft = isLegalDocDraft;
 
 const DOCS = ["privacy", "terms"] as const;
 type Doc = (typeof DOCS)[number];
@@ -33,6 +32,8 @@ const isDoc = (v: string): v is Doc => (DOCS as readonly string[]).includes(v);
 export const Route = createFileRoute("/legal/$doc")({
   loader: ({ params }) => {
     if (!isDoc(params.doc)) throw notFound();
+    // Reviewable on staging, gone in production.
+    if (IS_PRODUCTION && isLegalDocDraft(params.doc)) throw notFound();
     return { doc: params.doc as Doc };
   },
   head: ({ params }) => {
@@ -107,7 +108,7 @@ function LegalBody() {
           <div className="max-w-[42rem]">
             {d.sections.map((s, i) => (
               <section key={s.heading} className={i === 0 ? "" : "mt-10"}>
-                <h2 className="font-display text-[1.375rem] leading-[1.2] tracking-[-0.02em] sm:text-2xl">
+                <h2 className="font-display h2-card">
                   {s.heading}
                 </h2>
                 <p className="mt-3 text-[1.0625rem] leading-[1.7] text-muted-foreground">

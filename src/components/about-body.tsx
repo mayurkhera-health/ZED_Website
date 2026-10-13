@@ -5,13 +5,14 @@ import { SectionHeader } from "@/components/section-header";
 import { BELIEF_MARKS } from "@/components/about-marks";
 
 /**
- * About page — six sections, each answering exactly one question:
+ * About page — seven sections, each answering exactly one question:
  *
  *   HERO         white    who is ZED
  *   WHY WE'RE HERE white  why does ZED exist
  *   WHAT WE BELIEVE surface  what principles guide it
  *   HOW WE WORK  dark     what is it like to work with ZED
  *   OUR TEAM     white    who and where are the people
+ *   OUR OWN VENTURE white  what else ZED builds
  *   CTA          surface  what next
  *
  * The alternating ground is load-bearing: six white sections in a row would
@@ -46,9 +47,7 @@ export function AboutBody({ showHeroPlaceholder }: { showHeroPlaceholder: boolea
       <section className="border-b border-border">
         <div className="container-page section-y">
           <p className="eyebrow text-accent">{a.eyebrow}</p>
-          <h1 className="font-display h1-page mt-3 max-w-[22ch]">
-            {a.heading}
-          </h1>
+          <h1 className="font-display h1-page mt-3 max-w-[22ch]">{a.heading}</h1>
 
           <div
             className={`mt-8 ${
@@ -171,9 +170,7 @@ export function AboutBody({ showHeroPlaceholder }: { showHeroPlaceholder: boolea
                   <div className="mt-5 text-foreground">
                     <Mark />
                   </div>
-                  <h3 className="font-display mt-4 max-w-[18ch] text-[1.375rem] leading-[1.15] tracking-[-0.02em]">
-                    {b.title}
-                  </h3>
+                  <h3 className="font-display h3-sub mt-4 max-w-[18ch]">{b.title}</h3>
                   <p className="mt-3 max-w-[26rem] text-[0.9375rem] leading-[1.6] text-muted-foreground">
                     {b.body}
                   </p>
@@ -207,9 +204,7 @@ export function AboutBody({ showHeroPlaceholder }: { showHeroPlaceholder: boolea
             {a.workPrinciples.map((p) => (
               <li key={p.title}>
                 <span className="block h-px w-7 bg-primary" aria-hidden="true" />
-                <h3 className="font-display mt-4 max-w-[18ch] text-[1.25rem] leading-[1.2] tracking-[-0.02em] sm:text-[1.375rem]">
-                  {p.title}
-                </h3>
+                <h3 className="font-display h3-sub mt-4 max-w-[18ch]">{p.title}</h3>
                 <p className="mt-3 max-w-[26rem] text-[0.9375rem] leading-[1.6] text-muted-foreground">
                   {p.body}
                 </p>
@@ -269,15 +264,56 @@ export function AboutBody({ showHeroPlaceholder }: { showHeroPlaceholder: boolea
       </section>
 
       {/* --------------------------------------------------------------
-          06 — CLOSING CTA
+          06 — OUR OWN VENTURE
+
+          Same shape as 02 (WHY WE'RE HERE): heading column left, prose right,
+          via .split. No new classes — eyebrow, heading, body and the inline
+          arrow link are the ones already used on this page.
+
+          Deliberately no logo, no card, no metrics. There are no verified
+          numbers for this venture yet, and the case-study sections are where
+          hard numbers live.
+
+          The link is a plain <a>, not <Link>: automatesmall.com is a separate
+          site, and the router only knows routes inside this one.
+          -------------------------------------------------------------- */}
+      <section className="border-b border-border" aria-labelledby="about-venture">
+        <div className="container-page section-y split">
+          <SectionHeader
+            align="left"
+            eyebrow={a.ventureEyebrow}
+            heading={a.ventureHeading}
+            headingId="about-venture"
+          />
+          <div>
+            <div className="max-w-[40rem] space-y-4">
+              {a.ventureBody.map((para) => (
+                <p
+                  key={para.slice(0, 20)}
+                  className="text-[1.0625rem] leading-[1.65] text-muted-foreground"
+                >
+                  {para}
+                </p>
+              ))}
+            </div>
+            <a
+              href="https://automatesmall.com"
+              className="group mt-6 inline-flex items-center gap-1.5 text-[0.9375rem] font-bold text-accent"
+            >
+              {a.ventureLink}
+              <ArrowRight className="arrow-shift h-4 w-4" aria-hidden="true" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* --------------------------------------------------------------
+          07 — CLOSING CTA
           -------------------------------------------------------------- */}
       <section className="bg-surface" aria-labelledby="about-cta">
         <div className="container-page section-y grid gap-8 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)] lg:items-center">
           <div className="max-w-[36rem]">
-            <h2
-              id="about-cta"
-              className="font-display max-w-[40rem] text-[1.75rem] leading-[1.12] tracking-[-0.025em] sm:text-[2.125rem]"
-            >
+            <h2 id="about-cta" className="font-display h2-section max-w-[40rem]">
               {a.ctaHeading}
             </h2>
             <p className="mt-4 text-[1.0625rem] leading-[1.6] text-muted-foreground">{a.ctaBody}</p>
@@ -366,7 +402,7 @@ function ProcessFlow({ stages }: { stages: { title: string; note: string }[] }) 
                 />
               )}
             </span>
-            <h3 className="text-[0.9375rem] font-bold leading-[1.3] md:mt-4">{s.title}</h3>
+            <h3 className="h-label md:mt-4">{s.title}</h3>
           </div>
           <p className="mt-1.5 max-w-[16rem] pl-[21px] text-[0.875rem] leading-[1.5] text-muted-foreground md:pl-0">
             {s.note}

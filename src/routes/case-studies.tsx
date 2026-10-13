@@ -74,7 +74,7 @@ function CaseStudiesPageBody() {
                   <p className="text-sm font-semibold tracking-wide text-muted-foreground">
                     {item.client} · {item.date}
                   </p>
-                  <h2 className="font-display mt-1 text-2xl tracking-tight sm:text-3xl">
+                  <h2 className="font-display h2-section mt-1">
                     {item.title}
                   </h2>
                   <p className="mt-3 max-w-3xl text-base leading-relaxed text-muted-foreground">

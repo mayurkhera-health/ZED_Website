@@ -91,7 +91,7 @@ function ServicesPageBody() {
               <div className="mx-auto flex max-w-6xl items-start gap-6">
                 <div className="min-w-0 flex-1">
                   <h2
-                    className="font-display text-2xl tracking-tight transition-transform group-hover:translate-x-1 sm:text-3xl"
+                    className="font-display h2-section transition-transform group-hover:translate-x-1"
                     style={{
                       transitionDuration: "var(--dur)",
                       transitionTimingFunction: "var(--ease)",
